@@ -10,50 +10,55 @@ const trustItems = [
 
 export const TrustBadges = () => {
   return (
-    <section className="py-10 bg-background relative overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-full bg-navy/5 blur-[120px] rounded-full pointer-events-none" />
-      
+    <section className="py-16 bg-background border-y border-border/40 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12">
-          {trustItems.map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="flex items-center gap-4 px-6 py-3 rounded-2xl bg-white dark:bg-navy/40 border border-border/50 shadow-sm hover:shadow-md hover:border-green/30 transition-all duration-300 group"
-            >
-              <div className="relative">
-                <div className="w-10 h-10 rounded-xl bg-green/5 flex items-center justify-center border border-green/10 group-hover:scale-110 transition-transform duration-500">
-                  <item.icon className="w-5 h-5 text-green" />
-                </div>
-                {/* Active Indicator */}
-                <div className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-green border-2 border-white dark:border-navy animate-pulse" />
-              </div>
-              
-              <div>
-                <p className="text-[10px] font-black tracking-tighter text-muted-foreground uppercase mb-0">
-                  {item.label}
-                </p>
-                <p className="text-xs font-bold text-foreground/80">
-                  {item.sub}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-12">
           
-          {/* Uptime Indicator Pill */}
+          <div className="flex flex-col items-center lg:items-start">
+            <span className="text-[10px] font-black text-green uppercase tracking-[0.5em] mb-4">Verification Layer</span>
+            <h3 className="text-2xl font-black text-navy uppercase tracking-tighter">Certified Infrastructure.</h3>
+          </div>
+
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+            {trustItems.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="flex flex-col items-center gap-4 group"
+              >
+                <div className="w-16 h-16 rounded-[1.5rem] bg-navy/5 flex items-center justify-center group-hover:bg-navy transition-all duration-500 shadow-sm border border-transparent group-hover:border-green/20">
+                  <item.icon className="w-8 h-8 text-navy/40 group-hover:text-green transition-colors" />
+                </div>
+                
+                <div className="text-center">
+                  <p className="text-[9px] font-black tracking-[0.2em] text-foreground/40 uppercase mb-1">
+                    {item.label}
+                  </p>
+                  <p className="text-xs font-bold text-foreground/80">
+                    {item.sub}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-            className="flex items-center gap-3 px-5 py-2.5 rounded-full bg-green/10 border border-green/20"
+            className="flex items-center gap-4 px-6 py-4 rounded-[2rem] bg-green/5 border border-green/10 shadow-sm"
           >
-            <div className="w-2 h-2 rounded-full bg-green animate-ping" />
-            <span className="text-[10px] font-bold text-green uppercase tracking-widest">Systems: Operational</span>
+            <div className="relative flex items-center justify-center">
+              <div className="w-3 h-3 rounded-full bg-green animate-ping absolute" />
+              <div className="w-3 h-3 rounded-full bg-green relative" />
+            </div>
+            <div>
+              <p className="text-[9px] font-black text-green/60 uppercase tracking-widest">Network Uptime</p>
+              <p className="text-sm font-black text-navy uppercase">99.9% Operational</p>
+            </div>
           </motion.div>
         </div>
       </div>

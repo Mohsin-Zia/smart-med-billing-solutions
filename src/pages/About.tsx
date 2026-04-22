@@ -273,304 +273,171 @@ const About = () => {
 
   return (
     <PageWrapper>
-      {/* Hero with Background Image */}
-      <section className="pt-32 pb-20 lg:pt-40 lg:pb-24 relative overflow-hidden">
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
-              height: "120%",
-              top: "-10%",
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/80 to-green/40" />
+      {/* Page Header - Professional Architecture */}
+      <section className="pt-32 pb-24 lg:pt-56 lg:pb-40 relative overflow-hidden bg-navy text-white">
+        {/* Background Patterns */}
+        <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
+          <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-green to-transparent" />
+          <div className="absolute inset-y-0 left-1/4 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+          <div className="absolute inset-y-0 right-1/4 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-3xl mx-auto">
-            <span className="inline-block px-4 py-2 rounded-full bg-green/20 text-white text-sm font-medium mb-4">
-              Trusted Medical Billing Partner
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              About Unity Billing Solutions
-            </h1>
-            <p className="text-xl font-semibold text-white/90 mb-4">
-              15+ Years of Experience in Medical Billing Excellence
-            </p>
-            <p className="text-lg text-white/85 mb-5">
-              Unity Billing Solutionsis your trusted partner in revenue cycle
-              management, dedicated to simplifying complex billing processes,
-              ensuring compliance, and providing healthcare providers with the
-              insights and clarity needed to grow their practices confidently.
-            </p>
-            <p className="text-base text-white/80 mb-8">
-              Whether you operate a small clinic or a multi-location group, our
-              team combines extensive industry expertise, advanced technology,
-              and personalized, white-glove support. We focus on maximizing
-              reimbursements, minimizing claim denials, and streamlining
-              workflows so your practice can thrive financially while you focus
-              on delivering exceptional patient care.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="bg-green hover:bg-green/90" asChild>
-                <Link to="/contact">
-                  Get Started
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="bg-transparent border-white/40 text-white hover:bg-white/10"
-                asChild>
-                <Link to="/services">Our Services</Link>
-              </Button>
-            </div>
-          </div>
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="inline-flex items-center gap-4 px-8 py-3 rounded-full bg-white/5 border border-white/10 mb-12 shadow-inner"
+          >
+            <div className="w-2 h-2 rounded-full bg-green animate-pulse" />
+            <span className="text-[10px] font-black tracking-[0.5em] uppercase text-white/60">Institutional Identity</span>
+          </motion.div>
+          
+          <h1 className="text-5xl md:text-9xl font-black mb-12 leading-[0.8] tracking-tighter uppercase">
+            Architecting <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-green">Excellence.</span>
+          </h1>
+          
+          <p className="text-xl text-white/40 max-w-2xl mx-auto leading-relaxed font-medium mb-12 border-l-2 border-green/20 pl-10 text-left md:text-center md:border-l-0 md:pl-0">
+            SmartMed Billing Solutions is a premier revenue cycle management firm dedicated to transforming clinical intelligence into sustainable financial performance.
+          </p>
         </div>
       </section>
 
-      {/* Mission */}
-      <section id="mission" className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      {/* Mission & Impact */}
+      <section id="mission" className="py-40 bg-background relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-32 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}>
-              <h2 className="text-3xl font-bold text-foreground mb-6">
-                Our Mission
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                At Unity Billing Solutions, our mission is simple yet powerful:
-                to transform medical billing for healthcare providers
-                nationwide, helping practices achieve financial clarity,
-                efficiency, and growth.
-              </p>
-              <ul className="space-y-4">
-                {[
-                  "Maximize Revenue: Optimize reimbursements and cash flow for your practice.",
-                  "Reduce Denials: Minimize claim denials and administrative inefficiencies",
-                  "Ensure Compliance: Deliver accurate, timely, and fully compliant billing solutions.",
-                  "Focus on Patients: Empower healthcare providers to dedicate their time and energy to patient care.",
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start">
-                    <CheckCircle2 className="w-5 h-5 text-green mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-foreground">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="grid grid-cols-2 gap-6">
-              <StatCounter
-                value={1500}
-                suffix="+"
-                label="Healthcare Providers"
-                variant="medical"
-              />
-              <StatCounter
-                value={99}
-                suffix="%"
-                label="Clean Claim Rate"
-                variant="medical"
-              />
-              <StatCounter
-                value={75}
-                suffix="+"
-                label="Medical Specialities"
-                variant="medical"
-              />
-              <StatCounter
-                value={30}
-                suffix="%"
-                label="Revenue Increase"
-                variant="medical"
-              />
+              transition={{ duration: 0.8 }}
+            >
+              <div className="flex items-center gap-4 mb-10">
+                <div className="w-2 h-2 rounded-full bg-green" />
+                <span className="text-[10px] font-black text-green uppercase tracking-[0.5em]">Operational Mission</span>
+              </div>
+              <h2 className="text-5xl md:text-8xl font-black text-navy mb-12 leading-[0.85] tracking-tighter uppercase">
+                Bridging <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green to-navy-light">Care & Capital.</span>
+              </h2>
+              <p className="text-xl text-muted-foreground/60 leading-relaxed mb-16 font-medium border-l-2 border-green/20 pl-10">
+                Our mission is to engineer specialized revenue pathways for healthcare providers, ensuring that administrative complexity never obstructs patient care.
+              </p>
+              
+              <div className="grid sm:grid-cols-2 gap-8">
+                {[
+                  "Revenue Maximization",
+                  "Denial Mitigation",
+                  "Compliance Integrity",
+                  "Clinical Focus"
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center gap-5 group">
+                    <div className="w-14 h-14 rounded-2xl bg-navy/5 flex items-center justify-center group-hover:bg-navy group-hover:text-green transition-all duration-500 shadow-inner">
+                      <CheckCircle2 className="w-6 h-6" />
+                    </div>
+                    <span className="text-[11px] font-black uppercase tracking-[0.2em] text-navy/60">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="bg-navy rounded-[4rem] p-20 text-white relative overflow-hidden shadow-3xl"
+            >
+               {/* Visual Glow */}
+               <div className="absolute -top-1/4 -right-1/4 w-full h-full bg-green/10 blur-[120px]" />
+               
+               <div className="relative z-10 grid grid-cols-2 gap-16">
+                  {[
+                    { label: "PROVIDERS", value: "1,500+", sub: "Nationwide Network" },
+                    { label: "EFFICIENCY", value: "99%", sub: "Clean Claim Rate" },
+                    { label: "DOMAINS", value: "75+", sub: "Medical Specialties" },
+                    { label: "PERFORMANCE", value: "30%", sub: "Avg. Revenue Growth" }
+                  ].map((stat, i) => (
+                    <div key={i}>
+                      <p className="text-[10px] font-black text-white/20 uppercase tracking-[0.4em] mb-4">{stat.label}</p>
+                      <h4 className="text-5xl font-black text-green mb-2 tracking-tighter">{stat.value}</h4>
+                      <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest">{stat.sub}</p>
+                    </div>
+                  ))}
+               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-20 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              Our Core Values
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              These principles guide everything we do and how we serve our
-              clients.
-            </p>
-          </motion.div>
+      {/* Core Values */}
+      <section className="py-40 bg-navy/[0.02] relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-32">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center justify-center gap-4 mb-8">
+                <div className="w-2 h-2 rounded-full bg-green" />
+                <span className="text-[10px] font-black text-green uppercase tracking-[0.5em]">Corporate Ethos</span>
+              </div>
+              <h2 className="text-5xl md:text-8xl font-black text-navy mb-10 leading-[0.85] tracking-tighter uppercase">
+                Foundational <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green to-navy-light">Principles.</span>
+              </h2>
+            </motion.div>
+          </div>
 
-          <motion.div
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <motion.div
                 key={index}
-                variants={staggerItem}
-                className="bg-card rounded-xl p-6 shadow-card text-center hover:shadow-lg transition-shadow">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <value.icon className="w-7 h-7 text-primary" />
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white border border-border/40 p-12 rounded-[3.5rem] group hover:border-green/20 hover:shadow-2xl transition-all duration-500"
+              >
+                <div className="w-16 h-16 rounded-2xl bg-navy/5 flex items-center justify-center mb-10 group-hover:bg-navy group-hover:text-green transition-all duration-500 shadow-inner">
+                  <value.icon className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">
+                <h3 className="text-sm font-black text-navy uppercase tracking-widest mb-6 leading-tight">
                   {value.title}
                 </h3>
-                <p className="text-muted-foreground">{value.description}</p>
+                <p className="text-[11px] font-medium text-muted-foreground/80 leading-relaxed">
+                  {value.description}
+                </p>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Timeline - Commented Out */}
-      {false && (
-        <section
-          id="journey"
-          ref={journeySectionRef}
-          className="py-20 bg-background overflow-hidden">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-foreground mb-4">
-                Our Journey
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                From a small team with a big vision to an industry leader.
-              </p>
-            </div>
-
-            <div className="max-w-5xl mx-auto">
-              <div className="relative">
-                <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-transparent via-primary to-transparent opacity-30" />
-
-                {milestones.map((milestone, index) => {
-                  const isLeft = index % 2 === 0;
-                  return (
-                    <div
-                      key={index}
-                      className="milestone-wrapper relative flex items-center mb-16">
-                      <div
-                        className={`w-5/12 ${isLeft ? "text-right pr-12" : "text-left pl-12 ml-auto"}`}>
-                        <div
-                          className={`milestone-box bg-card rounded-xl p-6 shadow-card hover:shadow-lg transition-all relative overflow-hidden group`}>
-                          <div
-                            className={`milestone-arrow absolute top-1/2 ${
-                              isLeft
-                                ? "right-0 translate-x-1/2 -translate-y-1/2"
-                                : "left-0 -translate-x-1/2 -translate-y-1/2"
-                            } z-10`}></div>
-
-                          <div className="absolute inset-0 opacity-5 bg-gradient-to-br from-primary to-secondary" />
-
-                          <div className="relative z-10">
-                            <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary font-bold text-sm mb-3">
-                              {milestone.year}
-                            </span>
-                            <h3 className="text-xl font-semibold text-foreground mb-2">
-                              {milestone.title}
-                            </h3>
-                            <p className="text-muted-foreground text-sm">
-                              {milestone.description}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="absolute left-1/2 transform -translate-x-1/2 milestone-dot-container">
-                        <div className="milestone-dot w-6 h-6 rounded-full bg-gradient-to-br from-primary to-secondary border-4 border-background shadow-lg relative z-10">
-                          <div className="absolute inset-0 rounded-full bg-primary/30 animate-ping" />
-                          <div className="absolute inset-0 rounded-full bg-primary/50 blur-sm" />
-                        </div>
-                      </div>
-
-                      <div className="w-5/12" />
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Team - Commented Out */}
-      {false && (
-        <section id="team" className="py-20 bg-muted/50">
-          <div className="container mx-auto px-4">
-            <motion.div
-              className="text-center mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}>
-              <h2 className="text-3xl font-bold text-foreground mb-4">
-                Leadership Team
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Meet the experienced professionals leading our company.
-              </p>
-            </motion.div>
-
-            <motion.div
-              className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
-              variants={staggerContainer}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}>
-              {team.map((member, index) => (
-                <motion.div
-                  key={index}
-                  variants={staggerItem}
-                  className="bg-card rounded-xl p-6 shadow-card text-center hover:shadow-lg transition-shadow">
-                  <div className="w-20 h-20 rounded-full bg-gradient-primary flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-primary-foreground">
-                    {member.initials}
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground">
-                    {member.name}
-                  </h3>
-                  <p className="text-primary font-medium mb-2">{member.role}</p>
-                  <p className="text-sm text-muted-foreground">{member.bio}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-      )}
-
-      {/* Stats */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+      {/* Stats Summary */}
+      <section className="py-40 bg-background relative overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid md:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {[
-              { value: "15+", label: "Years in Business" },
-              { value: "1,500+", label: "Happy Clients" },
-              { value: "500+", label: "Team Members" },
-              { value: "50", label: "States Served" },
+              { value: "15+", label: "YEARS_IN_OPERATION" },
+              { value: "500+", label: "SUCCESS_ENGINEERS" },
+              { value: "50", label: "US_STATES_SERVED" },
+              { value: "24/7", label: "SYSTEM_MONITORING" },
             ].map((stat, index) => (
               <motion.div
                 key={index}
-                className="text-center p-6 bg-card rounded-xl shadow-card"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                className="p-16 bg-white border border-border/40 rounded-[3.5rem] text-center hover:shadow-2xl transition-all duration-500"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}>
-                <div className="text-4xl font-bold text-primary mb-2">
+                transition={{ delay: index * 0.1 }}
+              >
+                <div className="text-6xl font-black text-navy mb-6 tracking-tighter">
                   {stat.value}
                 </div>
-                <div className="text-sm text-muted-foreground">
+                <div className="text-[10px] font-black text-navy/20 uppercase tracking-[0.4em]">
                   {stat.label}
                 </div>
               </motion.div>
@@ -580,34 +447,47 @@ const About = () => {
       </section>
 
       {/* Careers */}
-      <section id="careers" className="py-20 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              Join Our Growing Team
+      <section id="careers" className="py-48 bg-navy relative overflow-hidden">
+        {/* Visual Accent */}
+        <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(34,197,94,0.1)_0%,transparent_70%)] opacity-50" />
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <motion.div
+            className="max-w-5xl mx-auto text-center"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-flex items-center gap-4 mb-12">
+              <div className="w-2 h-2 rounded-full bg-green animate-pulse" />
+              <span className="text-[10px] font-black text-green uppercase tracking-[0.6em]">Collaborative Opportunities</span>
+            </div>
+            <h2 className="text-5xl md:text-9xl font-black text-white mb-16 leading-[0.8] tracking-tighter uppercase">
+              Build the Future of <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-green">Clinical Finance.</span>
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              We're always looking for talented professionals to join our
-              mission. Explore career opportunities and grow with us.
+            <p className="text-xl text-white/40 mb-24 max-w-3xl mx-auto leading-relaxed font-medium border-l-2 border-green/20 pl-10 text-left md:text-center md:border-l-0 md:pl-0">
+              We are expanding our network of billing specialists and financial engineers. Explore institutional opportunities.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" asChild>
-                <Link to="/careers">
-                  View Open Positions
-                  <ArrowRight className="w-4 h-4 ml-2" />
+            <div className="flex flex-col sm:flex-row justify-center gap-10">
+              <Button size="lg" className="bg-green hover:bg-white text-navy px-16 h-20 rounded-full text-sm font-black uppercase tracking-[0.2em] shadow-3xl shadow-green/20 transition-all hover:scale-105 active:scale-95 group" asChild>
+                <Link to="/contact">
+                  Open Institutional Roles
+                  <ArrowRight className="w-6 h-6 ml-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link to="/contact">Contact HR</Link>
+              <Button size="lg" variant="outline" className="px-16 h-20 rounded-full text-sm font-black uppercase tracking-[0.2em] border-white/20 hover:bg-white/5 text-white transition-all hover:scale-105 active:scale-95" asChild>
+                <Link to="/contact">Contact Infrastructure Team</Link>
               </Button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       <CTASection
-        title="Why Healthcare Providers Choose Unity Billing Solutions"
-        description="Healthcare providers partner with Unity Billing Solutions for our precision, transparency, and proven results. Our advanced billing systems and experienced consultants reduce claim errors, increase reimbursements, and help practices stay compliant with constantly evolving payer regulations."
+        title="Why Healthcare Providers Choose SmartMed Billing Solutions"
+        description="Healthcare providers partner with SmartMed Billing Solutions for our precision, transparency, and proven results. Our advanced billing systems and experienced consultants reduce claim errors, increase reimbursements, and help practices stay compliant with constantly evolving payer regulations."
       />
     </PageWrapper>
   );

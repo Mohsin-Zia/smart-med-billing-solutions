@@ -23,7 +23,7 @@ export const SpecialtyCard = ({
   return (
     <motion.div
       className={cn(
-        "group relative p-8 rounded-[2rem] bg-white dark:bg-navy/40 border border-border/50 hover:border-green/30 cursor-pointer transition-all duration-500 overflow-hidden technical-shadow",
+        "group relative p-10 rounded-[2.5rem] bg-muted/20 backdrop-blur-sm border border-border/40 hover:border-green/30 cursor-pointer transition-all duration-500 overflow-hidden",
         className
       )}
       onClick={onClick}
@@ -32,26 +32,32 @@ export const SpecialtyCard = ({
       viewport={{ once: true, margin: "-50px" }}
       variants={cardEnter}
       transition={{ delay: index * 0.05 }}
-      whileHover={{ y: -8 }}
+      whileHover={{ y: -6, backgroundColor: 'hsl(var(--muted)/0.4)' }}
     >
-      {/* Premium Technical Accents */}
-      <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
-        <Icon className="w-16 h-16" />
+      {/* Decorative Technical ID */}
+      <div className="absolute top-6 right-8 opacity-10 group-hover:opacity-30 transition-opacity">
+        <span className="text-[10px] font-black font-mono tracking-tighter">SPEC_0{index + 1}</span>
       </div>
       
       <div className="relative z-10 flex flex-col items-center text-center">
-        <div className="w-16 h-16 rounded-2xl bg-muted/50 group-hover:bg-green/10 flex items-center justify-center mb-6 transition-all duration-500 scale-100 group-hover:scale-110">
-          <Icon className="w-8 h-8 text-primary group-hover:text-green transition-colors" />
+        <div className="w-16 h-16 rounded-[1.25rem] bg-background shadow-sm group-hover:bg-navy group-hover:text-white flex items-center justify-center mb-8 transition-all duration-500 transform group-hover:scale-110">
+          <Icon className="w-8 h-8 text-navy group-hover:text-green transition-colors" />
         </div>
         
-        <h3 className="text-sm font-bold text-foreground uppercase tracking-widest leading-relaxed mb-2">{name}</h3>
+        <h3 className="text-xs font-black text-foreground uppercase tracking-[0.2em] leading-tight mb-4 group-hover:text-green transition-colors">
+          {name}
+        </h3>
         
-        {/* Animated Dash */}
-        <div className="w-8 h-1 bg-green/20 group-hover:w-16 group-hover:bg-green transition-all duration-500 rounded-full" />
+        {/* Technical Progress Indicator */}
+        <div className="flex items-center gap-1.5 pt-4 opacity-20 group-hover:opacity-100 transition-all duration-700">
+          <div className="w-1.5 h-1.5 rounded-full bg-green" />
+          <div className="w-1.5 h-1.5 rounded-full bg-green/40" />
+          <div className="w-1.5 h-1.5 rounded-full bg-green/20" />
+        </div>
       </div>
 
-      {/* Background Glow */}
-      <div className="absolute -bottom-10 -left-10 w-24 h-24 bg-green/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+      {/* Atmospheric Glow */}
+      <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-green/5 rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
     </motion.div>
   );
 };

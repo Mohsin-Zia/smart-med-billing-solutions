@@ -5,9 +5,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { ScrollIndicator } from "@/components/common/ScrollIndicator";
+import { CookiesPopup } from "@/components/common/CookiesPopup";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
-
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -17,7 +17,7 @@ import CaseStudies from "./pages/CaseStudies";
 import Careers from "./pages/Careers";
 import NotFound from "./pages/NotFound";
 import Specialities from "./pages/Specialities";
-import { FAQSection } from "./components/sections/FAQSection";
+import FAQ from "./pages/FAQ";
 
 const queryClient = new QueryClient();
 
@@ -33,7 +33,7 @@ const App = () => (
             <Route path="/services/:serviceId" element={<Services />} />
             <Route path="/specialities" element={<Specialities />} />
             <Route path="/about" element={<About />} />
-            <Route path="/faq" element={<FAQSection />} />
+            <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
@@ -45,6 +45,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
+        <CookiesPopup />
       </BrowserRouter>
       {/* <ScrollIndicator /> */}
     </TooltipProvider>

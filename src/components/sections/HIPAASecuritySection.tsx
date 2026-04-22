@@ -35,47 +35,52 @@ export const HIPAASecuritySection = () => {
   const sectionRef = useGsapFadeIn();
 
   return (
-    <section
-      ref={sectionRef}
-      className="py-20 relative overflow-hidden bg-background"
-    >
-      {/* Decorative Security Grids */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-navy/5 blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-green/5 blur-[100px]" />
+    <section ref={sectionRef} className="py-40 relative overflow-hidden bg-background">
+      {/* Precision Background Pattern */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.01]">
+        <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(to right, hsl(var(--primary)) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--primary)) 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-20">
-          <div className="flex items-center gap-3 text-green font-black uppercase tracking-[0.2em] text-[10px] mb-6">
-            <span className="w-10 h-0.5 bg-green"></span>
-            Compliance Protocol
-          </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-8 leading-[1.1]">
-            Enterprise-Grade <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-green">HIPAA Security.</span>
-          </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed font-medium">
-            We implement multi-layered security protocols and rigorous compliance standards to safeguard sensitive healthcare data at every touchpoint.
-          </p>
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-32">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <div className="w-2 h-2 rounded-full bg-green animate-pulse" />
+              <span className="text-[10px] font-black text-green uppercase tracking-[0.5em]">Global Compliance Protocol</span>
+            </div>
+            <h2 className="text-5xl md:text-8xl font-black text-navy mb-10 leading-[0.85] tracking-tighter uppercase">
+              Fortified <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green to-navy-light">HIPAA Core.</span>
+            </h2>
+            <p className="text-xl text-muted-foreground/60 leading-relaxed font-medium max-w-2xl mx-auto">
+              We implement multi-layered security protocols and rigorous compliance standards to safeguard sensitive healthcare data at every touchpoint.
+            </p>
+          </motion.div>
         </div>
 
-        {/* Centralized Security Hub Card */}
-        <div className="grid lg:grid-cols-3 gap-8 items-stretch mb-20">
+        {/* Security Matrix */}
+        <div className="grid lg:grid-cols-3 gap-8 items-stretch mb-32">
           
-          {/* Left Column Features */}
-          <div className="space-y-6">
+          {/* Left Column */}
+          <div className="space-y-8">
             {securityFeatures.slice(0, 2).map((feature, index) => (
               <motion.div
                 key={index}
-                whileHover={{ y: -5 }}
-                className="p-8 rounded-[2rem] bg-white dark:bg-navy/40 border border-border/50 group hover:border-green/30 transition-all duration-300 technical-shadow"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="p-12 rounded-[3.5rem] bg-white border border-border/40 group hover:border-green/20 hover:shadow-2xl transition-all duration-500"
               >
-                <div className="w-12 h-12 rounded-xl bg-green/10 flex items-center justify-center mb-6 group-hover:bg-green group-hover:text-white transition-all">
-                  <feature.icon className="w-6 h-6" />
+                <div className="w-16 h-16 rounded-2xl bg-navy/5 flex items-center justify-center mb-10 group-hover:bg-navy group-hover:text-green transition-all duration-500 shadow-inner">
+                  <feature.icon className="w-8 h-8" />
                 </div>
-                <h4 className="text-lg font-bold text-foreground mb-3">{feature.title.replace("•\t", "")}</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed font-medium">{feature.description.replace("–", "")}</p>
+                <h4 className="text-sm font-black text-navy mb-4 uppercase tracking-widest">{feature.title.replace("•\t", "")}</h4>
+                <p className="text-[11px] text-muted-foreground/80 leading-relaxed font-medium">{feature.description.replace("–", "")}</p>
               </motion.div>
             ))}
           </div>
@@ -83,59 +88,67 @@ export const HIPAASecuritySection = () => {
           {/* Center Column: High-Impact Shield */}
           <div className="flex flex-col">
              <motion.div 
-               whileHover={{ scale: 1.02 }}
-               className="flex-1 bg-navy rounded-[3rem] p-12 text-white relative overflow-hidden flex flex-col items-center justify-center text-center shadow-2xl"
+               initial={{ opacity: 0, scale: 0.95 }}
+               whileInView={{ opacity: 1, scale: 1 }}
+               viewport={{ once: true }}
+               className="flex-1 bg-navy rounded-[4rem] p-20 text-white relative overflow-hidden flex flex-col items-center justify-center text-center shadow-3xl"
              >
-                {/* Shield Animation Background */}
-                <div className="absolute inset-0 opacity-10">
-                   <svg className="w-full h-full" viewBox="0 0 100 100">
-                      <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="4 4" />
-                      <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="8 8" />
-                   </svg>
-                </div>
+                {/* Visual Accent */}
+                <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(34,197,94,0.1)_0%,transparent_70%)]" />
 
                 <div className="relative z-10">
-                   <div className="w-24 h-24 rounded-full bg-green/20 border-4 border-green/30 flex items-center justify-center mb-8 mx-auto">
-                      <Shield className="w-12 h-12 text-green" />
+                   <div className="w-40 h-40 rounded-full bg-green/10 border border-green/20 flex items-center justify-center mb-12 mx-auto relative group">
+                      <div className="absolute inset-0 rounded-full bg-green/20 animate-ping opacity-20" />
+                      <Shield className="w-20 h-20 text-green" />
                    </div>
-                   <h3 className="text-3xl font-bold mb-4 italic">HIPAA CERTIFIED</h3>
-                   <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-black tracking-widest uppercase">
-                      Protocol v2.1 ACTIVE
+                   <h3 className="text-4xl font-black mb-6 tracking-tighter uppercase">HIPAA CERTIFIED</h3>
+                   <div className="inline-flex items-center gap-4 px-8 py-3 rounded-full bg-white/5 border border-white/10">
+                      <div className="w-2 h-2 rounded-full bg-green shadow-glow-green" />
+                      <span className="text-[10px] font-black tracking-[0.4em] uppercase text-white/60">Secure Node Active</span>
                    </div>
                 </div>
              </motion.div>
           </div>
 
-          {/* Right Column Features */}
-          <div className="space-y-6">
+          {/* Right Column */}
+          <div className="space-y-8">
             {securityFeatures.slice(2, 5).map((feature, index) => (
               <motion.div
                 key={index}
-                whileHover={{ y: -5 }}
-                className="p-8 rounded-[2rem] bg-white dark:bg-navy/40 border border-border/50 group hover:border-green/30 transition-all duration-300 technical-shadow"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 + index * 0.1 }}
+                className="p-12 rounded-[3.5rem] bg-white border border-border/40 group hover:border-green/20 hover:shadow-2xl transition-all duration-500"
               >
-                <div className="w-12 h-12 rounded-xl bg-green/10 flex items-center justify-center mb-6 group-hover:bg-green group-hover:text-white transition-all">
-                  <feature.icon className="w-6 h-6" />
+                <div className="w-16 h-16 rounded-2xl bg-navy/5 flex items-center justify-center mb-10 group-hover:bg-navy group-hover:text-green transition-all duration-500 shadow-inner">
+                  <feature.icon className="w-8 h-8" />
                 </div>
-                <h4 className="text-lg font-bold text-foreground mb-3">{feature.title.replace("•\t", "")}</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed font-medium">{feature.description}</p>
+                <h4 className="text-sm font-black text-navy mb-4 uppercase tracking-widest">{feature.title.replace("•\t", "")}</h4>
+                <p className="text-[11px] text-muted-foreground/80 leading-relaxed font-medium">{feature.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
 
-        {/* Global Security Features Bar */}
+        {/* Status Tray */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          className="glass-panel rounded-full py-6 px-12 flex flex-wrap justify-center gap-10 md:gap-16 border-border/50"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-navy/5 border border-border/40 rounded-[3rem] py-12 px-20 flex flex-wrap justify-between items-center gap-12"
         >
           {["BAA PROTECTED", "ENCRYPTED TRANSFER", "REGULAR AUDITS", "STAFF TRAINING"].map((label, idx) => (
-            <div key={idx} className="flex items-center gap-3">
-              <div className="w-2 h-2 rounded-full bg-green shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
-              <span className="text-[10px] font-black tracking-[0.2em] text-foreground/60">{label}</span>
+            <div key={idx} className="flex items-center gap-4">
+              <div className="w-2 h-2 rounded-full bg-green shadow-glow-green" />
+              <span className="text-[10px] font-black tracking-[0.4em] text-navy/40 uppercase">{label}</span>
             </div>
           ))}
+          <div className="lg:ml-auto">
+            <span className="text-[10px] font-black text-green/60 border border-green/20 px-6 py-2.5 rounded-full uppercase tracking-[0.2em] bg-green/5">
+              Verified Compliance
+            </span>
+          </div>
         </motion.div>
 
       </div>

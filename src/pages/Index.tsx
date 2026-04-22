@@ -24,8 +24,9 @@ const Index = () => {
       <StatsSection />
       <DMESection />
       <HIPAASecuritySection />
-      <EHR/>
+      <EHR />
       <SpecialitiesSection />
+      <TestimonialsSection />
       <FAQSection limit={5} />
       <CTASection />
     </PageWrapper>

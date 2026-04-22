@@ -14,206 +14,115 @@ const Specialities = () => {
 
   return (
     <PageWrapper>
-      {/* Hero Section - Matching Unity Billing SolutionsDesign */}
-      <section className="pt-36 pb-20 lg:pt-48 relative overflow-hidden">
-        {/* Medical Background Image */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
-            style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
-              height: "120%",
-              top: "-10%",
-            }}
-          />
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-green/70" />
+      {/* ─────────────────────────────────────────
+          PAGE HEADER — Domain Architecture
+      ───────────────────────────────────────── */}
+      <section className="pt-32 pb-24 lg:pt-56 lg:pb-40 relative overflow-hidden bg-navy text-white">
+        {/* Background Patterns */}
+        <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
+          <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-green to-transparent" />
+          <div className="absolute inset-y-0 left-1/4 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+          <div className="absolute inset-y-0 right-1/4 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
         </div>
 
-        {/* Background Pattern Overlay */}
-        <div className="absolute inset-0 z-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-              backgroundSize: "40px 40px",
-            }}
-          />
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div
-            className="text-center max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}>
-            {/* Title */}
-            <motion.h1
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}>
-              {specialities.length}+ Medical Specialities Supported
-            </motion.h1>
-
-            {/* Subtitle */}
-            <motion.p
-              className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}>
-              Expert billing services tailored to your specific medical
-              specialty with precision and care.
-            </motion.p>
-
-            {/* Stats Boxes */}
-            <motion.div
-              className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all">
-                <div className="text-5xl md:text-6xl font-bold text-green-light mb-2">
-                  98%
-                </div>
-                <div className="text-white/90 text-lg">Claim Accuracy</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all">
-                <div className="text-5xl md:text-6xl font-bold text-green-light mb-2">
-                  30%
-                </div>
-                <div className="text-white/90 text-lg">Faster Payments</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all">
-                <div className="text-5xl md:text-6xl font-bold text-green-light mb-2">
-                  40+
-                </div>
-                <div className="text-white/90 text-lg">Specialities</div>
-              </div>
-            </motion.div>
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="inline-flex items-center gap-4 px-8 py-3 rounded-full bg-white/5 border border-white/10 mb-12 shadow-inner"
+          >
+            <div className="w-2 h-2 rounded-full bg-green animate-pulse" />
+            <span className="text-[10px] font-black tracking-[0.5em] uppercase text-white/60">Cross-Domain Competency</span>
           </motion.div>
+          
+          <h1 className="text-5xl md:text-9xl font-black mb-12 leading-[0.8] tracking-tighter uppercase">
+            Specialized <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-green">Intelligence.</span>
+          </h1>
+          
+          <p className="text-xl text-white/40 max-w-2xl mx-auto leading-relaxed font-medium mb-24 border-l-2 border-green/20 pl-10 text-left md:text-center md:border-l-0 md:pl-0">
+            Providing institutional-grade revenue management across {specialities.length}+ medical domains with precision-mapped workflows.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              { value: "98%", label: "ACCURACY_INDEX", sub: "Clean Claim Baseline" },
+              { value: "30%", label: "LATENCY_REDUCTION", sub: "Accelerated Liquidity" },
+              { value: "40+", label: "ACTIVE_DOMAINS", sub: "Verified Specialties" }
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 + i * 0.1 }}
+                className="bg-white/[0.03] backdrop-blur-3xl rounded-[3rem] p-12 border border-white/10 text-left group hover:bg-white/[0.06] transition-all duration-500 hover:shadow-3xl"
+              >
+                <div className="text-[10px] font-black tracking-[0.4em] text-white/20 uppercase mb-6">{stat.label}</div>
+                <div className="text-6xl font-black text-green mb-2 tracking-tighter">{stat.value}</div>
+                <div className="text-[11px] font-bold text-white/40 uppercase tracking-widest leading-none">{stat.sub}</div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Main Specialities Section */}
-      <section className="py-20 bg-[#f4f7fb] min-h-screen">
-        <div className="container mx-auto px-4 max-w-7xl">
-          {/* Section Header */}
-          <div className="text-center mb-14">
-            <p className="text-[#2563eb] font-semibold uppercase tracking-widest text-sm mb-3">
-              Our Most Requested Medical Billing Services
-            </p>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0f1d3a] mb-5">
-              Medical Billing Specialities
-            </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
-              Expert billing services tailored to your specific medical
-              specialty with precision and care.
-            </p>
+      {/* ─────────────────────────────────────────
+          DOMAIN MATRIX — Specialties Grid
+      ───────────────────────────────────────── */}
+      <section className="py-40 bg-background relative overflow-hidden">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-32">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center justify-center gap-4 mb-8">
+                <div className="w-2 h-2 rounded-full bg-green" />
+                <span className="text-[10px] font-black text-green uppercase tracking-[0.5em]">Service Portfolio</span>
+              </div>
+              <h2 className="text-5xl md:text-8xl font-black text-navy mb-10 leading-[0.85] tracking-tighter uppercase">
+                Clinical <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green via-navy-light to-navy">Interface Matrix.</span>
+              </h2>
+            </motion.div>
           </div>
 
-          {/* Grid */}
           <motion.div
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8"
             variants={staggerContainer}
             initial="initial"
-            animate="animate">
-            {specialities.map((specialty) => {
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            {specialities.map((specialty, idx) => {
               const Icon = specialty.icon;
-              const isHovered = hoveredSpecialty === specialty.id;
-
               return (
                 <motion.div
                   key={specialty.id}
                   variants={staggerItem}
-                  className="relative cursor-pointer"
-                  onMouseEnter={() => setHoveredSpecialty(specialty.id)}
-                  onMouseLeave={() => setHoveredSpecialty(null)}>
-                  <motion.div
-                    className="relative h-full rounded-2xl overflow-hidden border-2 transition-all duration-300"
-                    animate={{
-                      borderColor: isHovered ? "#2563eb" : "#e2e8f0",
-                      boxShadow: isHovered
-                        ? "0 12px 40px rgba(37,99,235,0.25)"
-                        : "0 2px 8px rgba(0,0,0,0.06)",
-                      y: isHovered ? -6 : 0,
-                    }}
-                    transition={{ duration: 0.25, ease: "easeOut" }}>
-                    {/* Animated blue fill background */}
-                    <motion.div
-                      className="absolute inset-0"
-                      style={{
-                        background:
-                          "linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)",
-                      }}
-                      animate={{ opacity: isHovered ? 1 : 0 }}
-                      transition={{ duration: 0.25, ease: "easeOut" }}
-                    />
+                  whileHover={{ y: -8 }}
+                  className="group relative bg-white border border-border/40 rounded-[3rem] p-10 flex flex-col items-center text-center hover:border-green/20 transition-all duration-500 hover:shadow-2xl"
+                >
+                  <div className="absolute top-8 right-10 text-[10px] font-black text-navy/5 uppercase tracking-widest">SPEC_0{idx + 1}</div>
+                  
+                  <div className="w-20 h-20 rounded-3xl bg-navy/5 group-hover:bg-navy group-hover:text-green flex items-center justify-center mb-10 transition-all duration-500 shadow-inner">
+                    <Icon className="w-10 h-10" />
+                  </div>
+                  
+                  <h3 className="text-sm font-black text-navy uppercase tracking-widest leading-tight mb-6 group-hover:text-navy transition-colors">
+                    {specialty.name}
+                  </h3>
+                  
+                  <p className="text-[11px] text-muted-foreground/80 font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 h-0 group-hover:h-auto overflow-hidden">
+                    {specialty.description}
+                  </p>
 
-                    {/* White card background (behind fill) */}
-                    <div
-                      className="absolute inset-0 bg-white"
-                      style={{ zIndex: -1 }}
-                    />
-
-                    {/* Content */}
-                    <div className="relative z-10 flex flex-col items-center text-center p-5 pt-6">
-                      {/* Icon circle */}
-                      <motion.div
-                        className="w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-all duration-250"
-                        animate={{
-                          backgroundColor: isHovered
-                            ? "rgba(255,255,255,0.18)"
-                            : "#eff6ff",
-                        }}>
-                        <motion.div
-                          animate={{ color: isHovered ? "#ffffff" : "#2563eb" }}
-                          transition={{ duration: 0.2 }}>
-                          <Icon size={30} strokeWidth={1.6} />
-                        </motion.div>
-                      </motion.div>
-
-                      {/* Title */}
-                      <motion.h3
-                        className="font-semibold text-sm leading-tight mb-2"
-                        animate={{ color: isHovered ? "#ffffff" : "#0f1d3a" }}
-                        transition={{ duration: 0.2 }}>
-                        {specialty.name}
-                      </motion.h3>
-
-                      {/* Description - reveal on hover */}
-                      <AnimatePresence>
-                        {isHovered && (
-                          <motion.p
-                            className="text-xs text-white/85 leading-relaxed"
-                            initial={{ opacity: 0, height: 0, marginTop: 0 }}
-                            animate={{
-                              opacity: 1,
-                              height: "auto",
-                              marginTop: 8,
-                            }}
-                            exit={{ opacity: 0, height: 0, marginTop: 0 }}
-                            transition={{ duration: 0.25 }}>
-                            {specialty.description}
-                          </motion.p>
-                        )}
-                      </AnimatePresence>
-
-                      {/* Arrow on hover */}
-                      <AnimatePresence>
-                        {isHovered && (
-                          <motion.div
-                            className="mt-3"
-                            initial={{ opacity: 0, x: -8 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -8 }}
-                            transition={{ duration: 0.2, delay: 0.05 }}>
-                            <ArrowRight size={18} className="text-white/80" />
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  </motion.div>
+                  <div className="mt-auto pt-8 w-full opacity-0 group-hover:opacity-100 transition-all">
+                    <Button variant="ghost" size="sm" className="w-full text-[11px] font-black uppercase tracking-[0.2em] text-green hover:text-navy hover:bg-green/10 rounded-xl" asChild>
+                      <Link to="/contact">Request Protocol <ArrowRight className="w-4 h-4 ml-3" /></Link>
+                    </Button>
+                  </div>
                 </motion.div>
               );
             })}
@@ -221,204 +130,181 @@ const Specialities = () => {
         </div>
       </section>
 
-      {/* Why Choose Unity Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Why Choose Unity Billing Solutions
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              <span>Your Trusted Partner for Medical Billing Services</span>
-              At Unity Billing Solutions, we combine experienced professionals,
-              proven processes, and advanced technology to deliver billing
-              services that are accurate, transparent, and easy to work with.
-            </p>
-          </motion.div>
+      {/* ─────────────────────────────────────────
+          INFRASTRUCTURE VALUE
+      ───────────────────────────────────────── */}
+      <section className="py-40 bg-navy/[0.02] relative overflow-hidden border-y border-border/40">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-32">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center justify-center gap-4 mb-8">
+                <div className="w-2 h-2 rounded-full bg-green" />
+                <span className="text-[10px] font-black text-green uppercase tracking-[0.5em]">Corporate Advantage</span>
+              </div>
+              <h2 className="text-5xl md:text-8xl font-black text-navy mb-10 leading-[0.85] tracking-tighter uppercase">
+                Operational <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green to-navy-light">Edge.</span>
+              </h2>
+            </motion.div>
+          </div>
 
-          <div className="grid md:grid-cols-4 gap-4 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {[
               {
-                title: "Expertise",
-                description:
-                  "Our team has decades of collective experience in medical billing, coding, and compliance across multiple specialities and payer types, ensuring your practice receives maximum reimbursement.",
-                icon: CheckCircle2,
+                title: "Domain Expertise",
+                desc: "Institutional expertise in medical coding and compliance across multi-payer landscapes.",
               },
               {
-                title: "Tailored Solutions",
-                description:
-                  "Every practice is unique. We design flexible workflows, custom reports, and engagement models that align with your goals and integrate seamlessly with your internal team.",
-                icon: CheckCircle2,
+                title: "Tailored Architecture",
+                desc: "Bespoke workflow tunnels integrated with your specific clinical interface.",
               },
               {
-                title: "Advanced Technology",
-                description:
-                  "Our state-of-the-art tools streamline claim submission, tracking, and reporting, giving you real-time insights into revenue performance, trends, and opportunities for improvement.",
-                icon: CheckCircle2,
+                title: "Tech-Forward Stack",
+                desc: "Real-time analytics and predictive denial mapping via proprietary software layers.",
               },
               {
-                title: "Dedicated Support",
-                description:
-                  "With Unity Billing Solutions, you get a responsive, personal team that knows your practice by name—not just by ticket number—and is always ready to answer questions and provide guidance.",
-                icon: CheckCircle2,
+                title: "Dedicated Engineering",
+                desc: "Direct access to senior billing engineers and regulatory specialists 24/7.",
               },
-            ].map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={index}
-                  className="bg-card rounded-xl p-8 shadow-md hover:shadow-xl transition-all border border-border group"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -5 }}>
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-green/10 to-green/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <Icon className="w-7 h-7 text-green" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {item.description}
-                  </p>
-                </motion.div>
-              );
-            })}
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white border border-border/40 p-12 rounded-[3.5rem] group hover:border-green/20 hover:shadow-2xl transition-all duration-500"
+              >
+                <div className="w-16 h-16 rounded-2xl bg-navy/5 flex items-center justify-center mb-10 group-hover:bg-navy group-hover:text-green transition-all shadow-inner">
+                  <CheckCircle2 className="w-8 h-8" />
+                </div>
+                <h3 className="text-sm font-black text-navy uppercase tracking-widest mb-6 leading-tight">
+                  {item.title}
+                </h3>
+                <p className="text-[11px] font-medium text-muted-foreground/80 leading-relaxed">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary to-green relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-              backgroundSize: "40px 40px",
-            }}
-          />
+      {/* ─────────────────────────────────────────
+          MISSION STATEMENT — Our Commitment
+      ───────────────────────────────────────── */}
+      <section className="py-48 bg-navy relative overflow-hidden">
+        {/* Visual Accent */}
+        <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(34,197,94,0.1)_0%,transparent_70%)] opacity-50" />
+        <div className="absolute inset-0 pointer-events-none opacity-[0.02]">
+          <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)', backgroundSize: '120px 120px' }} />
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
-            className="text-center max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Our Commitment
+            className="text-center max-w-5xl mx-auto"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-flex items-center gap-4 mb-12">
+              <div className="w-2 h-2 rounded-full bg-green animate-pulse" />
+              <span className="text-[10px] font-black text-green uppercase tracking-[0.6em]">Our Core Commitment</span>
+            </div>
+            
+            <h2 className="text-5xl md:text-9xl font-black text-white mb-16 leading-[0.8] tracking-tighter uppercase">
+              Transforming <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-green">Clinical Finance.</span>
             </h2>
-            <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              At Unity Billing Solutions, we don’t just handle billing—we
-              transform it. Our commitment is to help your practice thrive
-              financially, so you can focus entirely on delivering exceptional
-              patient care.
+            
+            <p className="text-xl text-white/40 mb-24 leading-relaxed font-medium max-w-3xl mx-auto border-l-2 border-green/20 pl-10 text-left md:text-center md:border-l-0 md:pl-0">
+              We engineer revenue cycles that empower healthcare providers to focus exclusively on clinical outcomes, while we manage the financial architecture.
             </p>
-            <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              Contact us today to discover how we can optimize your revenue
-              cycle, reduce administrative burdens, and strengthen your
-              practice’s financial health.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button
-                size="lg"
-                className="bg-white text-primary hover:bg-white/90 shadow-xl"
-                asChild>
+
+            <div className="flex flex-col sm:flex-row justify-center gap-10">
+              <Button size="lg" className="bg-green hover:bg-white text-navy px-16 h-20 rounded-full text-sm font-black uppercase tracking-[0.2em] shadow-3xl shadow-green/20 transition-all hover:scale-105 active:scale-95 group" asChild>
                 <Link to="/contact">
-                  Get Started
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  Initiate Partnership
+                  <ArrowRight className="w-6 h-6 ml-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="bg-transparent border-white/40 text-white hover:bg-white/10"
-                asChild>
-                <Link to="/services">Our Services</Link>
+              <Button size="lg" variant="outline" className="px-16 h-20 rounded-full text-sm font-black uppercase tracking-[0.2em] border-white/20 hover:bg-white/5 text-white transition-all hover:scale-105 active:scale-95" asChild>
+                <Link to="/services">Explore Architecture</Link>
               </Button>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Frequently Asked Questions
+      {/* ─────────────────────────────────────────
+          FAQ INTERFACE — Technical Resolution
+      ───────────────────────────────────────── */}
+      <section className="py-24 bg-background relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-20">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-2 h-2 rounded-full bg-green" />
+              <span className="text-[10px] font-black text-green uppercase tracking-[0.4em]">Knowledge Base</span>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-black text-foreground tracking-tighter uppercase">
+              Common <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy-light underline decoration-green/30 underline-offset-8">Inquiries.</span>
             </h2>
-            <p className="text-xl text-muted-foreground">
-              Medical Billing Specialities FAQs
-            </p>
-          </motion.div>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {[
               {
-                q: "What makes Unity Billing Solutions different from other billing companies?",
-                a: "Unity Billing Solutions combines decades of industry experience, advanced technology, and personalized service to deliver accurate, transparent, and efficient billing solutions. We focus on maximizing reimbursements, minimizing denials, and simplifying your revenue cycle so you can focus on patient care.",
+                q: "Institutional Differentiation",
+                a: "SmartMed Billing Solutions integrates proprietary algorithmic auditing with senior human oversight to stabilize revenue streams across highly complex domains.",
               },
               {
-                q: "What types of practices do you work with?",
-                a: "We work with practices of all sizes—from solo providers and small clinics to multi-location groups. Our solutions are customized to fit the unique workflows, specialities, and goals of each practice.",
+                q: "Clinical Domain Range",
+                a: "Our architecture is mapped to support over 40 distinct medical domains, including specialized surgery, internal medicine, and durable medical equipment.",
               },
               {
-                q: "How does Unity Billing Solutions help improve revenue and cash flow?",
-                a: "Our team ensures accurate coding, timely claim submission, and proactive denial management. Combined with practice audits and revenue cycle optimization, these steps reduce errors, accelerate reimbursements, and maximize your practice revenue.",
+                q: "Revenue Stabilization",
+                a: "We minimize claim latencies and denial coefficients via real-time data sync and predictive analytics layers integrated into our billing cores.",
               },
               {
-                q: "Are your services compliant with healthcare regulations?",
-                a: "Absolutely. Unity Billing Solutions is fully committed to regulatory compliance and industry standards, ensuring all billing and coding processes follow CMS, HIPAA, and payer-specific guidelines to minimize risk and protect your practice.",
-              },
-              {
-                q: "How does Unity Billing Solutions support practices beyond billing?",
-                a: "Beyond traditional billing, we offer credentialing & enrollment, practice audits, telehealth and RPM billing, and strategic consulting. Our goal is to provide end-to-end solutions that strengthen your practice’s financial health and operational efficiency.",
-              },
-              {
-                q: "Have more questions?",
-                a: "Our team experts is here to help you with any specific questions about your practice's needs.",
-                isCta: true,
+                q: "Regulatory Compliance Integration",
+                a: "All processes are encrypted and compliant with CMS, HIPAA, and emerging payer-specific data protocols, ensuring 0% compliance friction.",
               },
             ].map((item, index) => (
               <motion.div
                 key={index}
-                className={`bg-card rounded-xl p-6 border border-border ${item.isCta ? "bg-gradient-to-br from-green/10 to-primary/5" : ""}`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}>
-                {item.isCta ? (
-                  <div className="text-center">
-                    <p className="text-lg text-foreground font-medium mb-4">
-                      {item.q}
-                    </p>
-                    <Button className="bg-green hover:bg-green/90" asChild>
-                      <Link to="/contact">Contact Us</Link>
-                    </Button>
-                  </div>
-                ) : (
-                  <>
-                    <h4 className="text-lg font-semibold text-foreground mb-3">
-                      {item.q}
-                    </h4>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {item.a}
-                    </p>
-                  </>
-                )}
+                transition={{ delay: index * 0.05 }}
+                className="bg-white border border-border/40 p-10 rounded-[2.5rem] hover:border-green/20 transition-all shadow-sm group"
+              >
+                <div className="flex items-center justify-between mb-6">
+                  <h4 className="text-sm font-black text-foreground uppercase tracking-widest group-hover:text-navy transition-colors">
+                    {item.q}
+                  </h4>
+                  <div className="w-2 h-2 rounded-full bg-border group-hover:bg-green transition-colors" />
+                </div>
+                <p className="text-[11px] text-muted-foreground font-medium leading-relaxed">
+                  {item.a}
+                </p>
               </motion.div>
             ))}
+          </div>
+
+          <div className="mt-20 text-center">
+            <div className="bg-muted/30 border border-border/40 p-12 rounded-[2.5rem] inline-block max-w-2xl">
+              <p className="text-[10px] font-black uppercase tracking-[0.4em] text-foreground/40 mb-6">Additional Queries?</p>
+              <h4 className="text-2xl font-black text-foreground mb-8 tracking-tighter uppercase whitespace-nowrap">Technical Support Infrastructure.</h4>
+              <Button className="bg-navy hover:bg-navy-light text-white px-10 h-16 rounded-xl font-black uppercase tracking-widest text-xs" asChild>
+                <Link to="/contact">Contact Support Protocol</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>

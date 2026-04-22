@@ -10,24 +10,21 @@ export const TestimonialsSection = () => {
 
   const slideVariants = {
     enter: (direction: number) => ({
-      x: direction > 0 ? 100 : -100,
+      x: direction > 0 ? 50 : -50,
       opacity: 0,
-      scale: 0.95,
-      rotateY: direction > 0 ? 10 : -10
+      scale: 0.98,
     }),
     center: {
       zIndex: 1,
       x: 0,
       opacity: 1,
       scale: 1,
-      rotateY: 0
     },
     exit: (direction: number) => ({
       zIndex: 0,
-      x: direction < 0 ? 100 : -100,
+      x: direction < 0 ? 50 : -50,
       opacity: 0,
-      scale: 0.95,
-      rotateY: direction < 0 ? 10 : -10
+      scale: 0.98,
     }),
   };
 
@@ -44,7 +41,7 @@ export const TestimonialsSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       paginate(1);
-    }, 8000);
+    }, 10000);
     return () => clearInterval(interval);
   }, [currentIndex]);
 
@@ -52,34 +49,37 @@ export const TestimonialsSection = () => {
 
   return (
     <section className="py-32 bg-navy relative overflow-hidden text-white">
-      {/* Cinematic Background */}
+      {/* Immersive Cinematic Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_20%,rgba(34,197,94,0.05)_0%,transparent_50%)]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-primary/5 blur-[120px] rounded-full" />
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_20%,rgba(34,197,94,0.1)_0%,transparent_60%)]" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-navy-light/20 blur-[120px] rounded-full" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         
         {/* Header Block */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="max-w-4xl mb-24">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-[0.2em] text-green mb-8">
-              <MessageSquare className="w-4 h-4" />
-              Provider Success Stories
+            <div className="flex items-center gap-4 text-green mb-8">
+              <div className="w-12 h-px bg-green" />
+              <span className="text-[10px] font-black uppercase tracking-[0.6em]">Partner Testimonials</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Trusted by Leading <br />
-              <span className="text-primary italic">Medical Practices.</span>
+            <h2 className="text-5xl md:text-8xl font-black mb-10 leading-[0.85] tracking-tighter uppercase">
+              Clinical <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green via-white to-green-light">Endorsements.</span>
             </h2>
+            <p className="text-xl text-white/40 max-w-xl leading-relaxed font-medium">
+              Verified outcomes from leading medical facilities and multi-state practices across the nation.
+            </p>
           </motion.div>
         </div>
 
-        <div className="relative max-w-5xl mx-auto">
-          <div className="relative perspective-[1500px] h-[500px] md:h-[400px]">
+        <div className="relative">
+          <div className="relative h-[600px] md:h-[500px]">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={currentIndex}
@@ -90,46 +90,43 @@ export const TestimonialsSection = () => {
                 exit="exit"
                 transition={{
                   duration: 0.6,
-                  ease: [0.16, 1, 0.3, 1]
+                  ease: "easeOut"
                 }}
-                className="absolute inset-0 bg-white/5 backdrop-blur-2xl rounded-[3rem] border border-white/10 p-8 md:p-16 shadow-4xl flex flex-col md:flex-row items-center gap-12"
+                className="absolute inset-0 bg-white/[0.03] backdrop-blur-3xl rounded-[4rem] border border-white/10 p-12 md:p-24 shadow-2xl flex flex-col md:flex-row items-center gap-16 overflow-hidden"
               >
-                {/* Visual Accent */}
+                {/* Visual Icon Accent */}
                 <div className="relative shrink-0">
-                   <div className="w-24 h-24 md:w-32 md:h-32 rounded-[2rem] overflow-hidden border-4 border-white/10 relative z-10">
-                      <img src={current.image} alt={current.name} className="w-full h-full object-cover" />
+                   <div className="w-32 h-32 md:w-48 md:h-48 rounded-[3rem] bg-gradient-to-br from-white/10 to-transparent flex items-center justify-center border border-white/10">
+                      <MessageSquare className="w-16 h-16 text-green/50" />
                    </div>
-                   <div className="absolute -top-4 -right-4 w-12 h-12 bg-green rounded-2xl flex items-center justify-center z-20 shadow-2xl">
-                      <Quote className="w-6 h-6 text-navy" />
-                   </div>
-                   <div className="absolute -bottom-6 -left-6 text-white/10 select-none">
-                      <Quote className="w-32 h-32 rotate-180" />
+                   <div className="absolute -top-6 -right-6 w-16 h-16 bg-green rounded-3xl flex items-center justify-center z-20 shadow-xl shadow-green/20">
+                      <Quote className="w-8 h-8 text-navy" />
                    </div>
                 </div>
 
-                <div className="flex-1 text-center md:text-left">
-                  <div className="flex items-center justify-center md:justify-start gap-1 mb-6">
+                <div className="flex-1 text-center md:text-left relative">
+                  <div className="flex items-center justify-center md:justify-start gap-1.5 mb-12">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-green text-green" />
+                      <Star key={i} className="w-5 h-5 fill-green text-green" />
                     ))}
                   </div>
                   
-                  <blockquote className="text-xl md:text-2xl font-medium leading-relaxed mb-8 italic text-white/90">
+                  <blockquote className="text-md md:text-lg font-black leading-[1.1] mb-12 italic text-white tracking-tight uppercase">
                     "{current.content}"
                   </blockquote>
 
-                  <div>
-                    <p className="text-xl font-black text-white">{current.name}</p>
-                    <p className="text-sm font-bold text-green uppercase tracking-widest">{current.role}</p>
+                  <div className="pt-10 border-t border-white/10">
+                    <p className="text-2xl font-black text-white uppercase tracking-tighter">{current.name}</p>
+                    <p className="text-xs font-black text-green uppercase tracking-[0.4em] mt-2">{current.role}</p>
                   </div>
                 </div>
               </motion.div>
             </AnimatePresence>
           </div>
 
-          {/* Precision Controls */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 mt-16 px-8">
-            <div className="flex items-center gap-3">
+          {/* Navigation Controls */}
+          <div className="flex flex-col md:flex-row items-center justify-between gap-12 mt-20">
+            <div className="flex items-center gap-4">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
@@ -139,29 +136,29 @@ export const TestimonialsSection = () => {
                   }}
                   className={`h-1.5 rounded-full transition-all duration-500 ${
                     index === currentIndex
-                      ? "bg-green w-12"
-                      : "bg-white/10 w-4 hover:bg-white/20"
+                      ? "bg-green w-20 shadow-glow-green"
+                      : "bg-white/10 w-6 hover:bg-white/30"
                   }`}
                 />
               ))}
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-6">
               <Button
                 variant="outline"
                 size="icon"
                 onClick={() => paginate(-1)}
-                className="w-14 h-14 rounded-2xl border-white/10 bg-white/5 hover:bg-white/10 text-white"
+                className="w-20 h-20 rounded-3xl border-white/10 bg-white/5 hover:bg-green hover:text-navy hover:border-green text-white transition-all duration-500"
               >
-                <ChevronLeft className="w-6 h-6" />
+                <ChevronLeft className="w-8 h-8" />
               </Button>
               <Button
                 variant="outline"
                 size="icon"
                 onClick={() => paginate(1)}
-                className="w-14 h-14 rounded-2xl border-white/10 bg-white/5 hover:bg-white/10 text-white"
+                className="w-20 h-20 rounded-3xl border-white/10 bg-white/5 hover:bg-green hover:text-navy hover:border-green text-white transition-all duration-500"
               >
-                <ChevronRight className="w-6 h-6" />
+                <ChevronRight className="w-8 h-8" />
               </Button>
             </div>
           </div>

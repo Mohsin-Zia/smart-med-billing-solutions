@@ -6,87 +6,80 @@ import { featuredServices } from "@/data/services";
 
 export const ServicesSection = () => {
   return (
-    <section className="py-20 bg-background relative overflow-hidden">
-      {/* Dynamic Background Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-green/5 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 -right-20 w-[500px] h-[500px] bg-navy/5 rounded-full blur-[100px]" />
-      </div>
+    <section className="py-32 bg-background relative overflow-hidden">
+      {/* Background Architectural Elements */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-navy/5 -skew-x-12 translate-x-1/4" />
+      <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-green/5 blur-3xl rounded-full -translate-x-1/2" />
 
       <div className="container mx-auto px-6 relative z-10">
         
-        {/* Header with High-End Layout */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-24">
-          <div className="max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex items-center gap-3 text-green font-black uppercase tracking-[0.2em] text-[10px] mb-6">
-                <span className="w-10 h-0.5 bg-green"></span>
-                Specialized Infrastructure
-              </div>
-              <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-8 leading-[1.1]">
-                Precision Revenue <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-green">Architecture.</span>
-              </h2>
-            </motion.div>
-          </div>
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
+        {/* Header - Technical Alignment */}
+        <div className="max-w-4xl mb-24">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:mb-4"
           >
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-sm">
-              We engineer maximum reimbursement pathways for modern healthcare practices through technical excellence.
+            <div className="flex items-center gap-4 text-green mb-8">
+              <div className="w-12 h-px bg-green" />
+              <span className="text-[10px] font-black uppercase tracking-[0.6em]">Modular Architecture</span>
+            </div>
+            <h2 className="text-5xl md:text-8xl font-black text-navy mb-8 leading-[0.85] tracking-tighter uppercase">
+              Systemized <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green to-navy-light">Revenue Logic.</span>
+            </h2>
+            <p className="text-xl text-muted-foreground/60 max-w-xl leading-relaxed font-medium border-l-2 border-green/20 pl-8">
+              We engineer high-velocity reimbursement pathways through technical excellence and clinical domain expertise.
             </p>
           </motion.div>
         </div>
 
-        {/* Technical Modules Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredServices.slice(0, 4).map((service, index) => (
+        {/* Services Matrix */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {featuredServices.slice(0, 6).map((service, index) => (
             <motion.div
               key={service.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group relative"
+              transition={{ delay: index * 0.1, duration: 0.6 }}
+              className="group relative h-[450px]"
             >
-              <div className="h-full bg-white dark:bg-navy/40 backdrop-blur-md rounded-[2.5rem] border border-border/50 p-8 hover:border-green/30 transition-all duration-500 flex flex-col technical-shadow">
+              <div className="h-full bg-white border border-border/40 rounded-[3rem] p-12 transition-all duration-700 flex flex-col group-hover:shadow-[0_40px_80px_rgba(30,58,138,0.1)] group-hover:-translate-y-4 relative overflow-hidden">
                 
-                <div className="relative z-10">
-                  <div className="w-16 h-16 rounded-2xl bg-muted/50 flex items-center justify-center mb-10 group-hover:bg-green/10 group-hover:scale-110 transition-all duration-500">
-                    <service.icon className="w-8 h-8 text-primary group-hover:text-green transition-colors" />
+                {/* Decorative Number */}
+                <div className="absolute top-10 right-12 text-7xl font-black text-navy/[0.03] group-hover:text-green/[0.05] transition-colors">
+                  0{index + 1}
+                </div>
+
+                <div className="relative z-10 h-full flex flex-col">
+                  <div className="w-20 h-20 rounded-[2rem] bg-navy/5 flex items-center justify-center mb-12 group-hover:bg-navy transition-all duration-500 transform group-hover:rotate-12">
+                    <service.icon className="w-10 h-10 text-navy group-hover:text-green transition-all" />
                   </div>
 
-                  <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-green transition-colors">{service.title}</h3>
-                  <p className="text-muted-foreground mb-8 text-sm leading-relaxed font-medium">
+                  <h3 className="text-2xl font-black text-navy mb-6 leading-tight tracking-tight uppercase">
+                    {service.title}
+                  </h3>
+                  
+                  <p className="text-sm text-muted-foreground/70 mb-10 leading-relaxed font-medium">
                     {service.shortDescription}
                   </p>
 
-                  <div className="space-y-3 mb-10">
-                    {service.benefits.slice(0, 2).map((benefit, bIdx) => (
-                      <div key={bIdx} className="flex items-center gap-2 text-[10px] font-bold text-foreground/60 uppercase tracking-widest">
-                        <div className="w-1.5 h-1.5 rounded-full bg-green" />
-                        {benefit}
+                  <div className="mt-auto pt-8 border-t border-border/50 flex items-center justify-between">
+                    <Link 
+                      to={`/services/${service.id}`}
+                      className="inline-flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-navy group/link"
+                    >
+                      Initialize Protocol
+                      <div className="w-10 h-10 rounded-full bg-navy/5 flex items-center justify-center group-hover/link:bg-green group-hover/link:text-navy transition-all">
+                        <ArrowRight className="w-5 h-5 transition-transform group-hover/link:translate-x-1" />
                       </div>
-                    ))}
+                    </Link>
                   </div>
                 </div>
-
-                <div className="mt-auto pt-6 border-t border-border/50">
-                  <Link 
-                    to={`/services/${service.id}`}
-                    className="flex items-center justify-between text-xs font-black uppercase tracking-widest text-primary group/link"
-                  >
-                    Module Details
-                    <ChevronRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
+                
+                {/* Hover Background Accent */}
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-green to-navy scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-700" />
               </div>
             </motion.div>
           ))}
@@ -94,16 +87,15 @@ export const ServicesSection = () => {
 
         {/* Global CTA */}
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className=" flex flex-col items-center gap-8"
+          className="mt-32 text-center"
         >
-          <div className="w-px h-16 bg-gradient-to-b from-green/50 to-transparent" />
-          <Button size="lg" className="bg-navy hover:bg-navy-light text-white px-12 h-16 rounded-2xl text-lg font-bold shadow-2xl transition-all hover:scale-105 active:scale-95" asChild>
-            <Link to="services/medical-billing">
-              Full System Overview
-              <ArrowRight className="ml-3 w-6 h-6" />
+          <Button size="lg" className="bg-navy hover:bg-navy-light text-white px-16 h-24 rounded-[2.5rem] text-xl font-black shadow-3xl shadow-navy/20 transition-all hover:scale-[1.05] active:scale-95 group" asChild>
+            <Link to="/services">
+              Full System Manifest
+              <Activity className="ml-6 w-8 h-8 group-hover:animate-pulse text-green" />
             </Link>
           </Button>
         </motion.div>

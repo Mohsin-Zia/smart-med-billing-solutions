@@ -19,7 +19,7 @@ export const GoogleMap = ({
   initialLocation = {
     lat: 33.2476,
 lng: -84.2867,
-    address: "1531 W McIntosh Rd Griffin GA 30223"
+    address: "2780 Picacho Ave, Las Cruces, NM 88007"
   },
   onLocationSelect,
   height = "400px",

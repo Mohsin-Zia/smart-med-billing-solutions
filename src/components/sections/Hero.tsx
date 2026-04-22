@@ -21,123 +21,133 @@ export const Hero = () => {
   const formContainerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="relative min-h-screen pt-36 lg:pt-36 pb-24 flex items-center overflow-hidden bg-background">
-      {/* Dynamic Background Elements */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-navy pt-20">
+      {/* Immersive Background Architecture */}
       <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60 mix-blend-overlay scale-105"
-          style={{
-            backgroundImage: `url('/hero-bg-v2.png')`,
-          }}
+        <motion.div 
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 0.4 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url('/hero-new.png')` }}
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/80 to-background" />
         
-        {/* Animated Mesh-style Gradients */}
-        <div className="absolute top-[-10%] right-[-5%] w-[60%] h-[70%] bg-green/20 blur-[120px] rounded-full animate-pulse" />
-        <div className="absolute bottom-[-10%] left-[-5%] w-[50%] h-[60%] bg-navy/20 blur-[100px] rounded-full" />
+        {/* Dynamic Light Rays */}
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-green/20 blur-[120px] rounded-full animate-pulse-slow" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-navy-light/30 blur-[100px] rounded-full animate-float" />
         
-        {/* Glass Overlay */}
-        <div className="absolute inset-0 bg-background/50 backdrop-blur-[2px]" />
+        {/* Technical Overlay */}
+        <div className="absolute inset-0 opacity-[0.05]" 
+             style={{ backgroundImage: `linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)`, backgroundSize: '50px 50px' }} />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+      <div className="container mx-auto px-6 relative z-10 pt-12">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           
-          {/* Left Content Column */}
+          {/* Content Column */}
           <div className="flex-1 text-center lg:text-left">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="mb-8 inline-block"
+              className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8"
             >
-              <span className="inline-flex items-center px-5 py-2 rounded-full bg-green/10 text-primary text-xs font-bold tracking-widest uppercase border border-green/20 backdrop-blur-md shadow-sm">
-                <Sparkles className="w-3.5 h-3.5 mr-2" />
-               Unity Billing Solutions
-              </span>
+              <div className="w-2 h-2 rounded-full bg-green animate-ping" />
+              <span className="text-[10px] font-black tracking-[0.4em] uppercase text-white/80">Next-Gen RCM Systems</span>
             </motion.div>
 
             <h1
               ref={titleRef}
-              className="text-4xl md:text-5xl lg:text-7xl font-bold text-foreground mb-8 leading-[1.1] tracking-tight"
+              className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-[0.9] tracking-tighter"
             >
-              Elevate Your <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy via-green to-green/80">
-                Revenue Cycle
+              Master Your <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green via-white to-green-light animate-gradient-x">
+                Financial Flow.
               </span>
             </h1>
 
             <p
               ref={subtitleRef}
-              className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium"
+              className="text-xl md:text-2xl text-white/60 mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium"
             >
-              Transform your practice with expert medical billing and 
-              consulting solutions. We streamline your operations so you can focus on 
-              what matters most—your patients.
+              Precision-engineered medical billing solutions for high-performance practices. 
+              We transform administrative complexity into consistent revenue growth.
             </p>
 
-            <div className="flex flex-wrap justify-center lg:justify-start gap-5 mb-12">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-6 mb-16">
               <Button
                 size="lg"
-                className="bg-green hover:bg-green/90 text-white group px-8 h-14 rounded-2xl shadow-lg shadow-green/20 text-base font-semibold transition-all duration-300 transform hover:scale-105"
+                className="bg-green hover:bg-green-light text-navy group px-12 h-20 rounded-2xl shadow-[0_20px_50px_rgba(34,197,94,0.3)] text-lg font-black transition-all duration-300 hover:scale-[1.02] active:scale-95"
                 asChild
               >
                 <Link to="/contact">
-                  Optimize Revenue
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  Maximize Reimbursements
+                  <ArrowRight className="ml-4 w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="px-8 h-14 rounded-2xl border-border/50 text-foreground hover:bg-muted font-semibold text-base backdrop-blur-md"
-                asChild
-              >
-                <Link to="services/medical-billing">Explore Solutions</Link>
               </Button>
             </div>
 
-            {/* Feature Pills */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+            {/* Feature Cards - Unique Layout */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-white/10 pt-10">
               {heroFeatures.map((feature, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.5 + index * 0.1, duration: 0.5 }}
-                  className="flex items-center bg-card/50 backdrop-blur-xl px-4 py-2.5 rounded-xl border border-border/40 shadow-sm"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.8 + index * 0.1 }}
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-green/10 flex items-center justify-center mr-3">
-                    <feature.icon className="w-4 h-4 text-green" />
+                  <div className="w-12 h-12 rounded-xl bg-green/10 flex items-center justify-center">
+                    <feature.icon className="w-6 h-6 text-green" />
                   </div>
-                  <span className="text-xs font-bold text-foreground/80">{feature.text}</span>
+                  <span className="text-[11px] font-black text-white/40 uppercase tracking-widest leading-tight">{feature.text}</span>
                 </motion.div>
               ))}
             </div>
           </div>
 
-          {/* Right Column - Unique Visualization / Form Card */}
-          <div className="flex-1 w-full max-w-xl">
-            <div className="relative group">
-              {/* Decorative background glow */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-green to-navy rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200" />
+          {/* Form Card Column */}
+          <div className="flex-1 w-full max-w-xl lg:max-w-md xl:max-w-xl">
+            <motion.div 
+              ref={formContainerRef}
+              initial={{ opacity: 0, x: 50, rotateY: -10 }}
+              animate={{ opacity: 1, x: 0, rotateY: 0 }}
+              transition={{ duration: 1, delay: 0.5, type: "spring" }}
+              className="relative"
+            >
+              {/* Glow Effect */}
+              <div className="absolute -inset-4 bg-green/20 blur-3xl rounded-[3rem] -z-10 animate-pulse-slow" />
               
-              <motion.div 
-                ref={formContainerRef}
-                initial={{ opacity: 0, scale: 0.95, rotateY: 5 }}
-                animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative bg-card border border-border pb-2 rounded-3xl shadow-2xl overflow-hidden backdrop-blur-sm"
-              >
+              <div className="bg-white/10 backdrop-blur-2xl border border-white/20 rounded-[3rem] p-2 shadow-2xl shadow-black/40">
+                <div className="bg-white rounded-[2.5rem] p-2">
                   <ContactForm variant="hero" />
+                </div>
+              </div>
 
+              {/* Floating Decorative Elements */}
+              <motion.div 
+                animate={{ y: [0, -15, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-10 -right-10 w-24 h-24 bg-navy-light rounded-3xl p-6 shadow-xl border border-white/10 hidden xl:flex items-center justify-center"
+              >
+                <Activity className="w-10 h-10 text-green" />
               </motion.div>
-
-             
-            </div>
+              <motion.div 
+                animate={{ y: [0, 15, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                className="absolute -bottom-10 -left-10 w-20 h-20 bg-green rounded-2xl p-5 shadow-xl border border-white/10 hidden xl:flex items-center justify-center"
+              >
+                <ShieldCheck className="w-10 h-10 text-navy" />
+              </motion.div>
+            </motion.div>
           </div>
 
         </div>
       </div>
-</section>
+      
+      {/* Bottom Transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
+    </section>
   );
 };

@@ -205,47 +205,49 @@ const cultureValues = [
 const Careers = () => {
   return (
     <PageWrapper>
-      {/* Hero */}
-      <section className="pt-36 pb-20 lg:pt-48 bg-gradient-hero">
-        <div className="container mx-auto px-4">
+      {/* ─────────────────────────────────────────
+          PAGE HEADER — Talent Infrastructure
+      ───────────────────────────────────────── */}
+      <section className="pt-32 pb-24 lg:pt-48 lg:pb-32 relative overflow-hidden bg-navy text-white text-center">
+        {/* Background Patterns */}
+        <div className="absolute inset-0 pointer-events-none opacity-[0.05]">
+          <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-green to-transparent" />
+          <div className="absolute inset-y-0 left-1/4 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+          <div className="absolute inset-y-0 right-1/4 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
-            className="text-center max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 mb-8"
           >
-            <span className="inline-block px-4 py-2 rounded-full bg-secondary/20 text-secondary text-sm font-medium mb-4">
-              Careers
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-              Build Your Career in Healthcare Revenue
-            </h1>
-            <p className="text-lg text-primary-foreground/80">
-              Join our team of 500+ professionals dedicated to transforming healthcare practices nationwide.
-              Grow your career while making a difference.
-            </p>
+            <div className="w-1.5 h-1.5 rounded-full bg-green animate-pulse" />
+            <span className="text-[10px] font-black tracking-[0.4em] uppercase text-white/60">Global Talent Operations</span>
           </motion.div>
+          
+          <h1 className="text-5xl md:text-8xl font-black mb-10 leading-[0.9] tracking-tighter uppercase">
+            Architect Your <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-green">Future Core.</span>
+          </h1>
+          
+          <p className="text-xl text-white/50 max-w-2xl mx-auto leading-relaxed font-medium mb-12">
+            Join a 500+ member engineering and operations ecosystem dedicated to clinical revenue architecture.
+          </p>
         </div>
       </section>
 
-      {/* Why Join Us */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              Why Work at MedBill Pro?
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We're committed to creating an environment where talented professionals can thrive,
-              grow, and make a meaningful impact.
-            </p>
-          </motion.div>
+      {/* ─────────────────────────────────────────
+          BENEFITS GRID — Ecosystem Support
+      ───────────────────────────────────────── */}
+      <section className="py-24 bg-background relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-20">
+             <div className="text-[10px] font-black text-green tracking-[0.4em] uppercase mb-4">Core Infrastructure</div>
+             <h2 className="text-3xl md:text-5xl font-black text-navy uppercase tracking-tighter">Why Scale with Us?</h2>
+          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {benefits.map((benefit, index) => (
               <motion.div
                 key={index}
@@ -254,41 +256,32 @@ const Careers = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                      <benefit.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <CardTitle className="text-xl">{benefit.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{benefit.description}</p>
-                  </CardContent>
-                </Card>
+                <div className="group h-full bg-white border border-border/40 rounded-[2.5rem] p-10 hover:border-green/20 hover:shadow-2xl transition-all duration-500">
+                  <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center mb-8 group-hover:bg-navy group-hover:text-green transition-all">
+                    <benefit.icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-black text-foreground uppercase tracking-tight mb-4 group-hover:text-navy transition-colors">{benefit.title}</h3>
+                  <p className="text-sm text-muted-foreground font-medium leading-relaxed">{benefit.description}</p>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Culture */}
-      <section className="py-20 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              Our Culture & Values
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              The principles that guide everything we do as an organization.
-            </p>
-          </motion.div>
+      {/* ─────────────────────────────────────────
+          VALUES MODULE — Operational Protocol
+      ───────────────────────────────────────── */}
+      <section className="py-24 bg-navy relative overflow-hidden">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-20 text-white">
+             <div className="text-[10px] font-black text-green tracking-[0.4em] uppercase mb-4">Foundational Logic</div>
+             <h2 className="text-3xl md:text-6xl font-black uppercase tracking-tighter">Operational Protocol</h2>
+          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
             {cultureValues.map((value, index) => (
               <motion.div
                 key={index}
@@ -297,139 +290,128 @@ const Careers = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="text-center h-full">
-                  <CardHeader>
-                    <div className="w-14 h-14 rounded-full bg-gradient-primary flex items-center justify-center mx-auto mb-4">
-                      <value.icon className="w-7 h-7 text-primary-foreground" />
-                    </div>
-                    <CardTitle className="text-lg">{value.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">{value.description}</p>
-                  </CardContent>
-                </Card>
+                <div className="h-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-10 text-center group hover:bg-white/10 transition-all">
+                  <div className="w-20 h-20 rounded-full bg-white/5 flex items-center justify-center mx-auto mb-8 border border-white/10 group-hover:border-green/30 transition-all">
+                    <value.icon className="w-8 h-8 text-green" />
+                  </div>
+                  <h3 className="text-lg font-black text-white uppercase tracking-widest mb-4">{value.title}</h3>
+                  <p className="text-[11px] text-white/40 font-bold uppercase tracking-widest leading-loose">{value.description}</p>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Open Positions */}
-      <section id="openings" className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              Open Positions
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Find your next opportunity and join our growing team.
-            </p>
-          </motion.div>
+      {/* ─────────────────────────────────────────
+          ACTIVE NODES — Deployment Opportunities
+      ───────────────────────────────────────── */}
+      <section id="openings" className="py-24 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-20">
+             <div className="text-[10px] font-black text-green tracking-[0.4em] uppercase mb-4">Active Deployment</div>
+             <h2 className="text-3xl md:text-5xl font-black text-navy uppercase tracking-tighter">Open Infrastructure Nodes</h2>
+          </div>
 
-          <div className="max-w-4xl mx-auto space-y-6">
+          <div className="max-w-5xl mx-auto space-y-8">
             {openPositions.map((position, index) => (
               <motion.div
                 key={position.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
               >
-                <Card className="hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="flex flex-wrap items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
-                          <CardTitle className="text-2xl">{position.title}</CardTitle>
-                          <span className="px-3 py-1 bg-secondary/10 text-secondary text-xs font-medium rounded-full">
-                            {position.department}
-                          </span>
+                <div className="group bg-white border border-border/40 rounded-[3rem] p-8 md:p-14 hover:border-green/20 hover:shadow-2xl transition-all duration-700">
+                  <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-12">
+                    <div className="flex-1 space-y-8">
+                      <div className="flex flex-wrap items-center gap-4">
+                        <h3 className="text-2xl md:text-4xl font-black text-foreground uppercase tracking-tighter group-hover:text-navy transition-colors">{position.title}</h3>
+                        <span className="px-6 py-2 bg-navy text-green text-[9px] font-black uppercase tracking-[0.2em] rounded-full border border-green/20">
+                          {position.department}
+                        </span>
+                      </div>
+                      
+                      <div className="flex flex-wrap gap-x-12 gap-y-6 text-[10px] font-black uppercase tracking-widest text-muted-foreground/40 font-mono">
+                        <span className="flex items-center gap-3">
+                          <Briefcase className="w-4 h-4 text-navy/40" />
+                          {position.type}
+                        </span>
+                        <span className="flex items-center gap-3">
+                          <MapPin className="w-4 h-4 text-navy/40" />
+                          RE_REMOTE
+                        </span>
+                        <span className="flex items-center gap-3">
+                          <GraduationCap className="w-4 h-4 text-navy/40" />
+                          {position.experience} EXP
+                        </span>
+                        <span className="flex items-center gap-3 text-navy">
+                          <DollarSign className="w-4 h-4 text-green" />
+                          {position.salary}
+                        </span>
+                      </div>
+
+                      <p className="text-sm text-muted-foreground font-medium leading-relaxed max-w-2xl">{position.description}</p>
+
+                      <div className="grid md:grid-cols-2 gap-12 pt-8 border-t border-border/40">
+                        <div>
+                          <h4 className="text-[10px] font-black text-navy uppercase tracking-[0.3em] mb-6">Requirements_List</h4>
+                          <ul className="space-y-4">
+                            {position.requirements.map((req, i) => (
+                              <li key={i} className="flex items-start gap-4 text-[11px] font-bold text-muted-foreground/70 uppercase tracking-tight">
+                                <div className="w-1 h-1 rounded-full bg-green mt-1.5 shrink-0" />
+                                <span>{req}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
-                        <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-                          <span className="flex items-center gap-1">
-                            <Briefcase className="w-4 h-4" />
-                            {position.type}
-                          </span>
-                          <span className="flex items-center gap-1">
-                            <MapPin className="w-4 h-4" />
-                            Remote
-                          </span>
-                          <span className="flex items-center gap-1">
-                            <GraduationCap className="w-4 h-4" />
-                            {position.experience}
-                          </span>
-                          <span className="flex items-center gap-1 font-semibold text-primary">
-                            <DollarSign className="w-4 h-4" />
-                            {position.salary}
-                          </span>
+                        <div>
+                          <h4 className="text-[10px] font-black text-navy uppercase tracking-[0.3em] mb-6">Responsibilities_Core</h4>
+                          <ul className="space-y-4">
+                            {position.responsibilities.map((resp, i) => (
+                              <li key={i} className="flex items-start gap-4 text-[11px] font-bold text-muted-foreground/70 uppercase tracking-tight">
+                                <div className="w-1 h-1 rounded-full bg-navy mt-1.5 shrink-0" />
+                                <span>{resp}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                       </div>
-                      <Button size="lg">Apply Now</Button>
                     </div>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <p className="text-muted-foreground">{position.description}</p>
-
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-2">Requirements:</h4>
-                      <ul className="space-y-1">
-                        {position.requirements.map((req, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                            <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                            <span>{req}</span>
-                          </li>
-                        ))}
-                      </ul>
+                    
+                    <div className="shrink-0 lg:pt-0">
+                      <Button className="w-full lg:w-auto h-20 px-12 rounded-[2rem] bg-navy hover:bg-green hover:text-navy text-white transition-all font-black uppercase tracking-widest text-xs shadow-xl group/btn">
+                         Initiate Deployment <Zap className="w-4 h-4 ml-4 group-hover/btn:animate-pulse" />
+                      </Button>
                     </div>
-
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-2">Responsibilities:</h4>
-                      <ul className="space-y-1">
-                        {position.responsibilities.map((resp, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                            <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0" />
-                            <span>{resp}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Application Process */}
-      <section className="py-20 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              Our Hiring Process
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A transparent and efficient hiring journey from application to offer.
-            </p>
-          </motion.div>
+      {/* ─────────────────────────────────────────
+          PROCESS PIPELINE — Onboarding Sequence
+      ───────────────────────────────────────── */}
+      <section className="py-24 bg-muted/20 border-y border-border/40 relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-24">
+             <div className="text-[10px] font-black text-green tracking-[0.4em] uppercase mb-4">Hiring Sequence</div>
+             <h2 className="text-3xl md:text-6xl font-black text-navy uppercase tracking-tighter">Onboarding Pipeline</h2>
+          </div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-4 gap-6">
+          <div className="max-w-6xl mx-auto relative">
+            {/* Connection Line */}
+            <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent -translate-y-1/2 hidden md:block" />
+            
+            <div className="grid md:grid-cols-4 gap-12 relative z-10">
               {[
-                { step: "01", title: "Apply", description: "Submit your application and resume online" },
-                { step: "02", title: "Screen", description: "Initial phone screen with our HR team" },
-                { step: "03", title: "Interview", description: "Skills assessment and team interviews" },
-                { step: "04", title: "Offer", description: "Welcome to the team!" }
+                { step: "01", title: "Apply", desc: "Submit Digital Portfolio" },
+                { step: "02", title: "Screen", desc: "HR Protocol Assessment" },
+                { step: "03", title: "Interview", desc: "Technical Matrix Validation" },
+                { step: "04", title: "Offer", desc: "Institutional Integration" }
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -439,9 +421,12 @@ const Careers = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <div className="text-5xl font-bold text-secondary/30 mb-4">{item.step}</div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
+                  <div className="w-24 h-24 rounded-[2rem] bg-white border border-border/60 flex items-center justify-center mx-auto mb-8 shadow-sm group-hover:shadow-xl transition-all group overflow-hidden relative">
+                     <div className="absolute inset-0 bg-navy translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                     <span className="text-4xl font-black text-navy group-hover:text-green relative z-10">{item.step}</span>
+                  </div>
+                  <h3 className="text-xl font-black text-foreground uppercase tracking-tight mb-2">{item.title}</h3>
+                  <p className="text-[10px] font-black text-muted-foreground/40 uppercase tracking-widest">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -455,6 +440,7 @@ const Careers = () => {
         primaryButtonText="Submit Resume"
       />
     </PageWrapper>
+
   );
 };
 

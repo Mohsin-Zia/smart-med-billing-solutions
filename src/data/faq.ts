@@ -8,14 +8,14 @@ export interface FAQ {
 export const faqs: FAQ[] = [
   {
     id: "1",
-    question: "What services does Unity Billing Solutions provide?",
+    question: "What services does SmartMed Billing Solutions provide?",
     answer:
-      "Unity Billing Solutions provides end-to-end medical billing solutions including claims submission, medical coding, accounts receivable management, denial management, and full revenue cycle optimization. Our services are tailored to support a wide range of medical specialities and practice sizes to ensure accurate billing and improved revenue.",
+      "SmartMed Billing Solutions provides end-to-end medical billing solutions including claims submission, medical coding, accounts receivable management, denial management, and full revenue cycle optimization. Our services are tailored to support a wide range of medical specialities and practice sizes to ensure accurate billing and improved revenue.",
     category: "services",
   },
   {
     id: "2",
-    question: "How can Unity Billing Solutions help reduce claim denials?",
+    question: "How can SmartMed Billing Solutions help reduce claim denials?",
     answer:
       "Our experienced billing team performs detailed coding, eligibility verification, and claim reviews before submission. By identifying common billing errors and ensuring compliance with payer guidelines, we significantly reduce claim denials and help accelerate reimbursements.",
     category: "services",

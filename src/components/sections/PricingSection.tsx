@@ -22,153 +22,103 @@ const comparisonData = {
 
 export const PricingSection = () => {
   return (
-    <section className="py-20 bg-muted/30 relative overflow-hidden">
-      {/* Background decoration */}
-      <motion.div
-        className="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-secondary/5 blur-3xl"
-        animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.2, 0.4, 0.2],
-        }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-      />
+    <section className="py-40 bg-background relative overflow-hidden">
+      {/* Background Architectural Patterns */}
+      <div className="absolute top-0 right-0 w-1/4 h-full bg-navy/[0.01]" />
+      <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-green/[0.01] blur-3xl rounded-full" />
 
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <motion.span
-            className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <div className="flex items-center gap-2">
-              <TrendingUp className="w-4 h-4" />
-              Why Outsource?
-            </div>
-          </motion.span>
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-foreground mb-4"
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            In-House vs. Outsourced Billing
-          </motion.h2>
-          <motion.p
-            className="text-lg text-muted-foreground max-w-2xl mx-auto"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            See how partnering with MedBill Pro compares to managing billing internally.
-          </motion.p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30, scale: 0.95 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, type: "spring", stiffness: 200 }}
-          className="max-w-4xl mx-auto"
-        >
-          <motion.div>
-            <Card className="overflow-hidden shadow-lg">
-              <CardHeader className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
-                <motion.div
-                  className="grid grid-cols-3 gap-4"
-                  initial={{ opacity: 0, y: -20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4 }}
-                >
-                  <div className="font-semibold">
-                    Feature
-                  </div>
-                  <div className="text-center font-semibold">
-                    In-House Billing
-                  </div>
-                  <div className="text-center font-semibold relative">
-                    <span className="relative z-10">MedBill Pro</span>
-                  </div>
-                </motion.div>
-              </CardHeader>
-              <CardContent className="p-0">
-                {comparisonData.rows.map((row, index) => (
-                  <motion.div
-                    key={index}
-                    className={`grid grid-cols-3 gap-4 p-4 border-b last:border-b-0 ${
-                      row.highlight ? "bg-secondary/10" : ""
-                    }`}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.05 }}
-                  >
-                    <div className="font-medium text-foreground">{row.feature}</div>
-                    <div className="text-center">
-                      {typeof row.inHouse === "boolean" ? (
-                        row.inHouse ? (
-                          <div>
-                            <X className="w-5 h-5 text-destructive mx-auto" />
-                          </div>
-                        ) : (
-                          <div>
-                            <Check className="w-5 h-5 text-secondary mx-auto" />
-                          </div>
-                        )
-                      ) : (
-                        <span className="text-muted-foreground">{row.inHouse}</span>
-                      )}
-                    </div>
-                    <div className="text-center">
-                      {typeof row.medbill === "boolean" ? (
-                        row.medbill ? (
-                          <div>
-                            <Check className="w-5 h-5 text-secondary mx-auto" />
-                          </div>
-                        ) : (
-                          <div>
-                            <X className="w-5 h-5 text-destructive mx-auto" />
-                          </div>
-                        )
-                      ) : (
-                        <span className="font-semibold text-primary">
-                          {row.medbill}
-                        </span>
-                      )}
-                    </div>
-                  </motion.div>
-                ))}
-              </CardContent>
-            </Card>
-          </motion.div>
-
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-32">
           <motion.div
-            className="text-center mt-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
           >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button size="lg" asChild>
-                <Link to="/pricing">
-                  See Full Pricing Details
-                  <motion.span
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 1 }}
-                    className="ml-2 inline-block"
-                  >
-                    →
-                  </motion.span>
-                </Link>
-              </Button>
-            </motion.div>
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <div className="w-2 h-2 rounded-full bg-green animate-pulse" />
+              <span className="text-[10px] font-black text-green uppercase tracking-[0.5em]">Revenue Strategy</span>
+            </div>
+            <h2 className="text-5xl md:text-8xl font-black text-navy mb-10 leading-[0.85] tracking-tighter uppercase">
+              Financial <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green to-navy-light">Architecture.</span>
+            </h2>
+            <p className="text-xl text-muted-foreground/60 leading-relaxed font-medium max-w-2xl mx-auto">
+              See how partnering with <span className="text-navy font-black">SmartMed</span> compares to managing billing internally.
+            </p>
+          </motion.div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-5xl mx-auto"
+        >
+          <div className="bg-white rounded-[4rem] border border-border/40 shadow-3xl overflow-hidden">
+            <div className="bg-navy p-12 text-white">
+              <div className="grid grid-cols-3 gap-8">
+                <div className="text-xs font-black uppercase tracking-[0.3em] opacity-40">Precision Metrics</div>
+                <div className="text-center text-xs font-black uppercase tracking-[0.3em] opacity-40">In-House Billing</div>
+                <div className="text-center text-xs font-black uppercase tracking-[0.3em] text-green">SmartMed Solutions</div>
+              </div>
+            </div>
+            
+            <div className="divide-y divide-border/40">
+              {comparisonData.rows.map((row, index) => (
+                <motion.div
+                  key={index}
+                  className={`grid grid-cols-3 gap-8 p-12 items-center hover:bg-navy/[0.02] transition-colors ${
+                    row.highlight ? "bg-green/[0.03]" : ""
+                  }`}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                >
+                  <div className="text-sm font-black text-navy uppercase tracking-widest leading-tight">{row.feature}</div>
+                  <div className="text-center">
+                    {typeof row.inHouse === "boolean" ? (
+                      row.inHouse ? (
+                        <X className="w-6 h-6 text-red-400 mx-auto" />
+                      ) : (
+                        <Check className="w-6 h-6 text-navy/20 mx-auto" />
+                      )
+                    ) : (
+                      <span className="text-sm font-bold text-navy/40">{row.inHouse}</span>
+                    )}
+                  </div>
+                  <div className="text-center">
+                    {typeof row.medbill === "boolean" ? (
+                      row.medbill ? (
+                        <Check className="w-8 h-8 text-green mx-auto" />
+                      ) : (
+                        <X className="w-8 h-8 text-red-400 mx-auto" />
+                      )
+                    ) : (
+                      <span className="text-lg font-black text-navy tracking-tighter">
+                        {row.medbill}
+                      </span>
+                    )}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          <motion.div
+            className="flex flex-col items-center mt-24"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="w-px h-32 bg-gradient-to-b from-green/40 to-transparent mb-16" />
+            <Button size="lg" className="bg-navy hover:bg-navy-light text-white px-16 h-20 rounded-full text-sm font-black uppercase tracking-[0.2em] shadow-3xl shadow-navy/20 transition-all hover:scale-105 active:scale-95 group" asChild>
+              <Link to="/pricing">
+                Full Financial Breakdown
+                <TrendingUp className="ml-6 w-6 h-6 group-hover:scale-110 transition-transform" />
+              </Link>
+            </Button>
           </motion.div>
         </motion.div>
       </div>

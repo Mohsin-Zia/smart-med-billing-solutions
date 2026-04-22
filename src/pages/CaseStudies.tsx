@@ -129,256 +129,151 @@ const stats = [
 const CaseStudies = () => {
   return (
     <PageWrapper>
-      {/* Hero */}
-      <section className="pt-36 pb-20 lg:pt-48 bg-gradient-hero">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}>
-            <span className="inline-block px-4 py-2 rounded-full bg-secondary/20 text-secondary text-sm font-medium mb-4">
-              Success Stories
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-              Real Results for Real Practices
-            </h1>
-            <p className="text-lg text-primary-foreground/80">
-              See how healthcare providers across specialities have transformed
-              their revenue cycle with MedBill Pro.
-            </p>
-          </motion.div>
+      {/* ─────────────────────────────────────────
+          PAGE HEADER — Result Architecture
+      ───────────────────────────────────────── */}
+      <section className="pt-32 pb-24 lg:pt-48 lg:pb-32 relative overflow-hidden bg-navy text-white text-center">
+        {/* Background Patterns */}
+        <div className="absolute inset-0 pointer-events-none opacity-[0.05]">
+          <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-green to-transparent" />
+          <div className="absolute inset-y-0 left-1/3 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+          <div className="absolute inset-y-0 right-1/3 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
         </div>
-      </section>
 
-      {/* Overall Stats */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {stats.map((stat, index) => (
+        <div className="container mx-auto px-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 mb-8"
+          >
+            <div className="w-1.5 h-1.5 rounded-full bg-green animate-pulse" />
+            <span className="text-[10px] font-black tracking-[0.4em] uppercase text-white/60">Deployment Success Log</span>
+          </motion.div>
+          
+          <h1 className="text-5xl md:text-8xl font-black mb-10 leading-[0.9] tracking-tighter uppercase">
+            Proof of <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-green">Performance.</span>
+          </h1>
+          
+          <p className="text-xl text-white/50 max-w-2xl mx-auto leading-relaxed font-medium mb-12">
+            Institutional-grade revenue stabilization across 1,500+ clinical deployments and {caseStudies.length} primary case study reports.
+          </p>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {stats.map((stat, i) => (
               <motion.div
-                key={index}
-                className="text-center"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}>
-                <div className="text-4xl font-bold text-primary mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  {stat.label}
-                </div>
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 + i * 0.1 }}
+                className="bg-white/5 backdrop-blur-xl rounded-[2rem] p-10 border border-white/10 text-left group hover:bg-white/[0.08] transition-all"
+              >
+                <div className="text-[9px] font-black tracking-[0.3em] text-white/30 uppercase mb-4">METRIC_0{i + 1}</div>
+                <div className="text-3xl md:text-4xl font-black text-green mb-1 tracking-tighter">{stat.value}</div>
+                <div className="text-[10px] font-bold text-white/40 uppercase tracking-widest leading-tight">{stat.label}</div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Case Studies */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="space-y-16">
+      {/* ─────────────────────────────────────────
+          DEPLOYMENT REPORTS — Case Studies
+      ───────────────────────────────────────── */}
+      <section className="py-24 bg-background relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="space-y-24">
             {caseStudies.map((study, index) => (
               <motion.div
                 key={study.id}
-                className="scroll-mt-24"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}>
-                <div className="grid lg:grid-cols-3 gap-8">
-                  {/* Main Content */}
-                  <div className="lg:col-span-2 space-y-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="px-4 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full">
+                className="relative group"
+              >
+                <div className="grid lg:grid-cols-3 gap-12 bg-white border border-border/40 rounded-[3.5rem] p-8 md:p-16 shadow-sm group-hover:shadow-2xl group-hover:border-green/20 transition-all duration-700">
+                   {/* Col 1: Parameter Comparison */}
+                   <div className="space-y-8">
+                      <div className="text-[11px] font-black text-navy px-6 py-2 bg-navy/5 rounded-full inline-block uppercase tracking-widest border border-navy/10">
                         {study.specialty}
-                      </span>
-                      <span className="text-muted-foreground text-sm">
-                        {study.practiceSize} • {study.location}
-                      </span>
-                    </div>
-
-                    <h2 className="text-3xl font-bold text-foreground">
-                      {study.title}
-                    </h2>
-
-                    <Card>
-                      <CardHeader>
-                        <CardTitle className="text-xl">The Challenge</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-muted-foreground">
-                          {study.challenge}
-                        </p>
-                      </CardContent>
-                    </Card>
-
-                    <Card>
-                      <CardHeader>
-                        <CardTitle className="text-xl">Our Solution</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-muted-foreground">
-                          {study.solution}
-                        </p>
-                      </CardContent>
-                    </Card>
-
-                    <Card>
-                      <CardHeader>
-                        <CardTitle className="text-xl flex items-center gap-2">
-                          <TrendingUp className="w-5 h-5 text-secondary" />
-                          Results in {study.timeline}
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <ul className="space-y-2">
-                          {study.results.map((result, i) => (
-                            <li key={i} className="flex items-start gap-2">
-                              <CheckCircle2 className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
-                              <span className="text-foreground">{result}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </CardContent>
-                    </Card>
-
-                    <Card className="bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20">
-                      <CardContent className="p-6">
-                        <div className="flex items-start gap-4">
-                          <div className="flex-1">
-                            <div className="flex items-center gap-1 mb-3">
-                              {[...Array(5)].map((_, i) => (
-                                <Star
-                                  key={i}
-                                  className="w-5 h-5 fill-yellow-400 text-yellow-400"
-                                />
+                      </div>
+                      
+                      <div className="space-y-4">
+                        <h3 className="text-xs font-black text-foreground/40 uppercase tracking-[0.3em]">Parameter Shift</h3>
+                        <div className="bg-muted/30 rounded-[2rem] p-8 border border-border/40 overflow-hidden relative">
+                           <div className="space-y-6">
+                              {[
+                                { label: "Collections", b: study.before.collections, a: study.after.collections },
+                                { label: "Denial Rate", b: study.before.denialRate, a: study.after.denialRate },
+                                { label: "Days in A/R", b: study.before.daysInAR, a: study.after.daysInAR }
+                              ].map((row, i) => (
+                                <div key={i} className="flex items-center justify-between gap-6">
+                                   <div className="text-[10px] font-black text-foreground/30 uppercase tracking-tighter">{row.label}</div>
+                                   <div className="flex items-center gap-4">
+                                      <div className="text-[11px] font-bold text-red-500/60 line-through tracking-tighter">{row.b}</div>
+                                      <ArrowRight className="w-3 h-3 text-border" />
+                                      <div className="text-[12px] font-black text-green tracking-tighter">{row.a}</div>
+                                   </div>
+                                </div>
                               ))}
-                            </div>
-                            <p className="text-foreground italic mb-4">
-                              "{study.testimonial}"
-                            </p>
-                            <div className="flex items-center gap-2">
-                              <div className="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center">
-                                <span className="text-sm font-bold text-primary-foreground">
-                                  {study.author
-                                    .split(" ")
-                                    .map((n) => n[0])
-                                    .join("")}
-                                </span>
-                              </div>
-                              <div>
-                                <div className="font-semibold text-foreground">
-                                  {study.author}
-                                </div>
-                                <div className="text-sm text-muted-foreground">
-                                  {study.role}
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                           </div>
                         </div>
-                      </CardContent>
-                    </Card>
-                  </div>
+                      </div>
 
-                  {/* Before/After Comparison */}
-                  <div className="space-y-6">
-                    <Card className="bg-destructive/5 border-destructive/20">
-                      <CardHeader>
-                        <CardTitle className="text-lg flex items-center gap-2 text-destructive">
-                          <TrendingUp className="w-5 h-5 rotate-180" />
-                          Before
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent className="space-y-3">
-                        <div className="flex justify-between items-center py-2 border-b border-destructive/20">
-                          <span className="text-muted-foreground">
-                            Monthly Collections
-                          </span>
-                          <span className="font-semibold text-destructive">
-                            {study.before.collections}
-                          </span>
+                      <div className="pt-8 space-y-4">
+                        <div className="text-[10px] font-black uppercase tracking-widest text-foreground/20">Institutional Context</div>
+                        <div className="flex items-center gap-4 text-xs font-bold text-foreground/60 uppercase tracking-tight">
+                           <span>{study.practiceSize}</span>
+                           <div className="w-1 h-1 rounded-full bg-border" />
+                           <span>{study.location}</span>
                         </div>
-                        <div className="flex justify-between items-center py-2 border-b border-destructive/20">
-                          <span className="text-muted-foreground">
-                            Denial Rate
-                          </span>
-                          <span className="font-semibold text-destructive">
-                            {study.before.denialRate}
-                          </span>
-                        </div>
-                        <div className="flex justify-between items-center py-2 border-b border-destructive/20">
-                          <span className="text-muted-foreground">
-                            Days in A/R
-                          </span>
-                          <span className="font-semibold text-destructive">
-                            {study.before.daysInAR}
-                          </span>
-                        </div>
-                        <div className="flex justify-between items-center py-2">
-                          <span className="text-muted-foreground">
-                            Billing Staff
-                          </span>
-                          <span className="font-semibold text-destructive">
-                            {study.before.staff}
-                          </span>
-                        </div>
-                      </CardContent>
-                    </Card>
+                      </div>
+                   </div>
 
-                    <Card className="bg-secondary/5 border-secondary/20">
-                      <CardHeader>
-                        <CardTitle className="text-lg flex items-center gap-2 text-secondary">
-                          <TrendingUp className="w-5 h-5" />
-                          After
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent className="space-y-3">
-                        <div className="flex justify-between items-center py-2 border-b border-secondary/20">
-                          <span className="text-muted-foreground">
-                            Monthly Collections
-                          </span>
-                          <span className="font-semibold text-secondary">
-                            {study.after.collections}
-                          </span>
-                        </div>
-                        <div className="flex justify-between items-center py-2 border-b border-secondary/20">
-                          <span className="text-muted-foreground">
-                            Denial Rate
-                          </span>
-                          <span className="font-semibold text-secondary">
-                            {study.after.denialRate}
-                          </span>
-                        </div>
-                        <div className="flex justify-between items-center py-2 border-b border-secondary/20">
-                          <span className="text-muted-foreground">
-                            Days in A/R
-                          </span>
-                          <span className="font-semibold text-secondary">
-                            {study.after.daysInAR}
-                          </span>
-                        </div>
-                        <div className="flex justify-between items-center py-2">
-                          <span className="text-muted-foreground">
-                            Billing Staff
-                          </span>
-                          <span className="font-semibold text-secondary">
-                            {study.after.staff}
-                          </span>
-                        </div>
-                      </CardContent>
-                    </Card>
+                   {/* Col 2: Narrative Analysis */}
+                   <div className="lg:col-span-2 space-y-12">
+                      <h2 className="text-3xl md:text-5xl font-black text-foreground tracking-tighter uppercase leading-[1.1] group-hover:text-navy transition-colors">
+                        {study.title}
+                      </h2>
+                      
+                      <div className="grid md:grid-cols-2 gap-12">
+                         <div>
+                            <h4 className="text-[10px] font-black text-green uppercase tracking-[0.3em] mb-4">Challenge_Log</h4>
+                            <p className="text-sm text-muted-foreground font-medium leading-relaxed">{study.challenge}</p>
+                         </div>
+                         <div>
+                            <h4 className="text-[10px] font-black text-navy-light uppercase tracking-[0.3em] mb-4">Solution_Deployment</h4>
+                            <p className="text-sm text-muted-foreground font-medium leading-relaxed">{study.solution}</p>
+                         </div>
+                      </div>
 
-                    <div className="text-center">
-                      <Button size="lg" className="w-full" asChild>
-                        <Link to="/contact">
-                          Get Similar Results
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
+                      <div className="bg-navy rounded-[2.5rem] p-10 md:p-14 text-white relative overflow-hidden">
+                         <div className="absolute top-0 right-0 p-8 opacity-[0.03]">
+                            <TrendingUp className="w-48 h-48" />
+                         </div>
+                         <h4 className="text-[10px] font-black text-green uppercase tracking-[0.3em] mb-10 relative z-10">Consolidated Yield Results — {study.timeline}</h4>
+                         <ul className="grid md:grid-cols-2 gap-6 relative z-10">
+                            {study.results.map((result, i) => (
+                              <li key={i} className="flex items-start gap-4 p-5 rounded-2xl bg-white/5 border border-white/10 group/item hover:border-green/50 transition-all">
+                                 <CheckCircle2 className="w-5 h-5 text-green shrink-0 mt-0.5" />
+                                 <span className="text-xs font-black uppercase tracking-widest text-white/80 group-hover/item:text-white transition-colors">{result}</span>
+                              </li>
+                            ))}
+                         </ul>
+                      </div>
+
+                      {/* Testimonial Glass Block */}
+                      <div className="flex items-start gap-8 pt-10 border-t border-border/40">
+                         <div className="w-16 h-16 rounded-2xl bg-muted flex items-center justify-center font-black text-sm text-foreground/30 shrink-0">
+                           {study.author.split(' ').map(n => n[0]).join('')}
+                         </div>
+                         <div>
+                            <p className="text-lg font-medium italic text-foreground mb-4 leading-relaxed">"{study.testimonial}"</p>
+                            <div className="text-[10px] font-black text-navy uppercase tracking-widest">{study.author}</div>
+                            <div className="text-[9px] font-bold text-muted-foreground uppercase tracking-tighter mt-1">{study.role}</div>
+                         </div>
+                      </div>
+                   </div>
                 </div>
               </motion.div>
             ))}
@@ -386,65 +281,52 @@ const CaseStudies = () => {
         </div>
       </section>
 
-      {/* ROI Calculator */}
-      <section className="py-20 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              Calculate Your Potential ROI
-            </h2>
-            <p className="text-muted-foreground mb-8">
-              See how much you could save by partnering with MedBill Pro
-            </p>
-          </div>
+      {/* ─────────────────────────────────────────
+          PROJECTION ENGINE — ROI Calculator Block
+      ───────────────────────────────────────── */}
+      <section className="py-24 bg-muted/20 relative overflow-hidden border-y border-border/40">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto rounded-[3.5rem] bg-navy p-12 md:p-24 text-white relative overflow-hidden shadow-2xl">
+             {/* Visual Background Pattern */}
+             <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
+               <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+             </div>
 
-          <div className="max-w-4xl mx-auto">
-            <Card className="p-8">
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="font-semibold text-foreground mb-4">
-                    Average Client Improvements
-                  </h3>
-                  <div className="space-y-4">
-                    {[
-                      { label: "Revenue Increase", value: "20-35%" },
-                      { label: "Denial Rate Reduction", value: "50-75%" },
-                      { label: "A/R Days Reduction", value: "40-60%" },
-                      { label: "Cost Savings", value: "$100K-$400K/year" },
-                    ].map((item, i) => (
-                      <div
-                        key={i}
-                        className="flex justify-between items-center py-2 border-b">
-                        <span className="text-muted-foreground">
-                          {item.label}
-                        </span>
-                        <span className="font-bold text-primary">
-                          {item.value}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
+             <div className="relative z-10 text-center">
+                <div className="inline-flex items-center gap-4 mb-10">
+                  <div className="w-1.5 h-1.5 rounded-full bg-green animate-pulse" />
+                  <span className="text-[10px] font-black text-green uppercase tracking-[0.4em]">Yield Projection Engine v3.1</span>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-full">
-                    <div className="bg-primary/10 rounded-xl p-6 text-center">
-                      <div className="text-4xl font-bold text-primary mb-2">
-                        $250K
-                      </div>
-                      <div className="text-sm text-muted-foreground mb-4">
-                        Average Annual Savings
-                      </div>
-                      <Button size="lg" className="w-full" asChild>
-                        {/* <Link to="/pricing">
-                          Get Your Custom Quote
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Link> */}
+                
+                <h2 className="text-4xl md:text-7xl font-black text-white mb-8 tracking-tighter uppercase whitespace-pre-line leading-[0.9]">Project Your <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-green">Fiscal Shift.</span></h2>
+                
+                <p className="text-lg text-white/40 mb-16 max-w-xl mx-auto font-medium leading-relaxed">
+                  Analyze potential efficiency gains based on your current institutional billing baseline.
+                </p>
+
+                <div className="grid md:grid-cols-2 gap-8 items-center bg-white/5 border border-white/10 rounded-[2.5rem] p-10 md:p-14 text-left">
+                   <div className="space-y-6">
+                      {[
+                        { label: "Revenue Increase", value: "20-35%" },
+                        { label: "Denial Reduction", value: "50-75%" },
+                        { label: "Cost Savings", value: "Up to 40%" }
+                      ].map((item, i) => (
+                        <div key={i} className="flex justify-between items-center py-4 border-b border-white/5">
+                           <span className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em]">{item.label}</span>
+                           <span className="text-xl font-black text-green tracking-tighter">{item.value}</span>
+                        </div>
+                      ))}
+                   </div>
+                   
+                   <div className="bg-white rounded-[2rem] p-10 text-navy text-center shadow-2xl">
+                      <div className="text-[9px] font-black uppercase tracking-[0.3em] text-navy/30 mb-4">Calculated Average Recovery</div>
+                      <div className="text-5xl font-black tracking-tighter mb-8 leading-none">$250K+</div>
+                      <Button className="w-full h-16 rounded-xl bg-navy hover:bg-navy-light text-white font-black uppercase tracking-widest text-[10px] transition-all" asChild>
+                        <Link to="/contact">Request Assessment Protocol</Link>
                       </Button>
-                    </div>
-                  </div>
+                   </div>
                 </div>
-              </div>
-            </Card>
+             </div>
           </div>
         </div>
       </section>

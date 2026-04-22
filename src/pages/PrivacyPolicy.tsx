@@ -31,6 +31,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
 
 const PrivacyPolicy = () => {
   const effectiveDate = "January 1, 2026";
@@ -179,830 +180,314 @@ const PrivacyPolicy = () => {
 
   return (
     <PageWrapper>
-      {/* ── Hero ─────────────────────────────────────────────────────────── */}
-      <section className="pt-36 pb-20 lg:pt-48 bg-gradient-hero">
-        <div className="container mx-auto px-4">
+      {/* ─────────────────────────────────────────
+          PAGE HEADER — Privacy Protocol
+      ───────────────────────────────────────── */}
+      <section className="pt-32 pb-24 lg:pt-48 lg:pb-32 relative overflow-hidden bg-navy text-white text-center">
+        {/* Background Patterns */}
+        <div className="absolute inset-0 pointer-events-none opacity-[0.05]">
+          <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-green to-transparent" />
+          <div className="absolute inset-y-0 left-1/4 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+          <div className="absolute inset-y-0 right-1/4 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
-            className="text-center max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 mb-8"
           >
-            <motion.div
-              className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-secondary/20 mb-6"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            >
-              <Shield className="w-10 h-10 text-secondary" />
-            </motion.div>
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-              Unity Billing Solutions Privacy Policy
-            </h1>
-            <p className="text-xl text-primary-foreground/90 mb-8">
-              Unity Billing Solutions — protecting your personal, medical, and
-              financial information
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-primary-foreground/80">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4" />
+            <Shield className="w-4 h-4 text-green" />
+            <span className="text-[10px] font-black tracking-[0.4em] uppercase text-white/60">Data Protection Protocol v4.0</span>
+          </motion.div>
+          
+          <h1 className="text-5xl md:text-8xl font-black mb-10 leading-[0.9] tracking-tighter uppercase">
+            Privacy <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-green">Architecture.</span>
+          </h1>
+          
+          <p className="text-xl text-white/50 max-w-2xl mx-auto leading-relaxed font-medium mb-12">
+            Institutional-grade transparency regarding the collection, processing, and stabilization of clinical data.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-4 text-[10px] font-black uppercase tracking-widest text-white/30">
+             <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10">
+                <div className="w-1 h-1 rounded-full bg-green" />
                 <span>Effective: {effectiveDate}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4" />
-                <span>HIPAA Compliant</span>
-              </div>
-            </div>
-          </motion.div>
+             </div>
+             <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10">
+                <div className="w-1 h-1 rounded-full bg-green" />
+                <span>HIPAA_COMPLIANT_V2</span>
+             </div>
+          </div>
         </div>
       </section>
 
-      {/* ── Intro ────────────────────────────────────────────────────────── */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl font-bold text-foreground mb-6">
-              Unity Billing Solutions Privacy Policy
-            </h2>
-            <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
-              <p>
-                At{" "}
-                <strong className="text-foreground">
-                  Unity Billing Solutions
-                </strong>
-                , we are fully committed to protecting your personal, medical,
-                and financial information with the highest level of
-                confidentiality and security. We operate in strict compliance
-                with{" "}
-                <strong className="text-foreground">HIPAA regulations</strong>{" "}
-                and applicable federal and state laws. Our goal is to ensure
-                that all sensitive data entrusted to us is handled responsibly,
-                securely stored, and used only for legitimate medical billing
-                and operational purposes.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── 1. Information We Collect ────────────────────────────────────── */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <Eye className="w-12 h-12 text-primary mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              1. Information We Collect
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We collect only the information that is necessary to properly
-              provide medical billing and revenue cycle management services.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      {/* ─────────────────────────────────────────
+          CORE STATEMENT — Intelligence Summary
+      ───────────────────────────────────────── */}
+      <section className="py-24 bg-background relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              className="bg-white border border-border/40 rounded-[3rem] p-10 md:p-20 shadow-sm"
             >
-              <Card className="h-full">
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-1">
-                    <div className="p-2 rounded-lg bg-primary/10">
-                      <UserCheck className="w-5 h-5 text-primary" />
-                    </div>
-                    <CardTitle className="text-lg">Data We Collect</CardTitle>
-                  </div>
-                  <CardDescription>
-                    Personal and medical information required for billing
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {dataCollected.map((item, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start gap-2 text-sm text-muted-foreground"
-                      >
-                        <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <Card className="h-full">
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-1">
-                    <div className="p-2 rounded-lg bg-primary/10">
-                      <Database className="w-5 h-5 text-primary" />
-                    </div>
-                    <CardTitle className="text-lg">
-                      How It Is Collected
-                    </CardTitle>
-                  </div>
-                  <CardDescription>
-                    Secure channels used to gather your information
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {collectionMethods.map((item, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start gap-2 text-sm text-muted-foreground"
-                      >
-                        <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="text-sm text-muted-foreground mt-4 pt-4 border-t border-border">
-                    We limit data collection to what is required for accurate
-                    billing, compliance, and service delivery.
-                  </p>
-                </CardContent>
-              </Card>
+              <h2 className="text-2xl font-black text-navy uppercase tracking-tighter mb-8 italic">Ethical_Framework</h2>
+              <div className="prose prose-lg max-w-none text-muted-foreground font-medium leading-relaxed">
+                <p>
+                  At SmartMed Billing Solutions, we are fully committed to protecting your personal, medical, and financial information with the highest level of confidentiality and security. We operate in strict compliance with <strong className="text-navy font-black">HIPAA regulations</strong> and applicable federal and state laws. Our goal is to ensure that all sensitive data entrusted to us is handled responsibly, securely stored, and used only for legitimate medical billing and operational purposes.
+                </p>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ── 2. SMS & Communications ──────────────────────────────────────── */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <MessageSquare className="w-12 h-12 text-primary mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              2. SMS &amp; Communications
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We may contact you via SMS, phone, or email for service-related
-              updates, billing notifications, and account reminders.
-            </p>
-          </motion.div>
+      {/* ─────────────────────────────────────────
+          DATA CATEGORIES — Information Matrix
+      ───────────────────────────────────────── */}
+      <section className="py-24 bg-muted/20 border-y border-border/40">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-20">
+             <div className="text-[10px] font-black text-green tracking-[0.4em] uppercase mb-4">Protocol_01</div>
+             <h2 className="text-3xl md:text-5xl font-black text-navy uppercase tracking-tighter">Information Collection</h2>
+          </div>
 
-          <div className="max-w-5xl mx-auto space-y-8">
-            {/* SMS Types */}
-            <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <Card className="rounded-[2.5rem] border-border/40 bg-white overflow-hidden group hover:border-green/20 hover:shadow-2xl transition-all">
+              <CardHeader className="p-10 border-b border-border/40">
+                <div className="flex items-center gap-6">
+                  <div className="w-14 h-14 rounded-2xl bg-muted group-hover:bg-navy group-hover:text-green transition-all flex items-center justify-center">
+                    <UserCheck className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-black text-foreground uppercase tracking-tight">Active Parameters</h3>
+                    <div className="text-[10px] font-black text-muted-foreground/40 uppercase tracking-widest mt-1">Primary_Data_Input</div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="p-10">
+                <ul className="space-y-4">
+                  {dataCollected.map((item, i) => (
+                    <li key={i} className="flex items-start gap-4 text-sm text-muted-foreground font-medium">
+                      <CheckCircle2 className="w-5 h-5 text-green shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="rounded-[2.5rem] border-border/40 bg-white overflow-hidden group hover:border-green/20 hover:shadow-2xl transition-all">
+              <CardHeader className="p-10 border-b border-border/40">
+                <div className="flex items-center gap-6">
+                  <div className="w-14 h-14 rounded-2xl bg-muted group-hover:bg-navy group-hover:text-green transition-all flex items-center justify-center">
+                    <Database className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-black text-foreground uppercase tracking-tight">Ingestion Channels</h3>
+                    <div className="text-[10px] font-black text-muted-foreground/40 uppercase tracking-widest mt-1">Transmission_Network</div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="p-10">
+                <ul className="space-y-4">
+                  {collectionMethods.map((item, i) => (
+                    <li key={i} className="flex items-start gap-4 text-sm text-muted-foreground font-medium">
+                      <CheckCircle2 className="w-5 h-5 text-green shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────
+          COMMUNICATIONS — Interface Protocol
+      ───────────────────────────────────────── */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-20">
+             <div className="text-[10px] font-black text-green tracking-[0.4em] uppercase mb-4">Protocol_02</div>
+             <h2 className="text-3xl md:text-5xl font-black text-navy uppercase tracking-tighter">Communications Hub</h2>
+          </div>
+
+          <div className="max-w-6xl mx-auto space-y-8">
+            <div className="grid md:grid-cols-2 gap-8">
               {smsTypes.map((type, index) => (
-                <motion.div
-                  key={type.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <Card className="h-full">
-                    <CardHeader>
-                      <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-lg bg-primary/10">
-                          <type.icon className="w-5 h-5 text-primary" />
-                        </div>
-                        <CardTitle className="text-lg">{type.title}</CardTitle>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className="space-y-2">
-                        {type.items.map((item, i) => (
-                          <li
-                            key={i}
-                            className="flex items-start gap-2 text-sm text-muted-foreground"
-                          >
-                            <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </motion.div>
+                <div key={type.title} className="bg-white border border-border/40 rounded-[2.5rem] p-10 hover:border-green/20 hover:shadow-2xl transition-all">
+                  <div className="flex items-center gap-6 mb-8">
+                    <div className="w-12 h-12 rounded-xl bg-navy text-green flex items-center justify-center">
+                      <type.icon className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-xl font-black text-foreground uppercase tracking-tight">{type.title}</h3>
+                  </div>
+                  <ul className="space-y-4">
+                    {type.items.map((item, i) => (
+                      <li key={i} className="flex items-start gap-4 text-sm text-muted-foreground font-medium">
+                        <div className="w-1 h-1 rounded-full bg-green mt-2" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
             </div>
 
-            {/* Consent, Opt-Out, Privacy rows */}
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-3 gap-6">
               {[
-                {
-                  title: "Consent & Opt-In",
-                  icon: CheckCircle2,
-                  color: "text-secondary",
-                  text: "SMS messages are sent only with your prior express consent. Consent is voluntary and is never a condition of receiving our services.",
-                },
-                {
-                  title: "Opt-Out & HELP",
-                  icon: AlertCircle,
-                  color: "text-amber-500",
-                  text: "Reply STOP at any time to opt out. Reply HELP for assistance. You may also contact us directly to manage communication preferences.",
-                },
-                {
-                  title: "Privacy & Security",
-                  icon: Lock,
-                  color: "text-primary",
-                  text: "Your phone number will never be sold or shared. SMS messages do not contain PHI. Message frequency typically does not exceed 4–6 messages per month.",
-                },
-              ].map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <Card className="h-full">
-                      <CardHeader className="pb-2">
-                        <div className="flex items-center gap-2">
-                          <Icon className={`w-5 h-5 ${item.color}`} />
-                          <CardTitle className="text-base">
-                            {item.title}
-                          </CardTitle>
-                        </div>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-sm text-muted-foreground">
-                          {item.text}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            <motion.div
-              className="p-5 bg-primary/5 border border-primary/20 rounded-xl text-sm text-muted-foreground"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-            >
-              All SMS communications comply with{" "}
-              <strong className="text-foreground">
-                TCPA and CTIA guidelines
-              </strong>{" "}
-              and include required opt-out instructions. Standard message and
-              data rates may apply.
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 2a. SMS Consent Form ─────────────────────────────────────────── */}
-      <section className="py-12 bg-muted/20">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl">SMS Consent Form</CardTitle>
-                <CardDescription className="mt-2 text-sm">
-                  By providing your phone number, you consent to receive SMS
-                  text messages from Unity Billing Solutions regarding service
-                  inquiries, appointment scheduling, onboarding updates, and
-                  account-related notifications. Message frequency may vary.
-                  Message and data rates may apply. Reply STOP to opt out at any
-                  time or HELP for assistance. Consent is not a condition of
-                  purchase.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form className="space-y-6">
-                  <div className="space-y-2">
-                    <label className="block text-sm font-medium text-foreground">
-                      Phone Number <span className="text-destructive">*</span>
-                    </label>
-                    <input
-                      type="tel"
-                      placeholder="(123) 456-7890"
-                      className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                    />
-                    <p className="text-xs text-muted-foreground">
-                      Standard message and data rates may apply.
-                    </p>
+                { title: "Consent & Opt-In", icon: CheckCircle2, text: "SMS messages are sent only with your prior express consent. Consent is voluntary and is never a condition of receiving our services." },
+                { title: "Opt-Out & HELP", icon: AlertCircle, text: "Reply STOP at any time to opt out. Reply HELP for assistance. You may also contact us directly to manage communication preferences." },
+                { title: "Privacy & Security", icon: Lock, text: "Your phone number will never be sold or shared. SMS messages do not contain PHI. Message frequency typically does not exceed 4–6 messages per month." }
+              ].map((item, i) => (
+                <div key={i} className="bg-muted/30 border border-border/40 rounded-[2rem] p-8">
+                  <div className="flex items-center gap-4 mb-4">
+                    <item.icon className="w-5 h-5 text-navy" />
+                    <h4 className="text-sm font-black text-foreground uppercase tracking-widest">{item.title}</h4>
                   </div>
-
-                  <div className="space-y-2">
-                    <label className="block text-sm font-medium text-foreground">
-                      Full Name{" "}
-                      <span className="text-muted-foreground text-xs">
-                        (optional)
-                      </span>
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="John Doe"
-                      className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                    />
-                  </div>
-
-                  <div className="flex items-start gap-2">
-                    <input
-                      id="sms-consent"
-                      type="checkbox"
-                      className="mt-1 h-4 w-4 rounded border-border text-primary focus:ring-primary"
-                    />
-                    <label
-                      htmlFor="sms-consent"
-                      className="text-sm text-foreground"
-                    >
-                      I agree to receive SMS communications from Unity Billing
-                      Solutions.
-                    </label>
-                  </div>
-
-                  <button
-                    type="button"
-                    className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors"
-                  >
-                    Submit Consent
-                  </button>
-
-                  <div className="space-y-1 pt-3 border-t border-border text-sm text-muted-foreground">
-                    <p className="font-medium text-foreground">
-                      We respect your privacy.
-                    </p>
-                    <p>
-                      By submitting this form, you agree to receive SMS
-                      communications from Unity Billing Solutions as described
-                      above. You can withdraw your consent at any time by
-                      texting STOP.
-                    </p>
-                  </div>
-                </form>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── 3. How We Use Your Information ──────────────────────────────── */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <FileText className="w-12 h-12 text-primary mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              3. How We Use Your Information
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Your information is used strictly for legitimate healthcare
-              billing and administrative purposes.
-            </p>
-          </motion.div>
-
-          <div className="max-w-4xl mx-auto">
-            <Card>
-              <CardContent className="pt-6">
-                <div className="grid md:grid-cols-2 gap-3">
-                  {dataUses.map((use, i) => (
-                    <motion.div
-                      key={i}
-                      className="flex items-start gap-3 p-3 bg-muted/40 rounded-lg"
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.05 }}
-                    >
-                      <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-muted-foreground">
-                        {use}
-                      </span>
-                    </motion.div>
-                  ))}
+                  <p className="text-xs text-muted-foreground font-medium leading-relaxed">{item.text}</p>
                 </div>
-                <p className="mt-6 text-sm text-muted-foreground italic border-t border-border pt-4">
-                  We do not use your information for unrelated purposes.
-                </p>
-              </CardContent>
-            </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── 4. HIPAA Compliance ──────────────────────────────────────────── */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              4. HIPAA Compliance
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Unity Billing Solutions takes HIPAA compliance extremely
-              seriously. We implement comprehensive safeguards designed to
-              protect Protected Health Information (PHI) from unauthorized
-              access, disclosure, alteration, or destruction.
-            </p>
-          </motion.div>
+      {/* ─────────────────────────────────────────
+          CONSENT TERMINAL — SMS Validation
+      ───────────────────────────────────────── */}
+      <section className="py-24 bg-navy relative overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl mx-auto bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[3.5rem] p-12 md:p-24">
+             <div className="inline-flex items-center gap-4 mb-10 text-white">
+               <div className="w-1.5 h-1.5 rounded-full bg-green animate-pulse" />
+               <span className="text-[10px] font-black text-green uppercase tracking-[0.4em]">Authorization Terminal v1.2</span>
+             </div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-            {hipaaCategories.map((cat, index) => (
-              <motion.div
-                key={cat.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.07 }}
-              >
-                <Card className="h-full hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="flex items-center gap-3 mb-1">
-                      <div className="p-2 rounded-lg bg-primary/10">
-                        <cat.icon className="w-5 h-5 text-primary" />
-                      </div>
-                      <CardTitle className="text-lg">{cat.title}</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2">
+             <h2 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter uppercase leading-[0.9]">SMS Consent <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-green">Protocol.</span></h2>
+             
+             <p className="text-sm text-white/40 mb-12 max-w-xl font-medium leading-relaxed">
+               By providing your phone number, you authorize the transmission of service-related nodes via encrypted cellular frequency.
+             </p>
+
+             <form className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                   <div className="space-y-4">
+                      <label className="text-[10px] font-black text-white/30 uppercase tracking-widest ml-4">Phone_Identifier</label>
+                      <input type="tel" placeholder="+1 (000) 000-0000" className="w-full h-16 rounded-2xl bg-white/5 border border-white/10 text-white px-8 focus:outline-none focus:border-green/50 transition-all font-mono text-sm" />
+                   </div>
+                   <div className="space-y-4">
+                      <label className="text-[10px] font-black text-white/30 uppercase tracking-widest ml-4">Authorized_Name</label>
+                      <input type="text" placeholder="John Doe" className="w-full h-16 rounded-2xl bg-white/5 border border-white/10 text-white px-8 focus:outline-none focus:border-green/50 transition-all font-mono text-sm" />
+                   </div>
+                </div>
+
+                <div className="p-6 bg-white/5 border border-white/10 rounded-2xl flex items-start gap-4 hover:border-green/30 transition-all group">
+                   <input id="terminal-consent" type="checkbox" className="w-5 h-5 rounded border-white/20 bg-transparent text-green focus:ring-green mt-1" />
+                   <label htmlFor="terminal-consent" className="text-xs text-white/60 font-medium leading-relaxed uppercase tracking-tight group-hover:text-white transition-colors">I acknowledge and authorize SMS communication via the Smart Medical Billing Solutions encrypted gateway.</label>
+                </div>
+
+                <Button className="w-full h-20 rounded-[2rem] bg-green hover:bg-white text-navy font-black uppercase tracking-widest text-xs transition-all shadow-2xl">
+                   Validate & Execute Protocol
+                </Button>
+
+                <p className="text-[9px] font-bold text-white/10 text-center uppercase tracking-widest mt-8">Zero-latency enrollment. 256-bit encryption. CTIA compliant.</p>
+             </form>
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────
+          SECURITY LAYERS — HIPAA Safeguards
+      ───────────────────────────────────────── */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-20">
+             <div className="text-[10px] font-black text-green tracking-[0.4em] uppercase mb-4">Protocol_04</div>
+             <h2 className="text-3xl md:text-5xl font-black text-navy uppercase tracking-tighter">Security Safeguards</h2>
+             <p className="text-lg text-muted-foreground mt-6 max-w-2xl mx-auto font-medium leading-relaxed">SmartMed Billing Solutions implements institutional-grade barriers designed to protect Protected Health Information (PHI).</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
+             {hipaaCategories.map((cat, index) => (
+                <div key={index} className="bg-white border border-border/40 rounded-[2.5rem] p-10 hover:border-green/20 hover:shadow-2xl transition-all group">
+                   <div className="w-14 h-14 rounded-2xl bg-muted group-hover:bg-navy group-hover:text-green transition-all flex items-center justify-center mb-8">
+                     <cat.icon className="w-6 h-6" />
+                   </div>
+                   <h3 className="text-lg font-black text-foreground uppercase tracking-tighter mb-6">{cat.title}</h3>
+                   <ul className="space-y-4">
                       {cat.measures.map((m, i) => (
-                        <li
-                          key={i}
-                          className="flex items-start gap-2 text-sm text-muted-foreground"
-                        >
-                          <Shield className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
-                          <span>{m}</span>
+                        <li key={i} className="flex items-start gap-3 text-[11px] font-bold text-muted-foreground/60 uppercase tracking-tight">
+                           <div className="w-1 h-1 rounded-full bg-border mt-1.5 shrink-0" />
+                           <span>{m}</span>
                         </li>
                       ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.p
-            className="text-center text-sm text-muted-foreground mt-10 max-w-3xl mx-auto"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            Through these safeguards, we protect patient health information in
-            both digital and physical formats, ensuring{" "}
-            <strong className="text-foreground">
-              confidentiality, integrity, and availability
-            </strong>{" "}
-            of data.
-          </motion.p>
-        </div>
-      </section>
-
-      {/* ── 5. Who Has Access ────────────────────────────────────────────── */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <Eye className="w-12 h-12 text-primary mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              5. Who Has Access
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Only authorized personnel within Unity Billing Solutions have
-              access to your information. Access is granted strictly on a
-              need-to-know basis and is limited to individuals directly involved
-              in billing, compliance, or account management.
-            </p>
-          </motion.div>
-
-          <div className="max-w-3xl mx-auto">
-            <Card>
-              <CardHeader>
-                <CardTitle>Access Restrictions</CardTitle>
-                <CardDescription>
-                  Access is limited to individuals directly involved in billing,
-                  compliance, or account management.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="grid sm:grid-cols-2 gap-3">
-                  {accessRestrictions.map((item, i) => (
-                    <div
-                      key={i}
-                      className="flex items-start gap-2 p-3 bg-muted/40 rounded-lg text-sm text-muted-foreground"
-                    >
-                      <Lock className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
+                   </ul>
                 </div>
-                <div className="mt-6 p-4 bg-destructive/10 border border-destructive/20 rounded-xl flex items-start gap-3">
-                  <AlertCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
-                  <p className="text-sm text-muted-foreground">
-                    <strong className="text-destructive">
-                      Unauthorized access is strictly prohibited
-                    </strong>{" "}
-                    and subject to disciplinary action.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 6. Your Rights ───────────────────────────────────────────────── */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <UserCheck className="w-12 h-12 text-primary mx-auto mb-4" />
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
-              6. Your Rights
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              You have important rights regarding your personal and medical
-              information.
-            </p>
-          </motion.div>
+      {/* ─────────────────────────────────────────
+          RIGHTS MATRIX — Control Nodes
+      ───────────────────────────────────────── */}
+      <section className="py-24 bg-muted/20 border-t border-border/40">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-20">
+             <div className="text-[10px] font-black text-green tracking-[0.4em] uppercase mb-4">Protocol_06</div>
+             <h2 className="text-3xl md:text-5xl font-black text-navy uppercase tracking-tighter">Your Rights</h2>
+          </div>
 
           <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
+            <Accordion type="single" collapsible className="space-y-4 font-mono">
               {userRights.map((right, index) => (
                 <AccordionItem
                   key={right.title}
                   value={`right-${index}`}
-                  className="border rounded-xl px-6 bg-card shadow-sm"
+                  className="border border-border/60 rounded-[2rem] px-10 bg-white shadow-sm overflow-hidden"
                 >
-                  <AccordionTrigger className="text-left hover:no-underline py-4">
-                    <div className="flex items-center gap-3 pr-4">
-                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span className="font-semibold text-foreground">
+                  <AccordionTrigger className="text-left hover:no-underline py-8">
+                    <div className="flex items-center gap-6 pr-4">
+                      <div className="text-[10px] font-black text-green opacity-40">NODE_0{index + 1}</div>
+                      <span className="text-lg font-black text-navy uppercase tracking-tighter">
                         {right.title}
                       </span>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="pb-4 pl-8">
-                    <p className="text-foreground font-medium mb-2">
+                  <AccordionContent className="pb-10 pl-16">
+                    <p className="text-foreground font-black uppercase text-xs mb-4 tracking-widest">
                       {right.description}
                     </p>
-                    <p className="text-sm text-muted-foreground">
-                      <strong className="text-primary">Process:</strong>{" "}
-                      {right.process}
-                    </p>
+                    <div className="p-6 bg-muted/30 rounded-2xl border border-border/40">
+                       <span className="text-[10px] font-black text-navy uppercase tracking-[0.3em] block mb-2">Process_Execution:</span>
+                       <p className="text-[12px] text-muted-foreground font-medium leading-relaxed italic">{right.process}</p>
+                    </div>
                   </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
 
-            <motion.p
-              className="mt-6 text-sm text-muted-foreground text-center"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-            >
-              Requests may be submitted via email at{" "}
-              <a
-                href="mailto:Contact@unitybillingsolutions.com"
-                className="text-primary hover:underline"
-              >
-                Contact@unitybillingsolutions.com
-              </a>{" "}
-              or by phone at{" "}
-              <a
-                href="tel:(678) 408-2725"
-                className="text-primary hover:underline"
-              >
-                (678) 408-2725
-              </a>
-              . We will respond in accordance with applicable legal
-              requirements.
-            </motion.p>
+            <div className="mt-20 p-12 bg-navy rounded-[3rem] text-center text-white relative overflow-hidden">
+               <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
+                 <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+               </div>
+               <h4 className="text-[10px] font-black text-green uppercase tracking-[0.4em] mb-6">Contact Privacy Office</h4>
+               <p className="text-xl font-medium mb-10 text-white/50">Submit official data requests to the secure channel:</p>
+               <a
+                  href="mailto:ashleyb@smbillings.com"
+                  className="text-2xl md:text-4xl font-black text-white hover:text-green transition-colors underline decoration-green/30 decoration-4 underline-offset-8"
+                >
+                  ashleyb@smbillings.com
+                </a>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── 7. Consent ───────────────────────────────────────────────────── */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <ScrollText className="w-8 h-8 text-primary flex-shrink-0" />
-              <h2 className="text-3xl font-bold text-foreground">7. Consent</h2>
-            </div>
-            <Card>
-              <CardContent className="pt-6 space-y-4 text-muted-foreground">
-                <p>
-                  By using our services and providing insurance or medical
-                  information, you consent to the collection, use, and
-                  processing of your data for billing, administrative, and
-                  compliance purposes.
-                </p>
-                <p className="font-medium text-foreground">
-                  Consent may be provided through:
-                </p>
-                <ul className="space-y-2">
-                  {[
-                    "Phone or in-person communications",
-                    "Emails or written agreements",
-                    "Website form submissions",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm">
-                      <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-sm pt-2 border-t border-border">
-                  Your personal information, including phone numbers and SMS
-                  consent, will{" "}
-                  <strong className="text-foreground">
-                    never be shared, sold, or disclosed
-                  </strong>{" "}
-                  to third parties except as required by law or for legitimate
-                  billing operations.
-                </p>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── 8. Children's Privacy ────────────────────────────────────────── */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <Baby className="w-8 h-8 text-primary flex-shrink-0" />
-              <h2 className="text-3xl font-bold text-foreground">
-                8. Children's Privacy
-              </h2>
-            </div>
-            <Card>
-              <CardContent className="pt-6">
-                <p className="text-muted-foreground">
-                  Our services are not directed toward children under the age of
-                  13. We do not knowingly collect personal information from
-                  children. If a parent or guardian believes that a child has
-                  provided personal data to us without consent, they should
-                  contact us immediately so appropriate steps can be taken to
-                  remove the information.
-                </p>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── 9. Updates to This Policy ────────────────────────────────────── */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <RefreshCw className="w-8 h-8 text-primary flex-shrink-0" />
-              <h2 className="text-3xl font-bold text-foreground">
-                9. Updates to This Privacy Policy
-              </h2>
-            </div>
-            <Card>
-              <CardContent className="pt-6">
-                <p className="text-muted-foreground">
-                  We may update this Privacy Policy from time to time to reflect
-                  changes in regulations, services, or operational practices.
-                  Updated versions will be posted on this page with a revised
-                  effective date. When required, we may also notify clients via
-                  email or other appropriate communication methods.
-                </p>
-                <p className="text-muted-foreground mt-4">
-                  We encourage you to review this Privacy Policy periodically to
-                  stay informed about how we protect your information.
-                </p>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── 10. Contact ──────────────────────────────────────────────────── */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <Mail className="w-12 h-12 text-primary mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              10. Contact Information
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              For questions, concerns, or to exercise your privacy rights,
-              please contact us.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
-            <motion.div
-              whileHover={{ y: -5 }}
-              className="text-center p-6 bg-card rounded-xl shadow-md"
-            >
-              <Mail className="w-8 h-8 text-primary mx-auto mb-4" />
-              <h3 className="font-semibold text-foreground mb-2">Email Us</h3>
-              <a
-                href="mailto:Contact@unitybillingsolutions.com"
-                className="text-primary hover:underline text-sm break-all"
-              >
-                Contact@unitybillingsolutions.com
-              </a>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ y: -5 }}
-              className="text-center p-6 bg-card rounded-xl shadow-md"
-            >
-              <Phone className="w-8 h-8 text-primary mx-auto mb-4" />
-              <h3 className="font-semibold text-foreground mb-2">Call Us</h3>
-              <a
-                href="tel:+15013133708"
-                className="text-primary hover:underline"
-              >
-                (678) 408-2725
-              </a>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ y: -5 }}
-              className="text-center p-6 bg-card rounded-xl shadow-md"
-            >
-              <Globe className="w-8 h-8 text-primary mx-auto mb-4" />
-              <h3 className="font-semibold text-foreground mb-2">Website</h3>
-              <a
-                href="https://www.unitymedicalbilling.com"
-                className="text-primary hover:underline text-sm"
-              >
-                www.unitymedicalbilling.com
-              </a>
-            </motion.div>
-          </div>
-
-          <motion.div
-            className="max-w-3xl mx-auto p-6 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl border border-primary/20 text-center"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-muted-foreground">
-              We are committed to addressing your privacy concerns promptly and
-              professionally.
-            </p>
-            <p className="mt-3 text-sm font-medium text-foreground">
-              © {new Date().getFullYear()} Unity Billing Solutions — All Rights
-              Reserved.
-            </p>
-          </motion.div>
         </div>
       </section>
     </PageWrapper>

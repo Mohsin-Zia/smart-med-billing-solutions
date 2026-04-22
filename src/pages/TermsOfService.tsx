@@ -60,7 +60,7 @@ const TermsOfService = () => {
       title: "Timely Updates",
       icon: RefreshCw,
       description:
-        "Notify Unity promptly of any changes that may affect billing operations.",
+        "Notify Smart promptly of any changes that may affect billing operations.",
     },
   ];
 
@@ -77,7 +77,7 @@ const TermsOfService = () => {
     "All Protected Health Information (PHI) handled securely and confidentially",
     "Unauthorized disclosure of PHI is strictly prohibited",
     "Clients are expected to safeguard proprietary information",
-    "Unity adheres to HIPAA Privacy Rule (45 CFR Part 160)",
+    "Smart adheres to HIPAA Privacy Rule (45 CFR Part 160)",
     "Full compliance with the HIPAA Security Rule (45 CFR Part 164)",
     "HITECH Act provisions are strictly followed",
   ];
@@ -89,674 +89,301 @@ const TermsOfService = () => {
 
   return (
     <PageWrapper>
-      {/* ── Hero ───────────────────────────────────────────────── */}
-      <section className="pt-36 pb-20 lg:pt-48 bg-gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-              backgroundSize: "40px 40px",
-            }}
-          />
+      {/* ─────────────────────────────────────────
+          PAGE HEADER — Legal Infrastructure
+      ───────────────────────────────────────── */}
+      <section className="pt-32 pb-24 lg:pt-48 lg:pb-32 relative overflow-hidden bg-navy text-white text-center">
+        {/* Background Patterns */}
+        <div className="absolute inset-0 pointer-events-none opacity-[0.05]">
+          <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-green to-transparent" />
+          <div className="absolute inset-y-0 left-1/4 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+          <div className="absolute inset-y-0 right-1/4 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
-            className="text-center max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 mb-8"
           >
+            <Scale className="w-4 h-4 text-green" />
+            <span className="text-[10px] font-black tracking-[0.4em] uppercase text-white/60">Governing Protocol v2.5</span>
+          </motion.div>
+          
+          <h1 className="text-5xl md:text-8xl font-black mb-10 leading-[0.9] tracking-tighter uppercase">
+            Legal <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-green">Framework.</span>
+          </h1>
+          
+          <p className="text-xl text-white/50 max-w-2xl mx-auto leading-relaxed font-medium mb-12">
+            The operational logic and binding parameters governing the transmission and processing of institutional revenue.
+          </p>
+
+          <div className="inline-flex items-center gap-4 px-6 py-2 rounded-full border border-white/10 text-[10px] font-black uppercase tracking-widest text-white/30">
+             <div className="w-1 h-1 rounded-full bg-green" />
+             <span>Ref: {effectiveDate}</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────
+          PROTOCOL INDEX — Documentation Map
+      ───────────────────────────────────────── */}
+      <section className="py-24 bg-muted/20 border-y border-border/40">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+             <div className="text-[10px] font-black text-green tracking-[0.4em] uppercase mb-4">Index_Logic</div>
+             <h2 className="text-3xl font-black text-navy uppercase tracking-tighter">Documentation Matrix</h2>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-6xl mx-auto">
+            {tableOfContents.map((item) => (
+              <div
+                key={item.number}
+                className="group flex flex-col bg-white border border-border/40 rounded-2xl p-6 hover:border-green/20 hover:shadow-xl transition-all cursor-pointer"
+              >
+                <span className="text-2xl font-black text-border group-hover:text-green transition-colors mb-4 italic">0{item.number}</span>
+                <span className="text-[10px] font-black text-navy uppercase tracking-widest leading-tight">
+                  {item.title}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────
+          ACCEPTANCE — Protocol Initiation
+      ───────────────────────────────────────── */}
+      <section className="py-24 bg-background overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
             <motion.div
-              className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/20 mb-6"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={sectionVariant}
             >
-              <Scale className="w-10 h-10 text-white" />
+              <div className="flex flex-col md:flex-row gap-12 items-start">
+                <div className="shrink-0 flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-2xl bg-navy text-green flex items-center justify-center font-black text-2xl">01</div>
+                </div>
+                <div className="flex-1 space-y-8">
+                  <h2 className="text-4xl font-black text-navy uppercase tracking-tighter">Protocol Initiation</h2>
+                  <p className="text-muted-foreground font-medium text-lg leading-relaxed italic">
+                    By accessing this website or engaging with our services, you acknowledge that you have read, understood, and agree to these Terms & Conditions.
+                  </p>
+                  
+                  <div className="p-8 bg-muted/30 border border-border/40 rounded-[2rem] flex items-start gap-6">
+                    <AlertTriangle className="w-6 h-6 text-navy shrink-0" />
+                    <p className="text-xs text-navy/60 font-medium leading-relaxed uppercase tracking-tight">
+                      <strong className="text-navy font-black">Institutional Requirement:</strong> These Terms govern your use of our Services along with our Privacy Policy, Business Associate Agreement (BAA), and any applicable Service Level Agreements (SLAs).
+                    </p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
-
-            <div className="inline-flex items-center gap-2 bg-white/15 border border-white/30 rounded-full px-4 py-2 mb-6">
-              <CheckCircle2 className="w-4 h-4 text-white/80" />
-              <span className="text-white/90 text-sm font-medium">
-                {effectiveDate}
-              </span>
-            </div>
-
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-              Terms &amp; Conditions
-            </h1>
-            <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-              Please read these terms carefully before using our website or
-              engaging with our medical billing services.
-            </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* ── Intro Banner ───────────────────────────────────────── */}
-      <section className="py-14 bg-background">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={sectionVariant}
-          >
-            <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 md:p-12 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Welcome to Unity Billing Solutions
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-4">
-                These Terms &amp; Conditions govern your use of our website and
-                services in the field of medical billing and revenue cycle
-                management. Please read these terms carefully before using our
-                website or engaging with our services.
-              </p>
-              <div className="mt-6 p-4 bg-sky-50 border border-sky-200 rounded-xl flex items-start gap-3 max-w-3xl mx-auto">
-                <AlertTriangle className="w-5 h-5 text-sky-500 flex-shrink-0 mt-0.5" />
-                <p className="text-blue-400 leading-relaxed">
-                  By accessing or using our website, you agree to comply with
-                  and be bound by these Terms &amp; Conditions. If you do not
-                  agree with any part of these terms, please do not use our
-                  website or services.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* ─────────────────────────────────────────
+          SMS GATEWAY — Interface Terms
+      ───────────────────────────────────────── */}
+      <section className="py-24 bg-muted/20 border-y border-border/40">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto bg-white border border-border/40 rounded-[3rem] p-12 md:p-20 group hover:border-green/20 hover:shadow-2xl transition-all">
+             <div className="flex items-center gap-8 mb-12">
+                <div className="w-14 h-14 rounded-2xl bg-navy text-green flex items-center justify-center font-black text-xl italic">02</div>
+                <h2 className="text-3xl font-black text-navy uppercase tracking-tighter">SMS Interface Protocol</h2>
+             </div>
+             
+             <p className="text-muted-foreground font-medium leading-relaxed mb-12">
+               By opting into SMS from <strong className="text-navy">SmartMed Billing Solutions</strong>, you authorize the node-to-node transmission of service-related data packages.
+             </p>
 
-      {/* ── Table of Contents ──────────────────────────────────── */}
-      <section className="py-12 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={sectionVariant}
-          >
-            <h3 className="text-xl font-bold text-foreground mb-6 text-center">
-              Table of Contents
-            </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-              {tableOfContents.map((item) => (
-                <div
-                  key={item.number}
-                  className="flex items-center gap-3 bg-card rounded-xl p-3 border border-border hover:border-primary/40 hover:shadow-md transition-all group cursor-pointer"
-                >
-                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
-                    <span className="text-xs font-bold text-primary">
-                      {item.number}
-                    </span>
-                  </div>
-                  <span className="text-xs text-muted-foreground group-hover:text-foreground transition-colors leading-tight">
-                    {item.title}
-                  </span>
+             <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-muted/50 rounded-2xl p-8 border border-border/20">
+                   <h4 className="text-[10px] font-black text-navy uppercase tracking-[0.3em] mb-4">Termination_Sequence</h4>
+                   <p className="text-xs font-medium text-muted-foreground leading-relaxed italic">
+                     Reply <strong className="text-navy">STOP</strong> at any time to execute the termination sequence and halt transmission.
+                   </p>
                 </div>
-              ))}
-            </div>
-          </motion.div>
+                <div className="bg-muted/50 rounded-2xl p-8 border border-border/20">
+                   <h4 className="text-[10px] font-black text-navy uppercase tracking-[0.3em] mb-4">Support_Query</h4>
+                   <p className="text-xs font-medium text-muted-foreground leading-relaxed italic">
+                     Reply <strong className="text-navy">HELP</strong> to receive technical documentation relating to the SMS gateway.
+                   </p>
+                </div>
+             </div>
+          </div>
         </div>
       </section>
 
-      {/* ── Section 1: Acceptance ──────────────────────────────── */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={sectionVariant}
-          >
-            <div className="flex items-start gap-5 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <span className="text-lg font-bold text-primary">1</span>
-              </div>
-              <div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">
-                  Acceptance of Terms
-                </h2>
-                <p className="text-muted-foreground leading-relaxed text-lg">
-                  By accessing this website or engaging with our services, you
-                  acknowledge that you have read, understood, and agree to these
-                  Terms &amp; Conditions. Continued use of our website or
-                  services constitutes your acceptance of any updates or
-                  modifications.
-                </p>
-              </div>
-            </div>
-
-            <div className="ml-17 bg-primary/10 border border-primary/20 rounded-xl p-6">
-              <div className="flex items-start gap-3">
-                <AlertTriangle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <p className="text-sm text-foreground">
-                  <strong>Important:</strong> These Terms govern your use of our
-                  Services along with our Privacy Policy, Business Associate
-                  Agreement (BAA), and any applicable Service Level Agreements
-                  (SLAs). All parties must comply with HIPAA regulations and
-                  applicable healthcare laws.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── Section 2: SMS ─────────────────────────────────────── */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={sectionVariant}
-          >
-            <Card>
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <span className="text-lg font-bold text-primary">2</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <MessageSquare className="w-6 h-6 text-primary" />
-                    <CardTitle className="text-2xl">
-                      SMS Terms of Service
-                    </CardTitle>
-                  </div>
+      {/* ─────────────────────────────────────────
+          SERVICES — Operational Scope
+      ───────────────────────────────────────── */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+             <div className="flex items-center gap-8 mb-16">
+                <div className="w-16 h-16 rounded-2xl bg-navy text-green flex items-center justify-center font-black text-2xl italic">03</div>
+                <div>
+                   <h2 className="text-4xl font-black text-navy uppercase tracking-tighter">Operational Scope</h2>
+                   <div className="text-[10px] font-black text-green tracking-[0.4em] uppercase mt-2">Active_Service_Load</div>
                 </div>
-              </CardHeader>
-              <CardContent className="space-y-4 text-muted-foreground">
-                <p className="leading-relaxed">
-                  By opting into SMS from{" "}
-                  <strong className="text-foreground">
-                    Unity Billing Solutions
-                  </strong>
-                  , you agree to receive conversational and service-related
-                  messages.
-                </p>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="bg-muted/50 rounded-xl p-4">
-                    <h4 className="font-semibold text-foreground mb-2 text-sm">
-                      To Opt Out
-                    </h4>
-                    <p className="text-sm">
-                      Reply <strong className="text-foreground">STOP</strong> at
-                      any time. You will receive a confirmation message and no
-                      further messages will be sent.
-                    </p>
-                  </div>
-                  <div className="bg-muted/50 rounded-xl p-4">
-                    <h4 className="font-semibold text-foreground mb-2 text-sm">
-                      For Help
-                    </h4>
-                    <p className="text-sm">
-                      Reply <strong className="text-foreground">HELP</strong> at
-                      any time to receive assistance or additional information
-                      about our SMS service.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
-      </section>
+             </div>
 
-      {/* ── Section 3: Services ────────────────────────────────── */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={sectionVariant}
-          >
-            <div className="flex items-start gap-5 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <span className="text-lg font-bold text-primary">3</span>
-              </div>
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <Briefcase className="w-6 h-6 text-primary" />
-                  <h2 className="text-3xl font-bold text-foreground">
-                    Services Offered
-                  </h2>
-                </div>
-                <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                  Unity Billing Solutions provides comprehensive billing,
-                  coding, revenue cycle management, credentialing, telehealth
-                  billing, and consulting services to healthcare providers.
-                </p>
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-3 ml-17">
+             <div className="grid md:grid-cols-2 gap-4">
               {servicesOffered.map((service, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-3 bg-card rounded-xl p-4 border border-border"
-                >
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-muted-foreground">
+                <div key={i} className="flex items-center gap-6 bg-white border border-border/40 rounded-2xl p-6 group hover:border-green/20 transition-all">
+                  <div className="w-2 h-2 rounded-full bg-navy group-hover:bg-green transition-all" />
+                  <span className="text-[11px] font-black text-muted-foreground uppercase tracking-widest leading-tight">
                     {service}
                   </span>
                 </div>
               ))}
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── Section 4: Client Responsibilities ────────────────── */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={sectionVariant}
-            className="text-center mb-12"
-          >
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 mb-4">
-              <span className="text-lg font-bold text-primary">4</span>
-            </div>
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <Users className="w-6 h-6 text-primary" />
-              <h2 className="text-3xl font-bold text-foreground">
-                Client Responsibilities
-              </h2>
-            </div>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              When using our website or services, clients agree to the following
-              obligations.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-5">
-            {clientObligations.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <Card className="h-full hover:shadow-lg hover:border-primary/30 transition-all">
-                    <CardContent className="pt-6">
-                      <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                          <Icon className="w-6 h-6 text-primary" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-foreground text-lg mb-2">
-                            {item.title}
-                          </h3>
-                          <p className="text-muted-foreground text-sm leading-relaxed">
-                            {item.description}
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              );
-            })}
           </div>
         </div>
       </section>
 
-      {/* ── Section 5: HIPAA ───────────────────────────────────── */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={sectionVariant}
-          >
-            <div className="flex items-start gap-5 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <span className="text-lg font-bold text-primary">5</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Shield className="w-6 h-6 text-primary" />
-                <h2 className="text-3xl font-bold text-foreground">
-                  HIPAA Compliance &amp; Confidentiality
-                </h2>
-              </div>
-            </div>
+      {/* ─────────────────────────────────────────
+          OBLIGATIONS — Node Requirements
+      ───────────────────────────────────────── */}
+      <section className="py-24 bg-navy relative overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-20 text-white">
+             <div className="text-[10px] font-black text-green tracking-[0.4em] uppercase mb-4">Client_Logic</div>
+             <h2 className="text-3xl md:text-6xl font-black uppercase tracking-tighter">Node Requirements</h2>
+          </div>
 
-            <div className="ml-17">
-              <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                Unity Billing Solutions strictly adheres to HIPAA regulations
-                and industry best practices to ensure the protection of all
-                Protected Health Information (PHI).
-              </p>
-              <div className="grid md:grid-cols-2 gap-3">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
+            {clientObligations.map((item, index) => (
+              <div key={index} className="h-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-10 hover:bg-white/10 transition-all group">
+                <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-8 border border-white/10 group-hover:border-green/30 transition-all">
+                  <item.icon className="w-6 h-6 text-green" />
+                </div>
+                <h3 className="text-lg font-black text-white uppercase tracking-tight mb-4">{item.title}</h3>
+                <p className="text-[11px] text-white/40 font-bold uppercase tracking-widest leading-loose italic">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────
+          CONFIDENTIALITY — Security Protocol
+      ───────────────────────────────────────── */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+             <div className="flex items-center gap-8 mb-16">
+                <div className="w-16 h-16 rounded-2xl bg-navy text-green flex items-center justify-center font-black text-2xl italic">05</div>
+                <div>
+                   <h2 className="text-4xl font-black text-navy uppercase tracking-tighter">Security Protocol</h2>
+                   <div className="text-[10px] font-black text-green tracking-[0.4em] uppercase mt-2">HIPAA_ENFORCEMENT_V4</div>
+                </div>
+             </div>
+
+             <div className="space-y-4">
                 {hipaaPoints.map((point, i) => (
-                  <div
-                    key={i}
-                    className="flex items-start gap-3 bg-primary/5 border border-primary/15 rounded-xl p-4"
-                  >
-                    <Shield className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-muted-foreground">
+                  <div key={i} className="flex items-center gap-8 bg-muted/20 border border-border/40 rounded-3xl p-8 hover:bg-white hover:border-green/20 hover:shadow-xl transition-all group">
+                    <Shield className="w-6 h-6 text-navy group-hover:text-green transition-all shrink-0" />
+                    <span className="text-xs font-black text-muted-foreground uppercase tracking-widest leading-relaxed italic">
                       {point}
                     </span>
                   </div>
                 ))}
+             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────
+          GOVERNING LOGIC — Regulatory Scope
+      ───────────────────────────────────────── */}
+      <section className="py-24 bg-muted/20 border-y border-border/40">
+        <div className="container mx-auto px-6">
+           <div className="max-w-4xl mx-auto bg-white border border-border/40 rounded-[3rem] p-12 md:p-20 overflow-hidden relative">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-navy -translate-y-1/2 translate-x-1/2 rotate-45" />
+              
+              <div className="flex items-center gap-8 mb-12">
+                <div className="w-16 h-16 rounded-2xl bg-navy text-green flex items-center justify-center font-black text-2xl italic shrink-0">10</div>
+                <h2 className="text-4xl font-black text-navy uppercase tracking-tighter">Governing Logic</h2>
               </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
-      {/* ── Section 6 & 7: IP + Liability ─────────────────────── */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-4xl space-y-8">
-          {/* Intellectual Property */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={sectionVariant}
-          >
-            <Card>
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <span className="text-lg font-bold text-primary">6</span>
-                  </div>
-                  <CardTitle className="text-2xl">
-                    Intellectual Property
-                  </CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-3 text-muted-foreground">
-                <p className="leading-relaxed">
-                  All content on our website, including text, graphics, logos,
-                  images, videos, and software, is the property of{" "}
-                  <strong className="text-foreground">
-                    Unity Billing Solutions
-                  </strong>{" "}
-                  and is protected by copyright and other intellectual property
-                  laws.
-                </p>
-                <div className="bg-destructive/10 border border-destructive/20 rounded-xl p-4 flex items-start gap-3">
-                  <Ban className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
-                  <p className="text-sm text-foreground">
-                    You may not reproduce, distribute, modify, or create
-                    derivative works without prior written permission from Unity
-                    Billing Solutions.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
+              <p className="text-muted-foreground font-medium leading-relaxed mb-12 italic">
+                These Protocols are governed by the laws of the jurisdiction in which SmartMed Billing Solutions maintains primary operations.
+              </p>
 
-          {/* Limitation of Liability */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={sectionVariant}
-          >
-            <Card>
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <span className="text-lg font-bold text-primary">7</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <AlertTriangle className="w-6 h-6 text-primary" />
-                    <CardTitle className="text-2xl">
-                      Limitation of Liability
-                    </CardTitle>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-3 text-muted-foreground">
-                <p className="leading-relaxed">
-                  While we strive to provide accurate and efficient billing
-                  services, Unity Billing Solutions cannot guarantee specific
-                  reimbursement outcomes or financial results.
-                </p>
-                <p className="leading-relaxed">
-                  In no event shall Unity Billing Solutions be liable for
-                  direct, indirect, incidental, special, or consequential
-                  damages arising from your use of our services, including but
-                  not limited to lost revenue, data loss, or business
-                  interruption.
-                </p>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── Section 8: Indemnification ─────────────────────────── */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={sectionVariant}
-          >
-            <Card>
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <span className="text-lg font-bold text-primary">8</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Gavel className="w-6 h-6 text-primary" />
-                    <CardTitle className="text-2xl">Indemnification</CardTitle>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="text-muted-foreground">
-                <p className="leading-relaxed">
-                  You agree to indemnify, defend, and hold{" "}
-                  <strong className="text-foreground">
-                    Unity Billing Solutions
-                  </strong>{" "}
-                  harmless from any claims, liabilities, losses, damages, costs,
-                  or expenses (including reasonable attorneys' fees) arising
-                  from your use of our services, violation of these Terms &amp;
-                  Conditions, or infringement of any third-party rights.
-                </p>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── Sections 9 & 10: Modifications + Governing Law ─────── */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-4xl space-y-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={sectionVariant}
-          >
-            <Card>
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <span className="text-lg font-bold text-primary">9</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <RefreshCw className="w-6 h-6 text-primary" />
-                    <CardTitle className="text-2xl">
-                      Modification of Terms
-                    </CardTitle>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="text-muted-foreground">
-                <p className="leading-relaxed">
-                  Unity Billing Solutions reserves the right to update or modify
-                  these Terms &amp; Conditions at any time without prior notice.
-                  Continued use of our website or services after any changes
-                  constitutes your acceptance of the revised terms. We encourage
-                  you to review this page periodically.
-                </p>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={sectionVariant}
-          >
-            <Card>
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <span className="text-lg font-bold text-primary">10</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Scale className="w-6 h-6 text-primary" />
-                    <CardTitle className="text-2xl">Governing Law</CardTitle>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4 text-muted-foreground">
-                <p className="leading-relaxed">
-                  These Terms &amp; Conditions are governed by the laws of the
-                  state in which Unity Billing Solutions operates. Any legal
-                  disputes arising from these terms shall be subject to the
-                  exclusive jurisdiction of the courts in that jurisdiction.
-                </p>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="p-4 bg-muted/50 rounded-xl">
-                    <h4 className="font-semibold text-foreground mb-2 text-sm">
-                      Federal Regulations
-                    </h4>
-                    <ul className="space-y-1 text-xs">
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
-                        HIPAA Privacy Rule (45 CFR Part 160)
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
-                        HIPAA Security Rule (45 CFR Part 164)
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
-                        HITECH Act provisions
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
-                        Medicare/Medicaid regulations
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
-                        Stark Law and Anti-Kickback Statute
-                      </li>
+              <div className="grid md:grid-cols-2 gap-8">
+                 <div className="space-y-6">
+                    <h4 className="text-[10px] font-black text-navy uppercase tracking-[0.4em] border-b border-border/40 pb-4">Federal_Enforcement</h4>
+                    <ul className="space-y-3">
+                       {["HIPAA Privacy Rule [45 CFR 160]", "HIPAA Security Rule [45 CFR 164]", "HITECH Act Provisions", "Medicare Compliance Logic"].map((item, i) => (
+                         <li key={i} className="flex items-center gap-3 text-[10px] font-black text-muted-foreground/50 uppercase tracking-widest">
+                           <div className="w-1 h-1 rounded-full bg-green" />
+                           {item}
+                         </li>
+                       ))}
                     </ul>
-                  </div>
-                  <div className="p-4 bg-muted/50 rounded-xl">
-                    <h4 className="font-semibold text-foreground mb-2 text-sm">
-                      State Compliance
-                    </h4>
-                    <ul className="space-y-1 text-xs">
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
-                        State privacy laws
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
-                        State medical billing regulations
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
-                        State licensure requirements
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
-                        Workers' compensation laws
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
-                        Prompt payment regulations
-                      </li>
+                 </div>
+                 <div className="space-y-6">
+                    <h4 className="text-[10px] font-black text-navy uppercase tracking-[0.4em] border-b border-border/40 pb-4">State_Logic</h4>
+                    <ul className="space-y-3">
+                       {["Regional Privacy Mandates", "State Billing Protocols", "Licensure Verification", "Workers Comp Framework"].map((item, i) => (
+                         <li key={i} className="flex items-center gap-3 text-[10px] font-black text-muted-foreground/50 uppercase tracking-widest">
+                           <div className="w-1 h-1 rounded-full bg-navy" />
+                           {item}
+                         </li>
+                       ))}
                     </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
+                 </div>
+              </div>
+           </div>
         </div>
       </section>
 
-      {/* ── Contact ────────────────────────────────────────────── */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            className="text-center max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h2>
-            <p className="text-xl mb-10">
-              If you have any questions or concerns regarding these Terms &amp;
-              Conditions, please don't hesitate to reach out.
-            </p>
+      {/* ─────────────────────────────────────────
+          LEGAL SUPPORT — Communication Node
+      ───────────────────────────────────────── */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto rounded-[4rem] bg-navy p-12 md:p-24 text-center text-white relative overflow-hidden">
+             {/* Background Patterns */}
+             <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
+               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent" />
+               <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white to-transparent" />
+             </div>
 
-            <div className="grid md:grid-cols-3 gap-5">
-              {[
-                {
-                  icon: MapPin,
-                  label: "Address",
-                  value: "1531 W McIntosh Rd Griffin GA 30223",
-                  href: null,
-                },
-                {
-                  icon: Phone,
-                  label: "Phone",
-                  value: "(678) 408-2725",
-                  href: "tel:(678) 408-2725s",
-                },
-                {
-                  icon: Mail,
-                  label: "Email",
-                  value: "Contact@unitybillingsolutions.com",
-                  href: "mailto:Contact@unitybillingsolutions.com",
-                },
-              ].map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div
-                    key={item.label}
-                    className="bg-white/10 backdrop-blur-sm border border-black rounded-2xl p-6 hover:bg-white/15 transition-all"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mx-auto mb-4">
-                      <Icon className="w-6 h-6 " />
+             <div className="inline-flex items-center gap-4 mb-10">
+               <div className="w-1.5 h-1.5 rounded-full bg-green animate-pulse" />
+               <span className="text-[10px] font-black text-green uppercase tracking-[0.4em]">Node_Status: Online</span>
+             </div>
+
+             <h2 className="text-4xl md:text-7xl font-black text-white mb-10 tracking-tighter uppercase leading-[0.9]">Legal Support <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-green">Protocol.</span></h2>
+             
+             <p className="text-xl text-white/50 mb-16 max-w-2xl mx-auto font-medium leading-relaxed italic">
+               Submit official legal inquiries or documentation requests to our secure communications relay.
+             </p>
+
+             <div className="grid md:grid-cols-3 gap-8">
+               {[
+                 { icon: MapPin, label: "Institutional_Address", value: "2780 Picacho Ave, Las Cruces, NM 88007" },
+                 { icon: Phone, label: "Voice_Relay", value: "575-496-3459" },
+                 { icon: Mail, label: "Encrypted_Email", value: "ashleyb@smbillings.com" }
+               ].map((item, i) => (
+                 <div key={i} className="p-8 bg-white/5 border border-white/10 rounded-[2.5rem] hover:bg-white/10 transition-all group">
+                    <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-green group-hover:text-navy transition-all">
+                      <item.icon className="w-5 h-5" />
                     </div>
-                    <p className=" text-sm mb-1">{item.label}</p>
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        className=" font-medium text-sm hover:underline break-all"
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <p className=" font-medium text-sm">{item.value}</p>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </motion.div>
+                    <div className="text-[9px] font-black text-green uppercase tracking-[0.3em] mb-4">{item.label}</div>
+                    <div className="text-xs font-black uppercase tracking-widest leading-loose text-white/70">{item.value}</div>
+                 </div>
+               ))}
+             </div>
+          </div>
         </div>
       </section>
     </PageWrapper>

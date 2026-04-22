@@ -18,55 +18,56 @@ export const FAQSection = ({ limit, showTitle = true }: FAQSectionProps) => {
   const displayFaqs = limit ? faqs.slice(0, limit) : faqs;
 
   return (
-    <section className="py-20 bg-background relative overflow-hidden">
-      {/* Precision Background Pattern */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <svg className="w-full h-full text-navy/5" viewBox="0 0 100 100">
-           <defs>
-              <pattern id="faqGrid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                 <circle cx="10" cy="10" r="0.5" fill="currentColor" />
-              </pattern>
-           </defs>
-           <rect width="100%" height="100%" fill="url(#faqGrid)" />
-        </svg>
-      </div>
+    <section className="py-32 bg-background relative overflow-hidden">
+      {/* Background Architectural Patterns */}
+      <div className="absolute top-0 right-0 w-1/4 h-full bg-navy/[0.01]" />
+      <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-green/[0.01] blur-3xl rounded-full" />
 
       <div className="container mx-auto px-6 relative z-10">
         {showTitle && (
-          <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-20">
-            <div className="flex items-center gap-3 text-green font-black uppercase tracking-[0.2em] text-[10px] mb-6">
-              <span className="w-10 h-0.5 bg-green"></span>
-              Knowledge Base
-            </div>
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-8 leading-[1.1]">
-              Technical <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-green">Clarifications.</span>
-            </h2>
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-24">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center justify-center gap-4 mb-8">
+                <div className="w-2 h-2 rounded-full bg-green animate-pulse" />
+                <span className="text-[10px] font-black text-green uppercase tracking-[0.5em]">Expert Knowledge Base</span>
+              </div>
+              <h2 className="text-5xl md:text-8xl font-black text-navy mb-10 leading-[0.85] tracking-tighter uppercase">
+                Strategic <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green to-navy-light">Logic Map.</span>
+              </h2>
+            </motion.div>
           </div>
         )}
 
         <div className="max-w-4xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-8">
             {displayFaqs.map((faq, index) => (
               <motion.div
                 key={faq.id}
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
                 <AccordionItem
                   value={faq.id}
-                  className="border border-border/50 rounded-[2rem] px-8 bg-white dark:bg-navy/40 hover:border-green/30 transition-all duration-300 technical-shadow group overflow-hidden"
+                  className="border border-border/40 rounded-[3rem] px-12 bg-white hover:border-green/20 hover:shadow-2xl transition-all duration-500 overflow-hidden group"
                 >
-                  <AccordionTrigger className="text-left text-lg font-bold text-foreground hover:no-underline py-8 group-hover:text-green transition-colors">
-                    <span className="flex items-center gap-6">
-                       <span className="text-[10px] font-black text-foreground/20 group-hover:text-green/40 transition-colors">0{index + 1}</span>
-                       {faq.question}
+                  <AccordionTrigger className="text-left text-xl font-black text-navy hover:no-underline py-12 group-hover:text-green transition-colors uppercase tracking-tight">
+                    <span className="flex items-start gap-10">
+                       <span className="flex flex-col items-center opacity-20 group-hover:opacity-100 transition-opacity">
+                          <span className="text-[9px] font-black text-navy uppercase tracking-tighter">ID</span>
+                          <span className="text-2xl font-black text-navy">0{index + 1}</span>
+                       </span>
+                       <span className="pt-1">{faq.question}</span>
                     </span>
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pb-8 pl-[2.8rem] font-medium leading-relaxed">
-                    <div className="pt-2 border-t border-border/50">
+                  <AccordionContent className="text-muted-foreground pb-12 pl-24 pr-12 font-medium leading-relaxed text-lg">
+                    <div className="pt-10 border-t border-border/40">
                        {faq.answer}
                     </div>
                   </AccordionContent>

@@ -9,57 +9,55 @@ import { featuredSpecialities } from "@/data/specialties";
 
 export const SpecialitiesSection = () => {
   return (
-    <section className="py-20 bg-background relative overflow-hidden">
-      {/* Precision Background Pattern */}
-      <div className="absolute inset-0 opacity-20 pointer-events-none">
-        <svg className="w-full h-full text-navy/5" viewBox="0 0 100 100">
-           <defs>
-              <pattern id="crossGrid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                 <path d="M 10 0 L 10 20 M 0 10 L 20 10" fill="none" stroke="currentColor" strokeWidth="0.2" />
-              </pattern>
-           </defs>
-           <rect width="100%" height="100%" fill="url(#crossGrid)" />
-        </svg>
+    <section className="py-40 bg-background relative overflow-hidden">
+      {/* Background Architectural Patterns */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.01]">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-navy-light to-transparent" />
+        <div className="absolute inset-y-0 left-1/3 w-px bg-gradient-to-b from-transparent via-navy-light/20 to-transparent" />
+        <div className="absolute inset-y-0 right-1/3 w-px bg-gradient-to-b from-transparent via-navy-light/20 to-transparent" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
+        {/* Header */}
+        <div className="flex flex-col lg:flex-row items-end justify-between gap-16 mb-32 pb-20 border-b border-border/40">
           <div className="max-w-3xl">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
             >
-              <div className="flex items-center gap-3 text-green font-black uppercase tracking-[0.2em] text-[10px] mb-6">
-                <span className="w-10 h-0.5 bg-green"></span>
-                Sector Expertise
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-2 h-2 rounded-full bg-green animate-pulse" />
+                <span className="text-[10px] font-black text-green uppercase tracking-[0.5em]">Domain Specialization</span>
               </div>
-              <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-4 leading-[1.1]">
-                Specialized <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-green">Domain Knowledge.</span>
+              <h2 className="text-5xl md:text-8xl font-black text-navy mb-4 leading-[0.85] tracking-tighter uppercase">
+                Multi-Sector <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green to-navy-light">Expertise.</span>
               </h2>
             </motion.div>
           </div>
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="md:mb-4"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="lg:max-w-sm"
           >
-            <p className="text-lg text-muted-foreground max-w-sm font-medium">
-              We provide tailored billing solutions for 75+ medical specialities, ensuring domain-specific compliance.
+            <p className="text-xl text-muted-foreground/60 leading-relaxed font-medium border-l-2 border-green/20 pl-8">
+              We engineer specialized revenue pathways for 75+ unique medical domains, ensuring compliance across the spectrum.
             </p>
           </motion.div>
         </div>
 
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-32"
           variants={staggerContainer}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
         >
-          {featuredSpecialities.map((specialty, idx) => (
+          {featuredSpecialities.slice(0, 4).map((specialty, idx) => (
             <motion.div key={specialty.id} variants={staggerItem}>
               <SpecialtyCard name={specialty.name} icon={specialty.icon} index={idx} />
             </motion.div>
@@ -67,15 +65,17 @@ export const SpecialitiesSection = () => {
         </motion.div>
 
         <motion.div
-          className="flex justify-center"
-          initial={{ opacity: 0, y: 20 }}
+          className="flex flex-col items-center"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
-          <Button size="lg" className="bg-navy hover:bg-navy-light text-white px-12 h-16 rounded-2xl text-lg font-bold shadow-2xl transition-all hover:scale-105 active:scale-95" asChild>
+          <div className="w-px h-32 bg-gradient-to-b from-green/40 to-transparent mb-16" />
+          <Button size="lg" className="bg-navy hover:bg-navy-light text-white px-16 h-20 rounded-full text-sm font-black uppercase tracking-[0.2em] shadow-3xl shadow-navy/20 transition-all hover:scale-105 active:scale-95 group" asChild>
             <Link to="/specialities">
-              View Complete Domain Map
-              <ArrowRight className="ml-3 w-5 h-5" />
+              Domain Mapping Overview
+              <ArrowRight className="ml-6 w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </Link>
           </Button>
         </motion.div>

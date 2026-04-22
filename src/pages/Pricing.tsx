@@ -104,193 +104,224 @@ const Pricing = () => {
 
   return (
     <PageWrapper>
-      {/* Hero with Background Image */}
-      <section className="pt-36 pb-20 lg:pt-48 relative overflow-hidden">
-        {/* Medical Background Image */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <div
-            ref={heroBgRef}
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
-            style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1554734867-bf3c00a49371?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
-              height: '120%',
-              top: '-10%',
-            }}
-          />
-          {/* Lighter gradient overlay for better visibility */}
-          <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/80 to-green/40" />
+      {/* ─────────────────────────────────────────
+          PAGE HEADER — Fiscal Architecture
+      ───────────────────────────────────────── */}
+      <section className="pt-32 pb-24 lg:pt-48 lg:pb-32 relative overflow-hidden bg-navy text-white text-center">
+        {/* Background Patterns */}
+        <div className="absolute inset-0 pointer-events-none opacity-[0.05]">
+          <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-green to-transparent" />
+          <div className="absolute inset-y-0 left-1/4 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+          <div className="absolute inset-y-0 right-1/4 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div ref={heroContentRef} className="text-center max-w-3xl mx-auto">
-            <span className="inline-block px-4 py-2 rounded-full bg-secondary/20 text-secondary text-sm font-medium mb-4">
-              Pricing
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-              Transparent, Performance-Based Pricing
-            </h1>
-            <p className="text-lg text-primary-foreground/80 mb-8">
-              We only succeed when you succeed. Our rates are based on collected revenue,
-              so we're motivated to maximize your collections.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" variant="secondary" asChild>
+        <div className="container mx-auto px-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 mb-8"
+          >
+            <DollarSign className="w-4 h-4 text-green" />
+            <span className="text-[10px] font-black tracking-[0.4em] uppercase text-white/60">Fiscal Architecture v2.5</span>
+          </motion.div>
+          
+          <h1 className="text-5xl md:text-8xl font-black mb-10 leading-[0.9] tracking-tighter uppercase">
+            Revenue <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-green">Realization.</span>
+          </h1>
+          
+          <p className="text-xl text-white/50 max-w-2xl mx-auto leading-relaxed font-medium mb-12">
+            Performance-based resource allocation logic designed to maximize throughput and minimize operational friction.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-6">
+              <Button size="lg" className="h-20 px-12 rounded-2xl bg-green hover:bg-white text-navy font-black uppercase tracking-widest text-xs transition-all shadow-2xl" asChild>
                 <Link to="/contact">
-                  Get Custom Quote
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                  Initialize Quote <ArrowRight className="w-4 h-4 ml-3" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
-                <Link to="/services">Our Services</Link>
-              </Button>
-            </div>
+              <div className="flex items-center gap-4 px-8 h-20 rounded-2xl border border-white/10 text-white/40 text-[10px] font-black uppercase tracking-[0.3em]">
+                 <div className="w-1.5 h-1.5 rounded-full bg-green animate-pulse" />
+                 Zero Upfront Terminal Fees
+              </div>
           </div>
         </div>
       </section>
 
-      {/* Calculator */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <Card className="overflow-hidden">
-              <CardHeader className="bg-primary text-primary-foreground">
-                <div className="flex items-center gap-3">
-                  <Calculator className="w-8 h-8" />
-                  <div>
-                    <CardTitle className="text-2xl">Savings Calculator</CardTitle>
-                    <CardDescription className="text-primary-foreground/80">
-                      See how much you could save by outsourcing
-                    </CardDescription>
+      {/* ─────────────────────────────────────────
+          REVENUE SIMULATOR — ROI Projection
+      ───────────────────────────────────────── */}
+      <section className="py-24 bg-background relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white border border-border/40 rounded-[4rem] overflow-hidden shadow-2xl group hover:border-green/20 transition-all duration-700"
+            >
+              <div className="bg-navy p-10 md:p-16 text-white flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-green/5 blur-3xl -z-0" />
+                <div className="relative z-10 text-center md:text-left">
+                  <div className="text-[10px] font-black text-green tracking-[0.4em] uppercase mb-4">Simulator_Logic</div>
+                  <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter">Revenue Optimization</h2>
+                </div>
+                <div className="relative z-10 shrink-0">
+                  <div className="px-8 py-4 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-xl text-center">
+                    <div className="text-[9px] font-black text-white/30 uppercase tracking-widest mb-1">Efficiency Delta</div>
+                    <div className="text-2xl font-black text-green tabular-nums">+24.8%</div>
                   </div>
                 </div>
-              </CardHeader>
-              <CardContent ref={savingsValuesRef} className="p-8">
-                <div className="mb-8">
-                  <label className="block text-sm font-medium text-foreground mb-4">
-                    Monthly Collections: <span className="text-primary font-bold">${currentCollection.toLocaleString()}</span>
-                  </label>
+              </div>
+
+              <div ref={savingsValuesRef} className="p-10 md:p-20 space-y-20">
+                <div className="space-y-12">
+                  <div className="flex items-end justify-between border-b border-border/40 pb-6">
+                    <label className="text-[10px] font-black text-navy tracking-[0.3em] uppercase">
+                      Monthly_Collections_Terminal
+                    </label>
+                    <span className="text-4xl font-black text-navy italic tracking-tighter tabular-nums underline decoration-green decoration-4 underline-offset-8">
+                      ${currentCollection.toLocaleString()}
+                    </span>
+                  </div>
+                  
                   <Slider
                     value={monthlyCollections}
                     onValueChange={setMonthlyCollections}
                     min={10000}
                     max={500000}
                     step={5000}
-                    className="w-full"
+                    className="w-full text-navy"
                   />
-                  <div className="flex justify-between text-sm text-muted-foreground mt-2">
-                    <span>$10,000</span>
-                    <span>$500,000</span>
+                  <div className="flex justify-between text-[9px] font-black text-muted-foreground/40 uppercase tracking-widest">
+                    <span>Min : $10k</span>
+                    <span>Load Factor [Peak]</span>
+                    <span>Max : $500k</span>
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="bg-destructive/10 rounded-xl p-6 text-center">
-                    <p className="text-sm text-muted-foreground mb-2">In-House Billing Cost (12%)</p>
-                    <p className="text-3xl font-bold text-destructive savings-value">${inHouseCost.toLocaleString()}</p>
-                    <p className="text-sm text-muted-foreground">per month</p>
+                <div className="grid md:grid-cols-3 gap-8">
+                  <div className="p-10 bg-muted/20 border border-border/40 rounded-[2.5rem] text-center hover:bg-white hover:border-destructive/20 transition-all duration-500">
+                    <p className="text-[9px] font-black text-muted-foreground/40 uppercase tracking-widest mb-6">Legacy In-House Cost [12%]</p>
+                    <p className="text-4xl font-black text-navy savings-value tabular-nums mb-4">${inHouseCost.toLocaleString()}</p>
+                    <div className="text-[10px] font-black text-destructive uppercase tracking-tight italic">Operational Friction</div>
                   </div>
-                  <div className="bg-secondary/10 rounded-xl p-6 text-center">
-                    <p className="text-sm text-muted-foreground mb-2">MedBill Pro Cost (5.5%)</p>
-                    <p className="text-3xl font-bold text-secondary savings-value">${ourCost.toLocaleString()}</p>
-                    <p className="text-sm text-muted-foreground">per month</p>
+                  
+                  <div className="p-10 bg-muted/20 border border-border/40 rounded-[2.5rem] text-center hover:bg-white hover:border-green/20 transition-all duration-500 relative overflow-hidden">
+                    <div className="absolute top-4 right-4 w-1.5 h-1.5 rounded-full bg-green animate-pulse" />
+                    <p className="text-[9px] font-black text-muted-foreground/40 uppercase tracking-widest mb-6 text-navy">Smart Protocol Cost [5.5%]</p>
+                    <p className="text-4xl font-black text-green savings-value tabular-nums mb-4">${ourCost.toLocaleString()}</p>
+                    <div className="text-[10px] font-black text-navy uppercase tracking-tight italic">Resource Allocation</div>
                   </div>
-                  <div className="bg-primary/10 rounded-xl p-6 text-center">
-                    <p className="text-sm text-muted-foreground mb-2">Your Monthly Savings</p>
-                    <p className="text-3xl font-bold text-primary savings-value">${savings.toLocaleString()}</p>
-                    <p className="text-sm text-muted-foreground">per month</p>
+                  
+                  <div className="p-10 bg-navy text-white rounded-[2.5rem] text-center shadow-2xl relative overflow-hidden">
+                    <div className="absolute inset-0 pointer-events-none opacity-[0.05]">
+                      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-green to-transparent" />
+                    </div>
+                    <p className="text-[9px] font-black text-white/30 uppercase tracking-widest mb-6">Realized Savings Node</p>
+                    <p className="text-4xl font-black text-green savings-value tabular-nums mb-4">${savings.toLocaleString()}</p>
+                    <div className="text-[10px] font-black text-white/60 uppercase tracking-tight italic">Net Profit Growth</div>
                   </div>
                 </div>
 
-                <div className="text-center mt-8 p-4 bg-secondary/10 rounded-xl">
-                  <p className="text-lg">
-                    <span className="font-bold text-secondary savings-value">Annual Savings: ${(savings * 12).toLocaleString()}</span>
-                    <span className="text-muted-foreground"> — Plus better collection rates!</span>
-                  </p>
+                <div className="text-center p-12 bg-muted/20 border border-border/40 rounded-[3rem] group-hover:bg-white transition-colors duration-700">
+                  <div className="inline-flex items-center gap-4 mb-4">
+                     <Calculator className="w-4 h-4 text-navy" />
+                     <span className="text-[10px] font-black text-navy/40 uppercase tracking-[0.4em]">Integrated Yield Analysis</span>
+                  </div>
+                  <div className="text-3xl md:text-5xl font-black text-navy uppercase tracking-tighter italic">
+                    Annual Profit Injection: <span className="text-green">${(savings * 12).toLocaleString()}</span>
+                  </div>
                 </div>
-              </CardContent>
-            </Card>
-          </motion.div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Pricing Tiers */}
-      <section className="py-20 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl font-bold text-foreground mb-4">Choose Your Plan</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Flexible pricing options to fit your practice size and needs.
-            </p>
-          </motion.div>
+      {/* ─────────────────────────────────────────
+          PRICING TIERS — Deployment Modules
+      ───────────────────────────────────────── */}
+      <section className="py-24 bg-muted/20 border-y border-border/40">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-24">
+             <div className="text-[10px] font-black text-green tracking-[0.4em] uppercase mb-4">Module_Matrix</div>
+             <h2 className="text-3xl md:text-7xl font-black text-navy uppercase tracking-tighter">Deployment Modules</h2>
+          </div>
 
-          <motion.div
-            className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
+          <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {pricingTiers.map((tier, index) => (
-              <motion.div key={index} variants={staggerItem}>
-                <Card className={`h-full relative ${tier.popular ? "border-primary shadow-lg" : ""}`}>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group h-full"
+              >
+                <div className={`h-full bg-white border border-border/40 rounded-[3rem] p-12 flex flex-col hover:border-green/20 hover:shadow-2xl transition-all duration-500 relative overflow-hidden ${tier.popular ? 'ring-2 ring-green/20 shadow-xl' : ''}`}>
                   {tier.popular && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-sm font-medium rounded-full">
-                      Most Popular
+                    <div className="absolute top-0 right-0 px-8 py-3 bg-navy text-green text-[9px] font-black uppercase tracking-[0.3em] italic rounded-bl-[2rem] border-l border-b border-white/10">
+                      Primary_Protocol
                     </div>
                   )}
-                  <CardHeader>
-                    <CardTitle className="text-2xl">{tier.name}</CardTitle>
-                    <CardDescription>{tier.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="mb-6">
-                      <span className="text-4xl font-bold text-primary">{tier.rate}</span>
-                      {tier.rate !== "Custom" && <span className="text-muted-foreground"> of collections</span>}
-                      <p className="text-sm text-muted-foreground mt-1">Min: {tier.minMonthly}/month</p>
-                    </div>
+                  
+                  <div className="mb-12">
+                     <h3 className="text-3xl font-black text-navy uppercase tracking-tighter mb-4">{tier.name}</h3>
+                     <p className="text-xs text-muted-foreground font-medium italic mb-10 leading-relaxed uppercase tracking-tight">{tier.description}</p>
+                     
+                     <div className="flex items-baseline gap-3 mb-2">
+                        <span className="text-6xl font-black text-navy tracking-tighter italic tabular-nums">{tier.rate}</span>
+                        {tier.rate !== "Custom" && <span className="text-[10px] font-black text-muted-foreground/40 uppercase tracking-widest">Load Factor</span>}
+                     </div>
+                     <div className="text-[10px] font-black text-green uppercase tracking-widest">Min Reserve: {tier.minMonthly}/mo</div>
+                  </div>
 
-                    <ul className="space-y-3 mb-6">
+                  <div className="space-y-6 flex-1 mb-12">
+                    <div className="text-[9px] font-black text-navy/20 uppercase tracking-[0.4em] border-b border-border/40 pb-4">Logic_Features</div>
+                    <ul className="space-y-4">
                       {tier.features.map((feature, i) => (
-                        <li key={i} className="flex items-start">
-                          <Check className="w-5 h-5 text-secondary mr-2 flex-shrink-0" />
-                          <span className="text-foreground">{feature}</span>
+                        <li key={i} className="flex items-start gap-4">
+                          <div className="w-5 h-5 rounded-lg bg-green/10 text-green flex items-center justify-center shrink-0 mt-0.5">
+                             <Check className="w-3.5 h-3.5" />
+                          </div>
+                          <span className="text-xs font-black text-muted-foreground uppercase tracking-widest leading-relaxed italic">{feature}</span>
                         </li>
                       ))}
                       {tier.notIncluded.map((feature, i) => (
-                        <li key={i} className="flex items-start opacity-50">
-                          <X className="w-5 h-5 text-muted-foreground mr-2 flex-shrink-0" />
-                          <span className="text-muted-foreground">{feature}</span>
+                        <li key={i} className="flex items-start gap-4 opacity-30 grayscale saturate-0">
+                          <div className="w-5 h-5 rounded-lg bg-muted text-muted-foreground flex items-center justify-center shrink-0 mt-0.5">
+                             <X className="w-3.5 h-3.5" />
+                          </div>
+                          <span className="text-[10px] font-black text-muted-foreground uppercase tracking-widest leading-relaxed italic">{feature}</span>
                         </li>
                       ))}
                     </ul>
+                  </div>
 
-                    <Button className="w-full" variant={tier.popular ? "default" : "outline"} asChild>
-                      <Link to="/contact">Get Started</Link>
-                    </Button>
-                  </CardContent>
-                </Card>
+                  <Button 
+                    className={`h-20 w-full rounded-2xl font-black uppercase tracking-widest text-xs transition-all ${
+                      tier.popular ? 'bg-navy text-green hover:bg-green hover:text-navy' : 'bg-muted/30 text-navy/40 border border-border/40 hover:bg-navy hover:text-white'
+                    }`}
+                    asChild
+                  >
+                    <Link to="/contact">Select Protocol</Link>
+                  </Button>
+                </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      <FAQSection />
+      <div className="bg-background">
+        <FAQSection />
+      </div>
 
       <CTASection
-        title="Need a Custom Quote?"
-        description="Every practice is unique. Contact us for a personalized pricing proposal tailored to your specific needs."
-        primaryButtonText="Request Custom Quote"
+        title="Need a Custom Logic Audit?"
+        description="Every practice deployment is unique. Contact us for a high-density fiscal documentation request."
+        primaryButtonText="Request Logic Audit"
       />
     </PageWrapper>
   );

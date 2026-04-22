@@ -43,110 +43,106 @@ const staggerItem = {
 
 export const WhoWeAreSection = () => {
   return (
-    <section className="py-20 relative overflow-hidden bg-background">
-      {/* Premium Technical Background */}
-      <div className="absolute inset-0 pointer-events-none opacity-40">
-        <svg className="absolute top-0 right-0 w-1/2 h-full text-navy/5" viewBox="0 0 400 800" fill="none">
-          <defs>
-            <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.5" />
-            </pattern>
-          </defs>
-          <rect width="400" height="800" fill="url(#grid-pattern)" />
-        </svg>
-      </div>
+    <section className="py-40 relative overflow-hidden bg-background">
+      {/* Background Architectural Elements */}
+      <div className="absolute top-0 left-0 w-1/4 h-full bg-navy/[0.02]" />
+      <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-green/[0.02] blur-3xl rounded-full" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-20">
+        <div className="flex flex-col lg:flex-row items-center gap-32">
           
-          {/* Visual Side - Multi-layered */}
+          {/* Visual Side */}
           <div className="flex-1 relative order-2 lg:order-1">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative rounded-[3rem] overflow-hidden shadow-2xl technical-shadow"
+              transition={{ duration: 0.8 }}
+              className="relative"
             >
-              <img
-                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                alt="Medical billing team"
-                className="w-full h-[600px] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
-            </motion.div>
-
-            {/* Float Card 1: Experience */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              className="absolute -top-10 -left-10 glass-panel p-8 rounded-3xl hidden md:block"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-green/20 flex items-center justify-center">
-                  <TrendingUp className="w-7 h-7 text-green" />
-                </div>
-                <div>
-                  <h4 className="text-2xl font-bold text-foreground">15+</h4>
-                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest">Years Expertise</p>
-                </div>
+              <div className="relative rounded-[4rem] overflow-hidden shadow-3xl bg-navy/5 p-3">
+                <img
+                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                  alt="Medical billing excellence"
+                  className="w-full h-[700px] object-cover rounded-[3.5rem] grayscale-[30%] hover:grayscale-0 transition-all duration-1000"
+                />
               </div>
-            </motion.div>
 
-            {/* Float Card 2: Mission */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="absolute -bottom-12 right-12 bg-white dark:bg-navy p-10 rounded-[2.5rem] shadow-2xl border border-border max-w-xs"
-            >
-              <h4 className="text-xl font-bold mb-3 flex items-center gap-2">
-                <Shield className="w-5 h-5 text-green" />
-                Our Core Mission
-              </h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Empowering healthcare professionals to deliver exceptional care by removing the complexities of revenue cycle management.
-              </p>
+              {/* High-Impact Stat Card */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4 }}
+                className="absolute -top-12 -left-12 bg-white backdrop-blur-2xl p-10 rounded-[3rem] shadow-3xl border border-border/40 hidden xl:block max-w-[280px]"
+              >
+                <div className="flex flex-col gap-6">
+                  <div className="w-20 h-20 rounded-3xl bg-green flex items-center justify-center text-navy shadow-lg shadow-green/20">
+                    <TrendingUp className="w-10 h-10" />
+                  </div>
+                  <div>
+                    <h4 className="text-5xl font-black text-navy tracking-tighter">15+</h4>
+                    <p className="text-[10px] font-black text-navy/40 uppercase tracking-[0.4em] mt-2">Years of Mastery</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Compliance Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="absolute -bottom-10 -right-10 bg-navy p-8 rounded-[3rem] shadow-3xl border border-white/10 text-white max-w-[320px]"
+              >
+                <div className="flex items-center gap-6">
+                  <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center">
+                    <Shield className="w-8 h-8 text-green" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-black text-green uppercase tracking-[0.4em] mb-1">Global Standard</p>
+                    <p className="text-sm font-black text-white/80 uppercase tracking-tight">Enterprise Compliance</p>
+                  </div>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
 
           {/* Content Side */}
           <div className="flex-1 order-1 lg:order-2">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
             >
-              <span className="inline-flex items-center px-4 py-2 rounded-full bg-green/10 text-primary text-xs font-black tracking-widest uppercase mb-6 border border-green/20">
-                <Users className="w-3.5 h-3.5 mr-2" />
-                Corporate Identity
-              </span>
+              <div className="flex items-center gap-4 mb-10">
+                <div className="w-12 h-px bg-green" />
+                <span className="text-[10px] font-black text-green uppercase tracking-[0.6em]">Corporate Identity</span>
+              </div>
               
-              <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-8 leading-[1.1]">
-                Engineering <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-green">Financial Success</span>
+              <h2 className="text-5xl md:text-8xl font-black text-navy mb-12 leading-[0.85] tracking-tighter uppercase">
+                Revenue <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green via-navy-light to-navy">Intelligence.</span>
               </h2>
 
-              <div className="space-y-6 text-lg text-muted-foreground font-medium mb-12">
-                <p>
-                  At <span className="text-foreground">Unity Billing Solutions</span>, we don't just process claims; we architect robust revenue pathways for modern healthcare practices.
-                </p>
-                <p>
-                  Our team combines deep clinical coding knowledge with advanced financial technology to ensure your practice remains compliant, profitable, and patient-focused.
-                </p>
-              </div>
+              <p className="text-xl text-muted-foreground/60 leading-relaxed mb-20 font-medium border-l-2 border-green/20 pl-10">
+                At <span className="text-navy font-black">SmartMed Billing Solutions</span>, we architect robust revenue pathways by merging deep clinical intelligence with advanced financial engineering.
+              </p>
 
-              {/* Technical Highlights Grid */}
-              <div className="grid sm:grid-cols-2 gap-6">
+              {/* Highlights Matrix */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {highlights.map((item, idx) => (
                   <motion.div
                     key={idx}
-                    whileHover={{ y: -5 }}
-                    className="p-6 rounded-2xl bg-muted/30 border border-border/50 hover:border-green/30 hover:bg-white transition-all duration-300 group shadow-sm hover:shadow-md"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 + idx * 0.1 }}
+                    className="p-10 rounded-[3rem] bg-white border border-border/40 hover:border-green/20 hover:shadow-2xl transition-all duration-500 group"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-green/10 flex items-center justify-center mb-4 group-hover:bg-green group-hover:text-white transition-all">
-                      <item.icon className="w-5 h-5" />
+                    <div className="w-14 h-14 rounded-2xl bg-navy/5 flex items-center justify-center mb-8 group-hover:bg-navy group-hover:text-green transition-all duration-500">
+                      <item.icon className="w-7 h-7" />
                     </div>
-                    <h4 className="font-bold text-foreground mb-2">{item.title}</h4>
-                    <p className="text-xs text-muted-foreground leading-relaxed">{item.description}</p>
+                    <h4 className="text-sm font-black text-navy mb-4 leading-tight tracking-widest uppercase">{item.title}</h4>
+                    <p className="text-[11px] text-muted-foreground/80 leading-relaxed font-medium">{item.description}</p>
                   </motion.div>
                 ))}
               </div>

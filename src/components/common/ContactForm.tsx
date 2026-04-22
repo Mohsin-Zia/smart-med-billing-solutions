@@ -79,7 +79,7 @@ export const ContactForm = ({
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     toast({
-      title: "Thank you for contacting Unity Billing Solutions!",
+      title: "Thank you for contacting SmartMed Billing Solutions!",
       description: "Our billing experts will reach out to you within 24 hours.",
     });
 
@@ -111,8 +111,8 @@ export const ContactForm = ({
         <FormItem className="pb-6">
           <p className="text-xs text-muted-foreground leading-relaxed">
             By providing a phone number and submitting this form, you are
-            consenting to be contacted by SMS text message from Unity Medical
-            Billing. Message & data rates may apply. Message frequency may vary.
+            consenting to be contacted by SMS text message from Smart Medical
+            Billing Solutions. Message & data rates may apply. Message frequency may vary.
             You can reply STOP to opt-out of further messaging and HELP for more
             information. View our Privacy Policy here:{" "}
             <Link to="/privacy-policy" className="underline">
@@ -128,7 +128,11 @@ export const ContactForm = ({
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input placeholder="Full Name *" {...field} />
+                    <Input 
+                      placeholder="Full Name *" 
+                      className="bg-white border-border/40 text-navy placeholder:text-navy/40 h-14 rounded-xl focus:ring-green/20" 
+                      {...field} 
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -140,7 +144,12 @@ export const ContactForm = ({
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input type="email" placeholder="Email *" {...field} />
+                    <Input 
+                      type="email" 
+                      placeholder="Email *" 
+                      className="bg-white border-border/40 text-navy placeholder:text-navy/40 h-14 rounded-xl focus:ring-green/20" 
+                      {...field} 
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -152,7 +161,11 @@ export const ContactForm = ({
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input placeholder="Practice Name *" {...field} />
+                    <Input 
+                      placeholder="Practice Name *" 
+                      className="bg-white border-border/40 text-navy placeholder:text-navy/40 h-14 rounded-xl focus:ring-green/20" 
+                      {...field} 
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -164,7 +177,11 @@ export const ContactForm = ({
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input placeholder="Phone *" {...field} />
+                    <Input 
+                      placeholder="Phone *" 
+                      className="bg-white border-border/40 text-navy placeholder:text-navy/40 h-14 rounded-xl focus:ring-green/20" 
+                      {...field} 
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -184,8 +201,8 @@ export const ContactForm = ({
                         onChange={field.onChange}
                         className="mt-1"
                       />
-                      I agree to receive SMS communications from Unity Medical
-                      Billing
+                      I agree to receive SMS communications from Smart Medical
+                      Billing Solutions
                     </label>
                   </FormControl>
 
@@ -230,7 +247,11 @@ export const ContactForm = ({
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input placeholder="Full Name *" {...field} />
+                    <Input 
+                      placeholder="Full Name *" 
+                      className="bg-white border-border/40 text-navy placeholder:text-navy/40 h-12 rounded-xl focus:ring-green/20" 
+                      {...field} 
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -242,7 +263,12 @@ export const ContactForm = ({
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input type="email" placeholder="Email *" {...field} />
+                    <Input 
+                      type="email" 
+                      placeholder="Email *" 
+                      className="bg-white border-border/40 text-navy placeholder:text-navy/40 h-12 rounded-xl focus:ring-green/20" 
+                      {...field} 
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -254,7 +280,11 @@ export const ContactForm = ({
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input placeholder="Practice Name *" {...field} />
+                    <Input 
+                      placeholder="Practice Name *" 
+                      className="bg-white border-border/40 text-navy placeholder:text-navy/40 h-12 rounded-xl focus:ring-green/20" 
+                      {...field} 
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -270,7 +300,7 @@ export const ContactForm = ({
                     defaultValue={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger>
+                      <SelectTrigger className="bg-white border-border/40 text-navy h-12 rounded-xl focus:ring-green/20">
                         <SelectValue placeholder="Patients/Day *" />
                       </SelectTrigger>
                     </FormControl>
@@ -292,7 +322,11 @@ export const ContactForm = ({
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input placeholder="Phone *" {...field} />
+                    <Input 
+                      placeholder="Phone *" 
+                      className="bg-white border-border/40 text-navy placeholder:text-navy/40 h-12 rounded-xl focus:ring-green/20" 
+                      {...field} 
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -308,7 +342,7 @@ export const ContactForm = ({
                     defaultValue={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger>
+                      <SelectTrigger className="bg-white border-border/40 text-navy h-12 rounded-xl focus:ring-green/20">
                         <SelectValue placeholder="Services Interested In" />
                       </SelectTrigger>
                     </FormControl>
@@ -354,8 +388,8 @@ export const ContactForm = ({
         <FormItem className="pb-6">
           <p className="text-xs text-muted-foreground leading-relaxed">
             By providing a phone number and submitting this form, you are
-            consenting to be contacted by SMS text message from Unity Medical
-            Billing. Message & data rates may apply. Message frequency may vary.
+            consenting to be contacted by SMS text message from Smart Medical
+            Billing Solutions. Message & data rates may apply. Message frequency may vary.
             You can reply STOP to opt-out of further messaging and HELP for more
             information. View our Privacy Policy here:{" "}
             <Link to={"/privacy-policy"} className="underline">
@@ -374,7 +408,11 @@ export const ContactForm = ({
                 <FormItem>
                   <FormLabel>Full Name *</FormLabel>
                   <FormControl>
-                    <Input placeholder="John Doe" {...field} />
+                    <Input 
+                      placeholder="John Doe" 
+                      className="bg-white border-border/40 text-navy placeholder:text-navy/40 h-14 rounded-xl focus:ring-green/20" 
+                      {...field} 
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -390,6 +428,7 @@ export const ContactForm = ({
                     <Input
                       type="email"
                       placeholder="john@example.com"
+                      className="bg-white border-border/40 text-navy placeholder:text-navy/40 h-14 rounded-xl focus:ring-green/20"
                       {...field}
                     />
                   </FormControl>
@@ -406,7 +445,11 @@ export const ContactForm = ({
                 <FormItem>
                   <FormLabel>Practice Name *</FormLabel>
                   <FormControl>
-                    <Input placeholder="Your Practice Name" {...field} />
+                    <Input 
+                      placeholder="Your Practice Name" 
+                      className="bg-white border-border/40 text-navy placeholder:text-navy/40 h-14 rounded-xl focus:ring-green/20" 
+                      {...field} 
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -423,7 +466,7 @@ export const ContactForm = ({
                     defaultValue={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger>
+                      <SelectTrigger className="bg-white border-border/40 text-navy h-14 rounded-xl focus:ring-green/20">
                         <SelectValue placeholder="Select volume" />
                       </SelectTrigger>
                     </FormControl>
@@ -448,7 +491,11 @@ export const ContactForm = ({
                 <FormItem>
                   <FormLabel>Phone *</FormLabel>
                   <FormControl>
-                    <Input placeholder="(555) 123-4567" {...field} />
+                    <Input 
+                      placeholder="(555) 123-4567" 
+                      className="bg-white border-border/40 text-navy placeholder:text-navy/40 h-14 rounded-xl focus:ring-green/20" 
+                      {...field} 
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -465,7 +512,7 @@ export const ContactForm = ({
                     defaultValue={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger>
+                      <SelectTrigger className="bg-white border-border/40 text-navy h-14 rounded-xl focus:ring-green/20">
                         <SelectValue placeholder="Select services" />
                       </SelectTrigger>
                     </FormControl>
@@ -491,7 +538,7 @@ export const ContactForm = ({
                 <FormControl>
                   <Textarea
                     placeholder="Tell us more about your practice..."
-                    className="min-h-[100px]"
+                    className="min-h-[120px] bg-white border-border/40 text-navy placeholder:text-navy/40 rounded-2xl focus:ring-green/20"
                     {...field}
                   />
                 </FormControl>
@@ -512,8 +559,7 @@ export const ContactForm = ({
                       onChange={field.onChange}
                       className="mt-1"
                     />
-                    I agree to receive SMS communications from Unity Medical
-                    Billing
+                    I agree to receive SMS communications from SmartMed Billing Solutions
                   </label>
                 </FormControl>
 

@@ -97,7 +97,7 @@ export const Footer = () => {
                 />
               </div>
             </Link>
-            <p className="text-white/50 text-base leading-relaxed mb-10 max-w-sm">
+            <p className="text-white text-base leading-relaxed mb-10 max-w-sm">
               Architecting maximum revenue pathways for healthcare providers through clinical intelligence and financial engineering.
             </p>
             
@@ -120,7 +120,7 @@ export const Footer = () => {
                   <Link
                     to={link.href}
                     onClick={handleLinkClick}
-                    className="text-sm font-medium text-white/50 hover:text-green transition-colors"
+                    className="text-sm font-medium text-white hover:text-green transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -137,7 +137,7 @@ export const Footer = () => {
                   <Link
                     to={link.href}
                     onClick={handleLinkClick}
-                    className="text-sm font-medium text-white/50 hover:text-green transition-colors"
+                    className="text-sm font-medium text-white hover:text-green transition-colors"
                   >
                     {link.label}
                   </Link>

@@ -21,7 +21,7 @@ export const Hero = () => {
   const formContainerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-navy pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-navy pt-16">
       {/* Immersive Background Architecture */}
       <div className="absolute inset-0 z-0">
         <motion.div 
@@ -59,26 +59,25 @@ export const Hero = () => {
 
             <h1
               ref={titleRef}
-              className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-[0.9] tracking-tighter"
+              className="text-2xl md:text-3xl lg:text-5xl font-black text-white mb-8 leading-[0.9] tracking-tighter"
             >
-              Master Your <br />
+              Optimized Medical Billing <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green via-white to-green-light animate-gradient-x">
-                Financial Flow.
+                Increase Your Revenue
               </span>
             </h1>
 
             <p
               ref={subtitleRef}
-              className="text-xl md:text-2xl text-white/60 mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium"
+              className="text-lg md:text-xl text-white/60 mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium"
             >
-              Precision-engineered medical billing solutions for high-performance practices. 
-              We transform administrative complexity into consistent revenue growth.
+              SmartMed Billing Solutions provides expert medical billing and consulting services aimed at streamlining your practice operations and improving financial outcomes. Our all-inclusive offerings cover full-service billing, telehealth and RPM support, and provider credentialing each customized to support your practice’s growth and success.
             </p>
 
             <div className="flex flex-wrap justify-center lg:justify-start gap-6 mb-16">
               <Button
                 size="lg"
-                className="bg-green hover:bg-green-light text-navy group px-12 h-20 rounded-2xl shadow-[0_20px_50px_rgba(34,197,94,0.3)] text-lg font-black transition-all duration-300 hover:scale-[1.02] active:scale-95"
+                className="bg-green hover:bg-green-light text-navy group px-8 md:px-12 h-16 md:h-20 rounded-2xl shadow-[0_20px_50px_rgba(34,197,94,0.3)] text-sm md:text-lg font-black transition-all duration-300 hover:scale-[1.02] active:scale-95"
                 asChild
               >
                 <Link to="/contact">

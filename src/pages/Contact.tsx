@@ -62,7 +62,7 @@ const Contact = () => {
             <span className="text-[10px] font-black tracking-[0.5em] uppercase text-white/60">Operational Interface</span>
           </motion.div>
           
-          <h1 className="text-5xl md:text-9xl font-black mb-12 leading-[0.8] tracking-tighter uppercase">
+          <h1 className="text-4xl md:text-7xl font-black mb-12 leading-[0.8] tracking-tighter uppercase">
             Global <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-green">Engagement.</span>
           </h1>
@@ -113,7 +113,7 @@ const Contact = () => {
                 <div className="w-2 h-2 rounded-full bg-green" />
                 <span className="text-[10px] font-black text-green uppercase tracking-[0.5em]">Integrated Logistics</span>
               </div>
-              <h2 className="text-5xl md:text-8xl font-black text-navy mb-12 leading-[0.85] tracking-tighter uppercase">
+              <h2 className="text-4xl md:text-7xl font-black text-navy mb-12 leading-[0.85] tracking-tighter uppercase">
                 Institutional <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-green to-navy-light">Connectivity.</span>
               </h2>

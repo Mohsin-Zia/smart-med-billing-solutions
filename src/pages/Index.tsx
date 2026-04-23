@@ -13,6 +13,9 @@ import { CTASection } from "@/components/sections/CTASection";
 import WhoWeAreSection from "@/components/common/WhoWeAreSection";
 import EHR from "@/components/sections/EHR";
 import { SpecialitiesSection } from "@/components/sections/SpecialitiesSection";
+import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
+import { WhyChooseUsSection } from "@/components/sections/WhyChooseUsSection";
+import { MedicalBillingProblemSection } from "@/components/sections/MedicalBillingProblemSection";
 
 const Index = () => {
   return (
@@ -20,8 +23,11 @@ const Index = () => {
       <Hero />
       <TrustBadges />
       <WhoWeAreSection />
+      <MedicalBillingProblemSection />
       <ServicesSection />
+      <HowItWorksSection />
       <StatsSection />
+      <WhyChooseUsSection />
       <DMESection />
       <HIPAASecuritySection />
       <EHR />

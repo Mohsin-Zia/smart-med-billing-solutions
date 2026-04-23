@@ -20,13 +20,13 @@ export const CTASection = ({
   showPhoneButton = true,
 }: CTASectionProps) => {
   return (
-    <section className="py-40 relative overflow-hidden bg-background">
+    <section className="py-20 relative overflow-hidden bg-background">
       {/* Dynamic Background Elements */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(34,197,94,0.05)_0%,transparent_70%)]" />
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
-          className="relative rounded-[4rem] p-16 md:p-32 overflow-hidden bg-navy shadow-3xl"
+          className="relative rounded-[4rem] p-12 md:p-20 overflow-hidden bg-navy shadow-3xl"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -47,7 +47,7 @@ export const CTASection = ({
               <span className="text-[10px] font-black text-green uppercase tracking-[0.6em]">System Integration</span>
             </motion.div>
 
-            <h2 className="text-5xl md:text-8xl font-black text-white mb-10 tracking-tighter leading-[0.85] uppercase">
+            <h2 className="text-4xl md:text-7xl font-black text-white mb-10 tracking-tighter leading-[0.85] uppercase">
               Bridge the <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green to-white">Revenue Gap.</span>
             </h2>
@@ -60,7 +60,7 @@ export const CTASection = ({
             <div className="flex flex-col sm:flex-row gap-12 items-center">
               <Button
                 size="lg"
-                className="bg-green hover:bg-green-light text-navy px-16 h-24 rounded-[2rem] text-xl font-black shadow-glow-green transition-all hover:scale-105 active:scale-95 group"
+                className="bg-green hover:bg-green-light text-navy px-8 md:px-16 h-16 md:h-24 rounded-[1.5rem] md:rounded-[2rem] text-sm md:text-xl font-black shadow-glow-green transition-all hover:scale-105 active:scale-95 group"
                 asChild
               >
                 <Link to={primaryButtonLink}>

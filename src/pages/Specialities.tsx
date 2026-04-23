@@ -35,7 +35,7 @@ const Specialities = () => {
             <span className="text-[10px] font-black tracking-[0.5em] uppercase text-white/60">Cross-Domain Competency</span>
           </motion.div>
           
-          <h1 className="text-5xl md:text-9xl font-black mb-12 leading-[0.8] tracking-tighter uppercase">
+          <h1 className="text-4xl md:text-7xl font-black mb-12 leading-[0.8] tracking-tighter uppercase">
             Specialized <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-green">Intelligence.</span>
           </h1>
@@ -46,9 +46,9 @@ const Specialities = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
-              { value: "98%", label: "ACCURACY_INDEX", sub: "Clean Claim Baseline" },
-              { value: "30%", label: "LATENCY_REDUCTION", sub: "Accelerated Liquidity" },
-              { value: "40+", label: "ACTIVE_DOMAINS", sub: "Verified Specialties" }
+              { value: "98%", label: "ACCURACY_INDEX", sub: "Claim Precision Baseline" },
+              { value: "30%", label: "LATENCY_REDUCTION", sub: "Faster Payments" },
+              { value: "75+", label: "ACTIVE_DOMAINS", sub: "Verified Specialties" }
             ].map((stat, i) => (
               <motion.div
                 key={i}
@@ -81,7 +81,7 @@ const Specialities = () => {
                 <div className="w-2 h-2 rounded-full bg-green" />
                 <span className="text-[10px] font-black text-green uppercase tracking-[0.5em]">Service Portfolio</span>
               </div>
-              <h2 className="text-5xl md:text-8xl font-black text-navy mb-10 leading-[0.85] tracking-tighter uppercase">
+              <h2 className="text-4xl md:text-7xl font-black text-navy mb-10 leading-[0.85] tracking-tighter uppercase">
                 Clinical <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-green via-navy-light to-navy">Interface Matrix.</span>
               </h2>
@@ -145,7 +145,7 @@ const Specialities = () => {
                 <div className="w-2 h-2 rounded-full bg-green" />
                 <span className="text-[10px] font-black text-green uppercase tracking-[0.5em]">Corporate Advantage</span>
               </div>
-              <h2 className="text-5xl md:text-8xl font-black text-navy mb-10 leading-[0.85] tracking-tighter uppercase">
+              <h2 className="text-4xl md:text-7xl font-black text-navy mb-10 leading-[0.85] tracking-tighter uppercase">
                 Operational <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-green to-navy-light">Edge.</span>
               </h2>
@@ -217,7 +217,7 @@ const Specialities = () => {
               <span className="text-[10px] font-black text-green uppercase tracking-[0.6em]">Our Core Commitment</span>
             </div>
             
-            <h2 className="text-5xl md:text-9xl font-black text-white mb-16 leading-[0.8] tracking-tighter uppercase">
+            <h2 className="text-4xl md:text-7xl font-black text-white mb-16 leading-[0.8] tracking-tighter uppercase">
               Transforming <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-green">Clinical Finance.</span>
             </h2>
@@ -227,17 +227,92 @@ const Specialities = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-10">
-              <Button size="lg" className="bg-green hover:bg-white text-navy px-16 h-20 rounded-full text-sm font-black uppercase tracking-[0.2em] shadow-3xl shadow-green/20 transition-all hover:scale-105 active:scale-95 group" asChild>
+              <Button size="lg" className="bg-green hover:bg-white text-navy px-8 md:px-16 h-16 md:h-20 rounded-full text-[10px] md:text-sm font-black uppercase tracking-[0.2em] shadow-3xl shadow-green/20 transition-all hover:scale-105 active:scale-95 group" asChild>
                 <Link to="/contact">
                   Initiate Partnership
-                  <ArrowRight className="w-6 h-6 ml-6 group-hover:translate-x-2 transition-transform" />
+                  <ArrowRight className="w-5 h-5 md:w-6 md:h-6 ml-4 md:ml-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="px-16 h-20 rounded-full text-sm font-black uppercase tracking-[0.2em] border-white/20 hover:bg-white/5 text-white transition-all hover:scale-105 active:scale-95" asChild>
+              <Button size="lg" variant="outline" className="px-8 md:px-16 h-16 md:h-20 rounded-full text-[10px] md:text-sm font-black uppercase tracking-[0.2em] border-white/20 hover:bg-white/5 text-white transition-all hover:scale-105 active:scale-95" asChild>
                 <Link to="/services">Explore Architecture</Link>
               </Button>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Clinical Systems Connectivity */}
+      <section className="py-40 bg-background relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-32 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center gap-4 mb-10">
+                <div className="w-2 h-2 rounded-full bg-green" />
+                <span className="text-[10px] font-black text-green uppercase tracking-[0.5em]">Systems Interoperability</span>
+              </div>
+              <h2 className="text-4xl md:text-7xl font-black text-navy mb-12 leading-[0.85] tracking-tighter uppercase">
+                Clinical Systems <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green to-navy-light">Connectivity.</span>
+              </h2>
+              <p className="text-xl text-muted-foreground/60 leading-relaxed mb-16 font-medium">
+                Our architecture is engineered to interface seamlessly with virtually any EMR, EHR, or Practice Management system on the market.
+              </p>
+              
+              <div className="space-y-6">
+                {[
+                  "Bi-directional data synchronization",
+                  "Automated demographic imports",
+                  "HL7 & FHIR compliant interfaces",
+                  "Real-time eligibility verification"
+                ].map((point, i) => (
+                  <div key={i} className="flex items-center gap-5">
+                    <div className="w-2 h-2 rounded-full bg-green/40" />
+                    <span className="text-xs font-black uppercase tracking-widest text-navy/60">{point}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="bg-navy rounded-[4rem] p-20 text-white relative overflow-hidden shadow-3xl"
+            >
+               <div className="absolute top-0 right-0 p-12 opacity-[0.05]">
+                 <CheckCircle2 className="w-64 h-64 text-white" />
+               </div>
+               
+               <h3 className="text-xs font-black text-green uppercase tracking-[0.4em] mb-12 relative z-10">Integration Matrix</h3>
+               
+               <div className="grid grid-cols-2 gap-8 relative z-10">
+                 {[
+                   "eClinicalWorks",
+                   "NextGen Healthcare",
+                   "Kareo / Tebra",
+                   "Athenahealth",
+                   "AdvancedMD",
+                   "Practice Fusion",
+                   "Allscripts",
+                   "Epic / Cerner"
+                 ].map((ehr, i) => (
+                   <div key={i} className="flex flex-col">
+                     <span className="text-sm font-black text-white/80 uppercase tracking-widest">{ehr}</span>
+                     <div className="w-full h-px bg-white/10 mt-4" />
+                     <span className="text-[9px] font-bold text-green uppercase tracking-[0.2em] mt-2">Verified Protocol</span>
+                   </div>
+                 ))}
+               </div>
+               
+               <div className="mt-16 pt-10 border-t border-white/10 relative z-10 text-center">
+                 <p className="text-[10px] font-black text-white/30 uppercase tracking-[0.5em]">Supporting 150+ Proprietary Interfaces</p>
+               </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

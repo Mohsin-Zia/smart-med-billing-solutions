@@ -292,7 +292,7 @@ const About = () => {
             <span className="text-[10px] font-black tracking-[0.5em] uppercase text-white/60">Institutional Identity</span>
           </motion.div>
           
-          <h1 className="text-5xl md:text-9xl font-black mb-12 leading-[0.8] tracking-tighter uppercase">
+          <h1 className="text-4xl md:text-7xl font-black mb-12 leading-[0.8] tracking-tighter uppercase">
             Architecting <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-green">Excellence.</span>
           </h1>
@@ -317,7 +317,7 @@ const About = () => {
                 <div className="w-2 h-2 rounded-full bg-green" />
                 <span className="text-[10px] font-black text-green uppercase tracking-[0.5em]">Operational Mission</span>
               </div>
-              <h2 className="text-5xl md:text-8xl font-black text-navy mb-12 leading-[0.85] tracking-tighter uppercase">
+              <h2 className="text-4xl md:text-7xl font-black text-navy mb-12 leading-[0.85] tracking-tighter uppercase">
                 Bridging <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-green to-navy-light">Care & Capital.</span>
               </h2>
@@ -352,20 +352,168 @@ const About = () => {
                {/* Visual Glow */}
                <div className="absolute -top-1/4 -right-1/4 w-full h-full bg-green/10 blur-[120px]" />
                
-               <div className="relative z-10 grid grid-cols-2 gap-16">
-                  {[
-                    { label: "PROVIDERS", value: "1,500+", sub: "Nationwide Network" },
-                    { label: "EFFICIENCY", value: "99%", sub: "Clean Claim Rate" },
-                    { label: "DOMAINS", value: "75+", sub: "Medical Specialties" },
-                    { label: "PERFORMANCE", value: "30%", sub: "Avg. Revenue Growth" }
-                  ].map((stat, i) => (
-                    <div key={i}>
-                      <p className="text-[10px] font-black text-white/20 uppercase tracking-[0.4em] mb-4">{stat.label}</p>
-                      <h4 className="text-5xl font-black text-green mb-2 tracking-tighter">{stat.value}</h4>
-                      <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest">{stat.sub}</p>
-                    </div>
+                <div className="relative z-10 grid grid-cols-2 gap-16">
+                   {[
+                     { label: "ACCURACY", value: "98%", sub: "Claim Precision" },
+                     { label: "EFFICIENCY", value: "99%", sub: "Clean Claim Rate" },
+                     { label: "DOMAINS", value: "75+", sub: "Medical Specialties" },
+                     { label: "PERFORMANCE", value: "30%", sub: "Avg. Faster Payments" }
+                   ].map((stat, i) => (
+                     <div key={i}>
+                       <p className="text-[10px] font-black text-white/20 uppercase tracking-[0.4em] mb-4">{stat.label}</p>
+                       <h4 className="text-5xl font-black text-green mb-2 tracking-tighter">{stat.value}</h4>
+                       <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest">{stat.sub}</p>
+                     </div>
+                   ))}
+                 </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Technical Pipeline - Detailed Workflow */}
+      <section id="workflow" className="py-40 bg-background relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-32">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center justify-center gap-4 mb-8">
+                <div className="w-2 h-2 rounded-full bg-green" />
+                <span className="text-[10px] font-black text-green uppercase tracking-[0.5em]">Operational Workflow</span>
+              </div>
+              <h2 className="text-4xl md:text-7xl font-black text-navy mb-10 leading-[0.85] tracking-tighter uppercase">
+                The Technical <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green to-navy-light">Pipeline.</span>
+              </h2>
+              <p className="text-xl text-muted-foreground/60 leading-relaxed font-medium">
+                Our proprietary 4-phase deployment model ensures a seamless transition and immediate revenue stabilization.
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-12 max-w-7xl mx-auto relative">
+            {/* Connecting Line */}
+            <div className="absolute top-24 left-0 w-full h-px bg-gradient-to-r from-transparent via-border/50 to-transparent hidden md:block" />
+            
+            {[
+              {
+                step: "01",
+                title: "Systems Audit",
+                desc: "Comprehensive analysis of existing data streams to identify structural revenue leakage.",
+                items: ["Leakage Analysis", "Data Mapping", "Process Audit"]
+              },
+              {
+                step: "02",
+                title: "Architecture",
+                desc: "Custom-mapping clinical intelligence to optimized billing codes and payer-specific logic.",
+                items: ["Code Optimization", "Payer Logic", "Workflow Design"]
+              },
+              {
+                step: "03",
+                title: "Live Activation",
+                desc: "Deployment of real-time scrubbing engines and direct-to-payer submission tunnels.",
+                items: ["Real-time Scrubbing", "Direct Submission", "Sync Check"]
+              },
+              {
+                step: "04",
+                title: "Optimization",
+                desc: "Continuous performance tuning through daily denial analysis and predictive modeling.",
+                items: ["Denial Tuning", "Revenue Forecast", "SLA Monitoring"]
+              }
+            ].map((phase, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="relative z-10"
+              >
+                <div className="w-20 h-20 rounded-3xl bg-white border border-border/40 flex items-center justify-center text-4xl font-black text-navy/10 mb-10 shadow-sm transition-all group hover:border-green">
+                  {phase.step}
+                </div>
+                <h3 className="text-sm font-black text-navy uppercase tracking-widest mb-6">{phase.title}</h3>
+                <p className="text-[11px] text-muted-foreground/80 leading-relaxed mb-8">{phase.desc}</p>
+                <ul className="space-y-3">
+                  {phase.items.map((item, i) => (
+                    <li key={i} className="flex items-center gap-3">
+                      <div className="w-1 h-1 rounded-full bg-green" />
+                      <span className="text-[9px] font-bold text-navy/40 uppercase tracking-widest">{item}</span>
+                    </li>
                   ))}
-               </div>
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Compliance Standards Section */}
+      <section className="py-40 bg-navy relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-32 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center gap-4 mb-10">
+                <div className="w-2 h-2 rounded-full bg-green" />
+                <span className="text-[10px] font-black text-green uppercase tracking-[0.5em]">Security Protocol</span>
+              </div>
+              <h2 className="text-4xl md:text-7xl font-black text-white mb-12 leading-[0.85] tracking-tighter uppercase">
+                Institutional <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green to-white">Compliance.</span>
+              </h2>
+              <p className="text-xl text-white/40 leading-relaxed mb-16 font-medium">
+                Our infrastructure is engineered to exceed the most stringent healthcare data security standards.
+              </p>
+              
+              <div className="grid grid-cols-2 gap-10">
+                {[
+                  { label: "HIPAA", desc: "Full Regulatory Alignment" },
+                  { label: "SOC 2", desc: "Type II Certified Core" },
+                  { label: "AES-256", desc: "Advanced Data Encryption" },
+                  { label: "SLA", desc: "99.9% Uptime Guarantee" }
+                ].map((standard, i) => (
+                  <div key={i} className="border-l border-white/10 pl-8">
+                    <h4 className="text-2xl font-black text-white mb-2 tracking-tighter">{standard.label}</h4>
+                    <p className="text-[10px] font-black text-white/20 uppercase tracking-[0.3em]">{standard.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="bg-white/[0.05] backdrop-blur-2xl border border-white/10 rounded-[4rem] p-16 relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 p-12 opacity-[0.05]">
+                <Award className="w-64 h-64 text-white" />
+              </div>
+              <h3 className="text-xs font-black text-green uppercase tracking-[0.4em] mb-12 relative z-10">Verification Log</h3>
+              <div className="space-y-8 relative z-10">
+                {[
+                  "Monthly security audit completion",
+                  "Encrypted data transmission tunnels active",
+                  "Zero-trust architecture implementation",
+                  "Annual compliance training certified"
+                ].map((log, i) => (
+                  <div key={i} className="flex items-center gap-6">
+                    <div className="w-2 h-2 rounded-full bg-green shadow-glow-green" />
+                    <span className="text-[11px] font-bold text-white/60 uppercase tracking-widest">{log}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-16 pt-10 border-t border-white/10">
+                <p className="text-[9px] font-black text-white/20 uppercase tracking-[0.5em] text-center">Protocol ID: SMB-SEC-2024-X</p>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -384,7 +532,7 @@ const About = () => {
                 <div className="w-2 h-2 rounded-full bg-green" />
                 <span className="text-[10px] font-black text-green uppercase tracking-[0.5em]">Corporate Ethos</span>
               </div>
-              <h2 className="text-5xl md:text-8xl font-black text-navy mb-10 leading-[0.85] tracking-tighter uppercase">
+              <h2 className="text-4xl md:text-7xl font-black text-navy mb-10 leading-[0.85] tracking-tighter uppercase">
                 Foundational <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-green to-navy-light">Principles.</span>
               </h2>
@@ -463,7 +611,7 @@ const About = () => {
               <div className="w-2 h-2 rounded-full bg-green animate-pulse" />
               <span className="text-[10px] font-black text-green uppercase tracking-[0.6em]">Collaborative Opportunities</span>
             </div>
-            <h2 className="text-5xl md:text-9xl font-black text-white mb-16 leading-[0.8] tracking-tighter uppercase">
+            <h2 className="text-4xl md:text-7xl font-black text-white mb-16 leading-[0.8] tracking-tighter uppercase">
               Build the Future of <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-green">Clinical Finance.</span>
             </h2>
@@ -471,13 +619,13 @@ const About = () => {
               We are expanding our network of billing specialists and financial engineers. Explore institutional opportunities.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-10">
-              <Button size="lg" className="bg-green hover:bg-white text-navy px-16 h-20 rounded-full text-sm font-black uppercase tracking-[0.2em] shadow-3xl shadow-green/20 transition-all hover:scale-105 active:scale-95 group" asChild>
+              <Button size="lg" className="bg-green hover:bg-white text-navy px-8 md:px-16 h-16 md:h-20 rounded-full text-[10px] md:text-sm font-black uppercase tracking-[0.2em] shadow-3xl shadow-green/20 transition-all hover:scale-105 active:scale-95 group" asChild>
                 <Link to="/contact">
                   Open Institutional Roles
-                  <ArrowRight className="w-6 h-6 ml-6 group-hover:translate-x-2 transition-transform" />
+                  <ArrowRight className="w-5 h-5 md:w-6 md:h-6 ml-4 md:ml-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="px-16 h-20 rounded-full text-sm font-black uppercase tracking-[0.2em] border-white/20 hover:bg-white/5 text-white transition-all hover:scale-105 active:scale-95" asChild>
+              <Button size="lg" variant="outline" className="px-8 md:px-16 h-16 md:h-20 rounded-full text-[10px] md:text-sm font-black uppercase tracking-[0.2em] border-white/20 hover:bg-white/5 text-white transition-all hover:scale-105 active:scale-95" asChild>
                 <Link to="/contact">Contact Infrastructure Team</Link>
               </Button>
             </div>

@@ -210,7 +210,7 @@ const Services = () => {
             <span className="text-[10px] font-black tracking-[0.4em] uppercase text-white/60">Service Protocol: {service.id}</span>
           </motion.div>
           
-          <h1 className="text-5xl md:text-8xl font-black mb-10 leading-[0.9] tracking-tighter uppercase">
+          <h1 className="text-4xl md:text-7xl font-black mb-10 leading-[0.9] tracking-tighter uppercase">
             {service.title.split(" ").slice(0, -1).join(" ")} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-green">{service.title.split(" ").slice(-1)}</span>
           </h1>
@@ -220,7 +220,7 @@ const Services = () => {
           </p>
 
           <div className="flex flex-wrap justify-center gap-6">
-            <Button size="lg" className="bg-green hover:bg-green/90 text-navy px-12 h-20 rounded-2xl text-lg font-black shadow-2xl transition-all" asChild>
+            <Button size="lg" className="bg-green hover:bg-green/90 text-navy px-8 md:px-12 h-16 md:h-20 rounded-2xl text-sm md:text-lg font-black shadow-2xl transition-all" asChild>
               <Link to="/contact">
                 Deploy Solution
                 <ArrowRight className="w-5 h-5 ml-4" />
@@ -229,7 +229,7 @@ const Services = () => {
             <Button
               size="lg"
               variant="outline"
-              className="px-12 h-20 rounded-2xl text-lg font-black border-white/20 hover:bg-white/10 text-white transition-all"
+              className="px-8 md:px-12 h-16 md:h-20 rounded-2xl text-sm md:text-lg text-black border-white/20 hover:bg-white/10 text-navy transition-all"
               asChild
             >
               <Link to="/pricing">Pricing Model</Link>
@@ -391,10 +391,10 @@ const Services = () => {
               <div className="w-1.5 h-1.5 rounded-full bg-green" />
               <span className="text-[10px] font-black text-green uppercase tracking-[0.4em]">Implementation Pipeline</span>
             </div>
-            <h2 className="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter uppercase">
-              System <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-green/50">Deployment.</span>
-            </h2>
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter uppercase">
+            System <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-green/50">Deployment.</span>
+          </h2>
           </div>
 
           <div className="grid md:grid-cols-4 gap-12 max-w-6xl mx-auto relative">

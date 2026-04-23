@@ -13,14 +13,14 @@ export const StatsSection = () => {
   const sectionRef = useGsapScrollReveal();
 
   return (
-    <section className="py-32 relative overflow-hidden bg-background">
+    <section className="py-20 relative overflow-hidden bg-background">
       {/* Precision Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
         <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(to right, hsl(var(--primary)) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--primary)) 1px, transparent 1px)', backgroundSize: '100px 100px' }} />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div ref={sectionRef} className="max-w-4xl mb-24">
+        <div ref={sectionRef} className="max-w-4xl mb-14">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -30,7 +30,7 @@ export const StatsSection = () => {
               <div className="w-2 h-2 rounded-full bg-green animate-pulse" />
               <span className="text-[10px] font-black text-green uppercase tracking-[0.5em]">Verified Performance Metric</span>
             </div>
-            <h2 className="text-5xl md:text-8xl font-black text-navy mb-10 leading-[0.85] tracking-tighter uppercase">
+            <h2 className="text-4xl md:text-7xl font-black text-navy mb-10 leading-[0.85] tracking-tighter uppercase">
               Proven <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green via-navy-light to-navy">Operational Alpha.</span>
             </h2>

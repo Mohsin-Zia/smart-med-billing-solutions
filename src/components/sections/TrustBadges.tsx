@@ -10,7 +10,7 @@ const trustItems = [
 
 export const TrustBadges = () => {
   return (
-    <section className="py-16 bg-background border-y border-border/40 relative overflow-hidden">
+    <section className="py-10 bg-background border-y border-border/40 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-12">
           

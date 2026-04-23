@@ -8,11 +8,11 @@ export interface Stat {
 
 export const stats: Stat[] = [
   {
-    id: "providers",
-    value: 150,
-    suffix: "+",
-    label: "Healthcare Providers",
-    description: "Trusted by practices nationwide"
+    id: "accuracy",
+    value: 98,
+    suffix: "%",
+    label: "Claim Accuracy",
+    description: "Industry-leading precision in submissions"
   },
   {
     id: "claims",
@@ -32,8 +32,8 @@ export const stats: Stat[] = [
     id: "recovery",
     value: 30,
     suffix: "%",
-    label: "Revenue Increase",
-    description: "Average improvement in collections"
+    label: "Faster Payments",
+    description: "Reduction in accounts receivable cycle"
   },
 ];
 

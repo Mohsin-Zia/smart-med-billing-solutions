@@ -9,7 +9,7 @@ import { featuredSpecialities } from "@/data/specialties";
 
 export const SpecialitiesSection = () => {
   return (
-    <section className="py-40 bg-background relative overflow-hidden">
+    <section className="py-20 bg-background relative overflow-hidden">
       {/* Background Architectural Patterns */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.01]">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-navy-light to-transparent" />
@@ -19,7 +19,7 @@ export const SpecialitiesSection = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row items-end justify-between gap-16 mb-32 pb-20 border-b border-border/40">
+        <div className="flex flex-col lg:flex-row items-end justify-between gap-10 mb-16 pb-12 border-b border-border/40">
           <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -31,7 +31,7 @@ export const SpecialitiesSection = () => {
                 <div className="w-2 h-2 rounded-full bg-green animate-pulse" />
                 <span className="text-[10px] font-black text-green uppercase tracking-[0.5em]">Domain Specialization</span>
               </div>
-              <h2 className="text-5xl md:text-8xl font-black text-navy mb-4 leading-[0.85] tracking-tighter uppercase">
+              <h2 className="text-4xl md:text-7xl font-black text-navy mb-4 leading-[0.85] tracking-tighter uppercase">
                 Multi-Sector <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-green to-navy-light">Expertise.</span>
               </h2>
@@ -51,7 +51,7 @@ export const SpecialitiesSection = () => {
         </div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-32"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-16"
           variants={staggerContainer}
           initial="initial"
           whileInView="animate"
@@ -71,11 +71,11 @@ export const SpecialitiesSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="w-px h-32 bg-gradient-to-b from-green/40 to-transparent mb-16" />
-          <Button size="lg" className="bg-navy hover:bg-navy-light text-white px-16 h-20 rounded-full text-sm font-black uppercase tracking-[0.2em] shadow-3xl shadow-navy/20 transition-all hover:scale-105 active:scale-95 group" asChild>
+          <div className="w-px h-20 bg-gradient-to-b from-green/40 to-transparent mb-10" />
+          <Button size="lg" className="bg-navy hover:bg-navy-light text-white px-8 md:px-16 h-16 md:h-20 rounded-full text-[10px] md:text-sm font-black uppercase tracking-[0.2em] shadow-3xl shadow-navy/20 transition-all hover:scale-105 active:scale-95 group" asChild>
             <Link to="/specialities">
-              Domain Mapping Overview
-              <ArrowRight className="ml-6 w-6 h-6 group-hover:translate-x-2 transition-transform" />
+              Explore All Specialties
+              <ArrowRight className="w-5 h-5 md:w-6 md:h-6 ml-4 md:ml-6 group-hover:translate-x-2 transition-transform" />
             </Link>
           </Button>
         </motion.div>

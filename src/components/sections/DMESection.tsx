@@ -34,13 +34,13 @@ export const DMESection = () => {
   const sectionRef = useGsapFadeIn();
 
   return (
-    <section ref={sectionRef} className="py-40 bg-background relative overflow-hidden">
+    <section ref={sectionRef} className="py-20 bg-background relative overflow-hidden">
       {/* Dynamic Background Elements */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-navy/[0.02] -skew-x-12 translate-x-1/4" />
       <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-green/[0.02] blur-3xl rounded-full" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-32">
+        <div className="flex flex-col lg:flex-row items-center gap-16">
           
           {/* Content side */}
           <div className="flex-1">
@@ -55,7 +55,7 @@ export const DMESection = () => {
                 <span className="text-[10px] font-black text-green uppercase tracking-[0.6em]">Vertical Infrastructure</span>
               </div>
 
-              <h2 className="text-5xl md:text-8xl font-black text-navy mb-12 leading-[0.85] tracking-tighter uppercase">
+              <h2 className="text-4xl md:text-7xl font-black text-navy mb-12 leading-[0.85] tracking-tighter uppercase">
                 Precision <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-green via-navy-light to-navy">DME Flow.</span>
               </h2>

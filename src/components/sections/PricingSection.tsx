@@ -22,13 +22,13 @@ const comparisonData = {
 
 export const PricingSection = () => {
   return (
-    <section className="py-40 bg-background relative overflow-hidden">
+    <section className="py-20 bg-background relative overflow-hidden">
       {/* Background Architectural Patterns */}
       <div className="absolute top-0 right-0 w-1/4 h-full bg-navy/[0.01]" />
       <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-green/[0.01] blur-3xl rounded-full" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-32">
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ export const PricingSection = () => {
               <div className="w-2 h-2 rounded-full bg-green animate-pulse" />
               <span className="text-[10px] font-black text-green uppercase tracking-[0.5em]">Revenue Strategy</span>
             </div>
-            <h2 className="text-5xl md:text-8xl font-black text-navy mb-10 leading-[0.85] tracking-tighter uppercase">
+            <h2 className="text-4xl md:text-7xl font-black text-navy mb-10 leading-[0.85] tracking-tighter uppercase">
               Financial <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green to-navy-light">Architecture.</span>
             </h2>
@@ -112,11 +112,11 @@ export const PricingSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="w-px h-32 bg-gradient-to-b from-green/40 to-transparent mb-16" />
-            <Button size="lg" className="bg-navy hover:bg-navy-light text-white px-16 h-20 rounded-full text-sm font-black uppercase tracking-[0.2em] shadow-3xl shadow-navy/20 transition-all hover:scale-105 active:scale-95 group" asChild>
-              <Link to="/pricing">
-                Full Financial Breakdown
-                <TrendingUp className="ml-6 w-6 h-6 group-hover:scale-110 transition-transform" />
+            <div className="w-px h-16 bg-gradient-to-b from-green/40 to-transparent mb-8" />
+            <Button size="lg" className="bg-navy hover:bg-navy-light text-white px-8 md:px-16 h-16 md:h-20 rounded-full text-[10px] md:text-sm font-black uppercase tracking-[0.2em] shadow-3xl shadow-navy/20 transition-all hover:scale-105 active:scale-95 group" asChild>
+              <Link to="/contact">
+                Initiate System Audit
+                <ArrowRight className="w-5 h-5 md:w-6 md:h-6 ml-4 md:ml-6 group-hover:translate-x-2 transition-transform" />
               </Link>
             </Button>
           </motion.div>

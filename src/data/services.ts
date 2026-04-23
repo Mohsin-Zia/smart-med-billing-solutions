@@ -33,7 +33,7 @@ export const services: Service[] = [
     shortDescription:
       "Boost revenue and minimize claim denials with our expert billing team.",
     description:
-      "Increase revenue and reduce claim denials with our experienced billing team. We focus on accurate submissions, faster reimbursements, and efficient accounts receivable management to keep your cash flow steady.",
+      "Maximize your reimbursements and minimize claim denials with our white-glove medical billing solutions. We transform administrative complexity into consistent revenue growth through technical precision and clinical domain expertise.",
     icon: FileText,
     benefits: [
       "Reduce claim denials by up to 95%",
@@ -42,12 +42,13 @@ export const services: Service[] = [
       "Reduced administrative burden",
     ],
     features: [
-      "Patient demographics verification",
-      "Insurance eligibility verification",
-      "Charge entry and coding",
-      "Claim submission and tracking",
+      "Patient demographics & technical verification",
+      "Real-time insurance eligibility verification",
+      "Expert charge entry and medical coding",
+      "Telehealth & RPM (Remote Patient Monitoring) support",
+      "Electronic & paper claim submission",
+      "Proactive denial management and appeals",
       "Payment posting and reconciliation",
-      "Denial management and appeals",
     ],
     carouselItems: [
       {

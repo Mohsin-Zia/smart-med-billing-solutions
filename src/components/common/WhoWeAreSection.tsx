@@ -43,13 +43,13 @@ const staggerItem = {
 
 export const WhoWeAreSection = () => {
   return (
-    <section className="py-40 relative overflow-hidden bg-background">
+    <section className="py-20 relative overflow-hidden bg-background">
       {/* Background Architectural Elements */}
       <div className="absolute top-0 left-0 w-1/4 h-full bg-navy/[0.02]" />
       <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-green/[0.02] blur-3xl rounded-full" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-32">
+        <div className="flex flex-col lg:flex-row items-center gap-16">
           
           {/* Visual Side */}
           <div className="flex-1 relative order-2 lg:order-1">
@@ -119,7 +119,7 @@ export const WhoWeAreSection = () => {
                 <span className="text-[10px] font-black text-green uppercase tracking-[0.6em]">Corporate Identity</span>
               </div>
               
-              <h2 className="text-5xl md:text-8xl font-black text-navy mb-12 leading-[0.85] tracking-tighter uppercase">
+              <h2 className="text-3xl md:text-5xl font-black text-navy mb-12 leading-[0.85] tracking-tighter uppercase">
                 Revenue <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-green via-navy-light to-navy">Intelligence.</span>
               </h2>

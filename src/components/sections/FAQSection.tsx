@@ -18,14 +18,14 @@ export const FAQSection = ({ limit, showTitle = true }: FAQSectionProps) => {
   const displayFaqs = limit ? faqs.slice(0, limit) : faqs;
 
   return (
-    <section className="py-32 bg-background relative overflow-hidden">
+    <section className="py-20 bg-background relative overflow-hidden">
       {/* Background Architectural Patterns */}
       <div className="absolute top-0 right-0 w-1/4 h-full bg-navy/[0.01]" />
       <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-green/[0.01] blur-3xl rounded-full" />
 
       <div className="container mx-auto px-6 relative z-10">
         {showTitle && (
-          <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-24">
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-14">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ export const FAQSection = ({ limit, showTitle = true }: FAQSectionProps) => {
                 <div className="w-2 h-2 rounded-full bg-green animate-pulse" />
                 <span className="text-[10px] font-black text-green uppercase tracking-[0.5em]">Expert Knowledge Base</span>
               </div>
-              <h2 className="text-5xl md:text-8xl font-black text-navy mb-10 leading-[0.85] tracking-tighter uppercase">
+              <h2 className="text-4xl md:text-7xl font-black text-navy mb-10 leading-[0.85] tracking-tighter uppercase">
                 Strategic <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-green to-navy-light">Logic Map.</span>
               </h2>

@@ -35,14 +35,14 @@ export const HIPAASecuritySection = () => {
   const sectionRef = useGsapFadeIn();
 
   return (
-    <section ref={sectionRef} className="py-40 relative overflow-hidden bg-background">
+    <section ref={sectionRef} className="py-20 relative overflow-hidden bg-background">
       {/* Precision Background Pattern */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.01]">
         <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(to right, hsl(var(--primary)) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--primary)) 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-32">
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -52,7 +52,7 @@ export const HIPAASecuritySection = () => {
               <div className="w-2 h-2 rounded-full bg-green animate-pulse" />
               <span className="text-[10px] font-black text-green uppercase tracking-[0.5em]">Global Compliance Protocol</span>
             </div>
-            <h2 className="text-5xl md:text-8xl font-black text-navy mb-10 leading-[0.85] tracking-tighter uppercase">
+            <h2 className="text-4xl md:text-7xl font-black text-navy mb-10 leading-[0.85] tracking-tighter uppercase">
               Fortified <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green to-navy-light">HIPAA Core.</span>
             </h2>

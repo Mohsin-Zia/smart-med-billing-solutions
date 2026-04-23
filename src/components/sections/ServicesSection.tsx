@@ -6,7 +6,7 @@ import { featuredServices } from "@/data/services";
 
 export const ServicesSection = () => {
   return (
-    <section className="py-32 bg-background relative overflow-hidden">
+    <section className="py-20 bg-background relative overflow-hidden">
       {/* Background Architectural Elements */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-navy/5 -skew-x-12 translate-x-1/4" />
       <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-green/5 blur-3xl rounded-full -translate-x-1/2" />
@@ -14,7 +14,7 @@ export const ServicesSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         
         {/* Header - Technical Alignment */}
-        <div className="max-w-4xl mb-24">
+        <div className="max-w-4xl mb-16">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -24,7 +24,7 @@ export const ServicesSection = () => {
               <div className="w-12 h-px bg-green" />
               <span className="text-[10px] font-black uppercase tracking-[0.6em]">Modular Architecture</span>
             </div>
-            <h2 className="text-5xl md:text-8xl font-black text-navy mb-8 leading-[0.85] tracking-tighter uppercase">
+            <h2 className="text-4xl md:text-7xl font-black text-navy mb-8 leading-[0.85] tracking-tighter uppercase">
               Systemized <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green to-navy-light">Revenue Logic.</span>
             </h2>
@@ -90,12 +90,12 @@ export const ServicesSection = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-32 text-center"
+          className="mt-20 text-center"
         >
-          <Button size="lg" className="bg-navy hover:bg-navy-light text-white px-16 h-24 rounded-[2.5rem] text-xl font-black shadow-3xl shadow-navy/20 transition-all hover:scale-[1.05] active:scale-95 group" asChild>
+          <Button size="lg" className="bg-navy hover:bg-navy-light text-white px-8 md:px-16 h-16 md:h-24 rounded-[1.5rem] md:rounded-[2.5rem] text-sm md:text-xl font-black shadow-3xl shadow-navy/20 transition-all hover:scale-[1.05] active:scale-95 group" asChild>
             <Link to="/services">
-              Full System Manifest
-              <Activity className="ml-6 w-8 h-8 group-hover:animate-pulse text-green" />
+              Full Service Protocol
+              <ArrowRight className="w-5 h-5 md:w-8 md:h-8 ml-4 md:ml-8 group-hover:translate-x-2 transition-transform" />
             </Link>
           </Button>
         </motion.div>

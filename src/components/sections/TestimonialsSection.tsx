@@ -48,7 +48,7 @@ export const TestimonialsSection = () => {
   const current = testimonials[currentIndex];
 
   return (
-    <section className="py-32 bg-navy relative overflow-hidden text-white">
+    <section className="py-20 bg-navy relative overflow-hidden text-white">
       {/* Immersive Cinematic Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_20%,rgba(34,197,94,0.1)_0%,transparent_60%)]" />
@@ -58,7 +58,7 @@ export const TestimonialsSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         
         {/* Header Block */}
-        <div className="max-w-4xl mb-24">
+        <div className="max-w-4xl mb-14">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -68,7 +68,7 @@ export const TestimonialsSection = () => {
               <div className="w-12 h-px bg-green" />
               <span className="text-[10px] font-black uppercase tracking-[0.6em]">Partner Testimonials</span>
             </div>
-            <h2 className="text-5xl md:text-8xl font-black mb-10 leading-[0.85] tracking-tighter uppercase">
+            <h2 className="text-4xl md:text-7xl font-black mb-10 leading-[0.85] tracking-tighter uppercase">
               Clinical <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green via-white to-green-light">Endorsements.</span>
             </h2>
@@ -94,7 +94,7 @@ export const TestimonialsSection = () => {
                 }}
                 className="absolute inset-0 bg-white/[0.03] backdrop-blur-3xl rounded-[4rem] border border-white/10 p-12 md:p-24 shadow-2xl flex flex-col md:flex-row items-center gap-16 overflow-hidden"
               >
-                {/* Visual Icon Accent */}
+                {/* Visual Icon Accent
                 <div className="relative shrink-0">
                    <div className="w-32 h-32 md:w-48 md:h-48 rounded-[3rem] bg-gradient-to-br from-white/10 to-transparent flex items-center justify-center border border-white/10">
                       <MessageSquare className="w-16 h-16 text-green/50" />
@@ -102,7 +102,7 @@ export const TestimonialsSection = () => {
                    <div className="absolute -top-6 -right-6 w-16 h-16 bg-green rounded-3xl flex items-center justify-center z-20 shadow-xl shadow-green/20">
                       <Quote className="w-8 h-8 text-navy" />
                    </div>
-                </div>
+                </div> */}
 
                 <div className="flex-1 text-center md:text-left relative">
                   <div className="flex items-center justify-center md:justify-start gap-1.5 mb-12">
@@ -125,7 +125,7 @@ export const TestimonialsSection = () => {
           </div>
 
           {/* Navigation Controls */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-12 mt-20">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 mt-12">
             <div className="flex items-center gap-4">
               {testimonials.map((_, index) => (
                 <button
